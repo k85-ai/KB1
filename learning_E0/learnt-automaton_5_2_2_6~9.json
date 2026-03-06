@@ -1,0 +1,41 @@
+{
+  "n_states": 21,
+  "alphabet": [
+    "L0",
+    "L1"
+  ],
+  "start": 0,
+  "graph_density": -1,
+  "delta": [
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 1
+    },
+    {
+      "source": 0,
+      "label": "L0",
+      "target": 2
+    },
+    {
+      "source": 1,
+      "label": "L1",
+      "target": 2
+    },
+    {
+      "source": 2,
+      "label": "L0",
+      "target": 20
+    },
+    {
+      "source": 20,
+      "label": "L1",
+      "target": 0
+    },
+    {
+      "source": 20,
+      "label": "L0",
+      "target": 1
+    }
+  ]
+}

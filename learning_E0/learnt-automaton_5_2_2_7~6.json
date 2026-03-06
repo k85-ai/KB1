@@ -1,0 +1,61 @@
+{
+  "n_states": 16,
+  "alphabet": [
+    "L0",
+    "L1"
+  ],
+  "start": 0,
+  "graph_density": -1,
+  "delta": [
+    {
+      "source": 0,
+      "label": "L0",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L1",
+      "target": 2
+    },
+    {
+      "source": 2,
+      "label": "L0",
+      "target": 15
+    },
+    {
+      "source": 1,
+      "label": "L0",
+      "target": 7
+    },
+    {
+      "source": 7,
+      "label": "L0",
+      "target": 2
+    },
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 14
+    },
+    {
+      "source": 14,
+      "label": "L1",
+      "target": 15
+    },
+    {
+      "source": 15,
+      "label": "L1",
+      "target": 14
+    },
+    {
+      "source": 15,
+      "label": "L0",
+      "target": 2
+    },
+    {
+      "source": 7,
+      "label": "L1",
+      "target": 14
+    }
+  ]
+}

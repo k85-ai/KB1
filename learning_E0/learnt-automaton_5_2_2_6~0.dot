@@ -1,0 +1,13 @@
+digraph learntMachine {
+  rankdir=LR;
+  0 [shape=circle, label="0"];
+  1 [shape=circle, label="1"];
+  6 [shape=circle, label="6"];
+  7 [shape=circle, label="7"];
+  0 -> 1 [label="L1"];
+  1 -> 6 [label="L1"];
+  0 -> 6 [label="L0"];
+  6 -> 7 [label="L0"];
+  7 -> 0 [label="L1"];
+  7 -> 1 [label="L0"];
+}

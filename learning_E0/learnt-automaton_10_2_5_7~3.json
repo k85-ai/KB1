@@ -1,0 +1,394 @@
+{
+  "n_states": 697,
+  "alphabet": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "start": 0,
+  "graph_density": -1,
+  "delta": [
+    {
+      "source": 0,
+      "label": "L2",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L2",
+      "target": 2
+    },
+    {
+      "source": 2,
+      "label": "L3",
+      "target": 3
+    },
+    {
+      "source": 3,
+      "label": "L3",
+      "target": 77
+    },
+    {
+      "source": 0,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 31
+    },
+    {
+      "source": 31,
+      "label": "L3",
+      "target": 1
+    },
+    {
+      "source": 2,
+      "label": "L4",
+      "target": 406
+    },
+    {
+      "source": 59,
+      "label": "L4",
+      "target": 619
+    },
+    {
+      "source": 31,
+      "label": "L0",
+      "target": 64
+    },
+    {
+      "source": 64,
+      "label": "L4",
+      "target": 65
+    },
+    {
+      "source": 65,
+      "label": "L1",
+      "target": 406
+    },
+    {
+      "source": 64,
+      "label": "L3",
+      "target": 0
+    },
+    {
+      "source": 0,
+      "label": "L3",
+      "target": 77
+    },
+    {
+      "source": 77,
+      "label": "L1",
+      "target": 31
+    },
+    {
+      "source": 3,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 31,
+      "label": "L1",
+      "target": 1
+    },
+    {
+      "source": 3,
+      "label": "L1",
+      "target": 31
+    },
+    {
+      "source": 77,
+      "label": "L0",
+      "target": 0
+    },
+    {
+      "source": 77,
+      "label": "L4",
+      "target": 1
+    },
+    {
+      "source": 216,
+      "label": "L0",
+      "target": 217
+    },
+    {
+      "source": 217,
+      "label": "L1",
+      "target": 31
+    },
+    {
+      "source": 217,
+      "label": "L3",
+      "target": 696
+    },
+    {
+      "source": 251,
+      "label": "L0",
+      "target": 252
+    },
+    {
+      "source": 252,
+      "label": "L2",
+      "target": 0
+    },
+    {
+      "source": 300,
+      "label": "L1",
+      "target": 65
+    },
+    {
+      "source": 217,
+      "label": "L2",
+      "target": 1
+    },
+    {
+      "source": 3,
+      "label": "L2",
+      "target": 64
+    },
+    {
+      "source": 406,
+      "label": "L1",
+      "target": 406
+    },
+    {
+      "source": 65,
+      "label": "L4",
+      "target": 77
+    },
+    {
+      "source": 216,
+      "label": "L4",
+      "target": 433
+    },
+    {
+      "source": 433,
+      "label": "L0",
+      "target": 434
+    },
+    {
+      "source": 434,
+      "label": "L4",
+      "target": 216
+    },
+    {
+      "source": 406,
+      "label": "L4",
+      "target": 216
+    },
+    {
+      "source": 433,
+      "label": "L3",
+      "target": 511
+    },
+    {
+      "source": 511,
+      "label": "L4",
+      "target": 433
+    },
+    {
+      "source": 528,
+      "label": "L1",
+      "target": 251
+    },
+    {
+      "source": 618,
+      "label": "L1",
+      "target": 619
+    },
+    {
+      "source": 619,
+      "label": "L3",
+      "target": 0
+    },
+    {
+      "source": 216,
+      "label": "L3",
+      "target": 696
+    },
+    {
+      "source": 696,
+      "label": "L1",
+      "target": 433
+    },
+    {
+      "source": 696,
+      "label": "L0",
+      "target": 217
+    },
+    {
+      "source": 300,
+      "label": "L4",
+      "target": 251
+    },
+    {
+      "source": 696,
+      "label": "L4",
+      "target": 508
+    },
+    {
+      "source": 618,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 508,
+      "label": "L1",
+      "target": 251
+    },
+    {
+      "source": 64,
+      "label": "L1",
+      "target": 406
+    },
+    {
+      "source": 65,
+      "label": "L0",
+      "target": 0
+    },
+    {
+      "source": 1,
+      "label": "L3",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L0",
+      "target": 406
+    },
+    {
+      "source": 1,
+      "label": "L4",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L1",
+      "target": 216
+    },
+    {
+      "source": 65,
+      "label": "L3",
+      "target": 0
+    },
+    {
+      "source": 528,
+      "label": "L4",
+      "target": 434
+    },
+    {
+      "source": 528,
+      "label": "L0",
+      "target": 252
+    },
+    {
+      "source": 59,
+      "label": "L1",
+      "target": 406
+    },
+    {
+      "source": 618,
+      "label": "L3",
+      "target": 1
+    },
+    {
+      "source": 618,
+      "label": "L2",
+      "target": 1
+    },
+    {
+      "source": 217,
+      "label": "L4",
+      "target": 618
+    },
+    {
+      "source": 434,
+      "label": "L1",
+      "target": 300
+    },
+    {
+      "source": 251,
+      "label": "L3",
+      "target": 528
+    },
+    {
+      "source": 252,
+      "label": "L1",
+      "target": 696
+    },
+    {
+      "source": 252,
+      "label": "L3",
+      "target": 528
+    },
+    {
+      "source": 251,
+      "label": "L4",
+      "target": 1
+    },
+    {
+      "source": 77,
+      "label": "L3",
+      "target": 77
+    },
+    {
+      "source": 252,
+      "label": "L4",
+      "target": 618
+    },
+    {
+      "source": 619,
+      "label": "L0",
+      "target": 2
+    },
+    {
+      "source": 64,
+      "label": "L2",
+      "target": 64
+    },
+    {
+      "source": 433,
+      "label": "L2",
+      "target": 508
+    },
+    {
+      "source": 508,
+      "label": "L3",
+      "target": 217
+    },
+    {
+      "source": 508,
+      "label": "L4",
+      "target": 59
+    },
+    {
+      "source": 619,
+      "label": "L4",
+      "target": 251
+    },
+    {
+      "source": 434,
+      "label": "L2",
+      "target": 528
+    },
+    {
+      "source": 300,
+      "label": "L3",
+      "target": 696
+    },
+    {
+      "source": 528,
+      "label": "L3",
+      "target": 508
+    },
+    {
+      "source": 59,
+      "label": "L2",
+      "target": 406
+    }
+  ]
+}

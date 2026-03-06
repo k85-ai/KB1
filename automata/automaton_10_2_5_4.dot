@@ -1,0 +1,29 @@
+digraph dotMachine {
+  rankdir=LR;
+  0 [shape=circle, label="0"];
+  1 [shape=circle, label="1"];
+  2 [shape=circle, label="2"];
+  3 [shape=circle, label="3"];
+  4 [shape=circle, label="4"];
+  5 [shape=circle, label="5"];
+  6 [shape=circle, label="6"];
+  7 [shape=circle, label="7"];
+  8 [shape=circle, label="8"];
+  9 [shape=circle, label="9"];
+  0 -> 1 [label="L4"];
+  0 -> 2 [label="L3"];
+  2 -> 3 [label="L1"];
+  1 -> 4 [label="L0"];
+  2 -> 5 [label="L3"];
+  1 -> 6 [label="L3"];
+  2 -> 7 [label="L4"];
+  6 -> 8 [label="L2"];
+  4 -> 9 [label="L2"];
+  8 -> 7 [label="L4"];
+  1 -> 8 [label="L1"];
+  6 -> 5 [label="L0"];
+  6 -> 1 [label="L3"];
+  8 -> 2 [label="L1"];
+  2 -> 2 [label="L2"];
+  0 -> 7 [label="L1"];
+}

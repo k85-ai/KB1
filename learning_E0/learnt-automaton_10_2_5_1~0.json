@@ -1,0 +1,164 @@
+{
+  "n_states": 150,
+  "alphabet": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "start": 0,
+  "graph_density": -1,
+  "delta": [
+    {
+      "source": 0,
+      "label": "L2",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L4",
+      "target": 20
+    },
+    {
+      "source": 1,
+      "label": "L1",
+      "target": 8
+    },
+    {
+      "source": 8,
+      "label": "L1",
+      "target": 67
+    },
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 10
+    },
+    {
+      "source": 10,
+      "label": "L2",
+      "target": 1
+    },
+    {
+      "source": 0,
+      "label": "L3",
+      "target": 20
+    },
+    {
+      "source": 20,
+      "label": "L0",
+      "target": 21
+    },
+    {
+      "source": 21,
+      "label": "L1",
+      "target": 8
+    },
+    {
+      "source": 20,
+      "label": "L3",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L2",
+      "target": 26
+    },
+    {
+      "source": 26,
+      "label": "L1",
+      "target": 8
+    },
+    {
+      "source": 20,
+      "label": "L1",
+      "target": 10
+    },
+    {
+      "source": 0,
+      "label": "L4",
+      "target": 37
+    },
+    {
+      "source": 37,
+      "label": "L2",
+      "target": 37
+    },
+    {
+      "source": 39,
+      "label": "L3",
+      "target": 37
+    },
+    {
+      "source": 20,
+      "label": "L2",
+      "target": 37
+    },
+    {
+      "source": 10,
+      "label": "L4",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L3",
+      "target": 67
+    },
+    {
+      "source": 21,
+      "label": "L0",
+      "target": 67
+    },
+    {
+      "source": 26,
+      "label": "L4",
+      "target": 67
+    },
+    {
+      "source": 21,
+      "label": "L4",
+      "target": 67
+    },
+    {
+      "source": 20,
+      "label": "L4",
+      "target": 95
+    },
+    {
+      "source": 95,
+      "label": "L1",
+      "target": 67
+    },
+    {
+      "source": 1,
+      "label": "L0",
+      "target": 112
+    },
+    {
+      "source": 112,
+      "label": "L1",
+      "target": 67
+    },
+    {
+      "source": 26,
+      "label": "L0",
+      "target": 67
+    },
+    {
+      "source": 39,
+      "label": "L4",
+      "target": 67
+    },
+    {
+      "source": 37,
+      "label": "L3",
+      "target": 39
+    },
+    {
+      "source": 37,
+      "label": "L4",
+      "target": 149
+    }
+  ]
+}

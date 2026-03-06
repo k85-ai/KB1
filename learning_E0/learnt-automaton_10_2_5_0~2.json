@@ -1,0 +1,104 @@
+{
+  "n_states": 205,
+  "alphabet": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "start": 0,
+  "graph_density": -1,
+  "delta": [
+    {
+      "source": 0,
+      "label": "L3",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L2",
+      "target": 38
+    },
+    {
+      "source": 0,
+      "label": "L4",
+      "target": 19
+    },
+    {
+      "source": 19,
+      "label": "L4",
+      "target": 19
+    },
+    {
+      "source": 0,
+      "label": "L0",
+      "target": 38
+    },
+    {
+      "source": 38,
+      "label": "L4",
+      "target": 19
+    },
+    {
+      "source": 0,
+      "label": "L2",
+      "target": 48
+    },
+    {
+      "source": 48,
+      "label": "L1",
+      "target": 49
+    },
+    {
+      "source": 49,
+      "label": "L2",
+      "target": 99
+    },
+    {
+      "source": 1,
+      "label": "L4",
+      "target": 99
+    },
+    {
+      "source": 99,
+      "label": "L3",
+      "target": 0
+    },
+    {
+      "source": 99,
+      "label": "L0",
+      "target": 0
+    },
+    {
+      "source": 49,
+      "label": "L3",
+      "target": 19
+    },
+    {
+      "source": 99,
+      "label": "L1",
+      "target": 99
+    },
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 204
+    },
+    {
+      "source": 38,
+      "label": "L0",
+      "target": 48
+    },
+    {
+      "source": 38,
+      "label": "L2",
+      "target": 0
+    },
+    {
+      "source": 38,
+      "label": "L3",
+      "target": 48
+    }
+  ]
+}
