@@ -20,42 +20,37 @@
     {
       "source": 2,
       "label": "L0",
-      "target": 19
+      "target": 6
     },
     {
       "source": 0,
       "label": "L1",
-      "target": 17
+      "target": 6
     },
     {
-      "source": 17,
+      "source": 6,
+      "label": "L0",
+      "target": 7
+    },
+    {
+      "source": 7,
       "label": "L1",
-      "target": 18
+      "target": 1
     },
     {
-      "source": 1,
+      "source": 6,
       "label": "L1",
       "target": 19
     },
     {
       "source": 19,
       "label": "L0",
-      "target": 18
+      "target": 6
     },
     {
-      "source": 18,
+      "source": 7,
       "label": "L0",
-      "target": 19
-    },
-    {
-      "source": 18,
-      "label": "L1",
-      "target": 17
-    },
-    {
-      "source": 2,
-      "label": "L1",
-      "target": 17
+      "target": 0
     }
   ]
 }

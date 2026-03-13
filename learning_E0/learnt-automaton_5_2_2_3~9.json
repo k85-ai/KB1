@@ -1,5 +1,5 @@
 {
-  "n_states": 60,
+  "n_states": 35,
   "alphabet": [
     "L0",
     "L1"
@@ -19,63 +19,33 @@
     },
     {
       "source": 2,
-      "label": "L1",
-      "target": 0
-    },
-    {
-      "source": 1,
-      "label": "L1",
-      "target": 10
-    },
-    {
-      "source": 10,
-      "label": "L1",
-      "target": 11
+      "label": "L0",
+      "target": 34
     },
     {
       "source": 0,
       "label": "L1",
-      "target": 12
+      "target": 16
     },
     {
-      "source": 12,
+      "source": 16,
       "label": "L0",
-      "target": 13
-    },
-    {
-      "source": 13,
-      "label": "L1",
       "target": 0
     },
     {
-      "source": 12,
-      "label": "L1",
-      "target": 17
-    },
-    {
-      "source": 17,
-      "label": "L0",
-      "target": 18
-    },
-    {
-      "source": 10,
-      "label": "L0",
-      "target": 31
-    },
-    {
       "source": 2,
-      "label": "L0",
-      "target": 17
-    },
-    {
-      "source": 13,
-      "label": "L0",
-      "target": 17
-    },
-    {
-      "source": 17,
       "label": "L1",
-      "target": 59
+      "target": 16
+    },
+    {
+      "source": 16,
+      "label": "L1",
+      "target": 34
+    },
+    {
+      "source": 34,
+      "label": "L0",
+      "target": 16
     }
   ]
 }

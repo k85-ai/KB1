@@ -2,12 +2,15 @@ digraph learntMachine {
   rankdir=LR;
   0 [shape=circle, label="0"];
   1 [shape=circle, label="1"];
-  5 [shape=circle, label="5"];
-  6 [shape=circle, label="6"];
-  0 -> 1 [label="L1"];
-  1 -> 5 [label="L1"];
-  0 -> 5 [label="L0"];
-  5 -> 6 [label="L0"];
-  6 -> 0 [label="L1"];
-  6 -> 1 [label="L0"];
+  2 [shape=circle, label="2"];
+  3 [shape=circle, label="3"];
+  12 [shape=circle, label="12"];
+  0 -> 1 [label="L0"];
+  1 -> 2 [label="L0"];
+  2 -> 3 [label="L0"];
+  3 -> 0 [label="L1"];
+  2 -> 1 [label="L1"];
+  0 -> 12 [label="L1"];
+  12 -> 0 [label="L0"];
+  3 -> 12 [label="L0"];
 }

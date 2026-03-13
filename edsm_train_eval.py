@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 from dataclasses import dataclass
 from typing import Dict, List, Tuple, Optional, Set
+from collections import deque
 
 from common import parse_traces_txt, Automaton, write_dot
 
@@ -33,20 +34,6 @@ class DFA:
 
     def outgoing_labels(self, s: int) -> Set[str]:
         return {a for (u, a) in self.delta.keys() if u == s}
-
-def build_pta(pos: List[Seq]) -> DFA:
-    delta: Dict[Tuple[int, str], int] = {}
-    next_id = 0
-    start = next_id; next_id += 1
-    for seq in pos:
-        s = start
-        for a in seq:
-            key = (s, a)
-            if key not in delta:
-                delta[key] = next_id
-                next_id += 1
-            s = delta[key]
-    return DFA(start=start, delta=delta)
 
 def compatible_by_negatives(dfa: DFA, neg: List[Seq]) -> bool:
     for seq in neg:
@@ -97,78 +84,6 @@ def successors_of(states: Set[int], dfa: DFA) -> Set[int]:
         if u in states:
             succ.add(v)
     return succ
-
-def score_pair(dfa: DFA, p: int, q: int) -> float:
-    out_p = dfa.outgoing_labels(p)
-    out_q = dfa.outgoing_labels(q)
-    common = len(out_p & out_q)
-    union = len(out_p | out_q)
-    return 10.0 * (common / max(1, union))
-
-def learn_edsm_redblue(pos: List[Seq], neg: List[Seq], score_threshold: float = 0.0,
-                       log_every_seconds: float = 2.0, max_merges: int = 50000) -> DFA:
-    dfa = build_pta(pos)
-    if not compatible_by_negatives(dfa, neg):
-        raise ValueError("Initial PTA accepts some negatives (inconsistent data).")
-
-    RED: Set[int] = {dfa.start}
-    BLUE: Set[int] = successors_of(RED, dfa) - RED
-
-    merges = 0
-    rounds = 0
-    last_log = time.time()
-
-    while merges < max_merges:
-        rounds += 1
-        if not BLUE:
-            break
-
-        best_pair = None
-        best_score = -math.inf
-        promote: Set[int] = set()
-
-        for b in list(BLUE):
-            best_for_b = None
-            best_for_b_score = -math.inf
-
-            for r in RED:
-                s = score_pair(dfa, r, b)
-                if s < score_threshold:
-                    continue
-                merged = merge_states(dfa, r, b)
-                if not compatible_by_negatives(merged, neg):
-                    continue
-                if s > best_for_b_score:
-                    best_for_b_score = s
-                    best_for_b = (r, b)
-
-            if best_for_b is None:
-                promote.add(b)
-            else:
-                if best_for_b_score > best_score:
-                    best_score = best_for_b_score
-                    best_pair = best_for_b
-
-        if best_pair is None:
-            if not promote:
-                promote.add(next(iter(BLUE)))
-            RED |= promote
-            BLUE = successors_of(RED, dfa) - RED
-        else:
-            r, b = best_pair
-            dfa = merge_states(dfa, r, b)
-            merges += 1
-            BLUE = successors_of(RED, dfa) - RED
-
-        now = time.time()
-        if now - last_log >= log_every_seconds:
-            last_log = now
-            print(f"[round={rounds} merges={merges}] states={len(dfa.states())} RED={len(RED)} BLUE={len(BLUE)} best_score={best_score:.3f}")
-
-    print(f"[done] rounds={rounds} merges={merges} states={len(dfa.states())}")
-    return dfa
-
-from collections import deque
 
 def build_pta_with_forbidden(pos: List[Seq], neg: List[Seq]) -> Tuple[DFA, Dict[int, Set[str]], List[str]]:
     """

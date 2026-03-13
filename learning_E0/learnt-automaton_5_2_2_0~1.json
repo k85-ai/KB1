@@ -1,5 +1,5 @@
 {
-  "n_states": 33,
+  "n_states": 15,
   "alphabet": [
     "L0",
     "L1"
@@ -9,48 +9,43 @@
   "delta": [
     {
       "source": 0,
-      "label": "L1",
+      "label": "L0",
       "target": 1
     },
     {
       "source": 1,
-      "label": "L1",
-      "target": 0
+      "label": "L0",
+      "target": 4
     },
     {
       "source": 0,
-      "label": "L0",
-      "target": 9
+      "label": "L1",
+      "target": 4
     },
     {
-      "source": 9,
+      "source": 4,
       "label": "L0",
-      "target": 10
+      "target": 5
     },
     {
-      "source": 10,
+      "source": 5,
+      "label": "L1",
+      "target": 4
+    },
+    {
+      "source": 5,
+      "label": "L0",
+      "target": 14
+    },
+    {
+      "source": 14,
       "label": "L0",
       "target": 0
     },
     {
-      "source": 10,
+      "source": 14,
       "label": "L1",
-      "target": 9
-    },
-    {
-      "source": 1,
-      "label": "L0",
-      "target": 32
-    },
-    {
-      "source": 32,
-      "label": "L0",
-      "target": 0
-    },
-    {
-      "source": 32,
-      "label": "L1",
-      "target": 9
+      "target": 4
     }
   ]
 }

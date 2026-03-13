@@ -1,5 +1,5 @@
 {
-  "n_states": 150,
+  "n_states": 106,
   "alphabet": [
     "L0",
     "L1",
@@ -12,153 +12,158 @@
   "delta": [
     {
       "source": 0,
-      "label": "L2",
-      "target": 1
-    },
-    {
-      "source": 1,
-      "label": "L4",
-      "target": 20
-    },
-    {
-      "source": 1,
-      "label": "L1",
-      "target": 8
-    },
-    {
-      "source": 8,
-      "label": "L1",
-      "target": 67
-    },
-    {
-      "source": 0,
-      "label": "L1",
-      "target": 10
-    },
-    {
-      "source": 10,
-      "label": "L2",
-      "target": 1
-    },
-    {
-      "source": 0,
-      "label": "L3",
-      "target": 20
-    },
-    {
-      "source": 20,
       "label": "L0",
-      "target": 21
-    },
-    {
-      "source": 21,
-      "label": "L1",
-      "target": 8
-    },
-    {
-      "source": 20,
-      "label": "L3",
       "target": 1
     },
     {
       "source": 1,
+      "label": "L1",
+      "target": 2
+    },
+    {
+      "source": 2,
+      "label": "L4",
+      "target": 3
+    },
+    {
+      "source": 3,
       "label": "L2",
-      "target": 26
+      "target": 13
     },
     {
-      "source": 26,
-      "label": "L1",
-      "target": 8
+      "source": 1,
+      "label": "L0",
+      "target": 13
     },
     {
-      "source": 20,
-      "label": "L1",
-      "target": 10
+      "source": 13,
+      "label": "L3",
+      "target": 14
+    },
+    {
+      "source": 14,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 2,
+      "label": "L2",
+      "target": 29
     },
     {
       "source": 0,
       "label": "L4",
-      "target": 37
+      "target": 29
     },
     {
-      "source": 37,
+      "source": 29,
       "label": "L2",
-      "target": 37
+      "target": 30
     },
     {
-      "source": 39,
-      "label": "L3",
-      "target": 37
-    },
-    {
-      "source": 20,
-      "label": "L2",
-      "target": 37
-    },
-    {
-      "source": 10,
+      "source": 30,
       "label": "L4",
+      "target": 31
+    },
+    {
+      "source": 31,
+      "label": "L1",
       "target": 1
     },
     {
       "source": 1,
       "label": "L3",
-      "target": 67
+      "target": 0
     },
     {
-      "source": 21,
-      "label": "L0",
-      "target": 67
-    },
-    {
-      "source": 26,
-      "label": "L4",
-      "target": 67
-    },
-    {
-      "source": 21,
-      "label": "L4",
-      "target": 67
-    },
-    {
-      "source": 20,
-      "label": "L4",
-      "target": 95
-    },
-    {
-      "source": 95,
-      "label": "L1",
-      "target": 67
-    },
-    {
-      "source": 1,
-      "label": "L0",
-      "target": 112
-    },
-    {
-      "source": 112,
-      "label": "L1",
-      "target": 67
-    },
-    {
-      "source": 26,
-      "label": "L0",
-      "target": 67
-    },
-    {
-      "source": 39,
-      "label": "L4",
-      "target": 67
-    },
-    {
-      "source": 37,
+      "source": 29,
       "label": "L3",
-      "target": 39
+      "target": 53
     },
     {
-      "source": 37,
+      "source": 53,
       "label": "L4",
-      "target": 149
+      "target": 54
+    },
+    {
+      "source": 54,
+      "label": "L0",
+      "target": 30
+    },
+    {
+      "source": 30,
+      "label": "L1",
+      "target": 60
+    },
+    {
+      "source": 31,
+      "label": "L0",
+      "target": 30
+    },
+    {
+      "source": 13,
+      "label": "L2",
+      "target": 2
+    },
+    {
+      "source": 54,
+      "label": "L1",
+      "target": 1
+    },
+    {
+      "source": 53,
+      "label": "L0",
+      "target": 105
+    },
+    {
+      "source": 105,
+      "label": "L1",
+      "target": 53
+    },
+    {
+      "source": 60,
+      "label": "L3",
+      "target": 2
+    },
+    {
+      "source": 60,
+      "label": "L1",
+      "target": 53
+    },
+    {
+      "source": 3,
+      "label": "L1",
+      "target": 53
+    },
+    {
+      "source": 105,
+      "label": "L2",
+      "target": 13
+    },
+    {
+      "source": 14,
+      "label": "L3",
+      "target": 2
+    },
+    {
+      "source": 105,
+      "label": "L3",
+      "target": 2
+    },
+    {
+      "source": 60,
+      "label": "L2",
+      "target": 13
+    },
+    {
+      "source": 3,
+      "label": "L3",
+      "target": 2
+    },
+    {
+      "source": 14,
+      "label": "L2",
+      "target": 30
     }
   ]
 }

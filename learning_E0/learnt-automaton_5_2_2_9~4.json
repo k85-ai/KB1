@@ -9,47 +9,32 @@
   "delta": [
     {
       "source": 0,
-      "label": "L1",
+      "label": "L0",
       "target": 1
     },
     {
       "source": 1,
-      "label": "L0",
-      "target": 2
-    },
-    {
-      "source": 2,
       "label": "L1",
-      "target": 3
+      "target": 18
     },
     {
       "source": 1,
-      "label": "L1",
+      "label": "L0",
+      "target": 3
+    },
+    {
+      "source": 3,
+      "label": "L0",
       "target": 4
     },
     {
       "source": 4,
       "label": "L0",
-      "target": 5
+      "target": 18
     },
     {
-      "source": 5,
-      "label": "L0",
-      "target": 0
-    },
-    {
-      "source": 4,
+      "source": 0,
       "label": "L1",
-      "target": 10
-    },
-    {
-      "source": 10,
-      "label": "L1",
-      "target": 5
-    },
-    {
-      "source": 2,
-      "label": "L0",
       "target": 18
     },
     {
@@ -58,9 +43,9 @@
       "target": 0
     },
     {
-      "source": 3,
+      "source": 4,
       "label": "L1",
-      "target": 5
+      "target": 3
     }
   ]
 }
