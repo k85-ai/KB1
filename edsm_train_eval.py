@@ -41,43 +41,6 @@ def compatible_by_negatives(dfa: DFA, neg: List[Seq]) -> bool:
             return False
     return True
 
-def merge_states(dfa: DFA, p: int, q: int) -> DFA:
-    if p == q:
-        return dfa
-    new_delta = dict(dfa.delta)
-    start = dfa.start
-
-    for (u, a), v in list(new_delta.items()):
-        if v == q:
-            new_delta[(u, a)] = p
-    if start == q:
-        start = p
-
-    def outgoing(s: int) -> Dict[str, int]:
-        return {a: t for (u, a), t in new_delta.items() if u == s}
-
-    out_p = outgoing(p)
-    out_q = outgoing(q)
-
-    for a in list(out_q.keys()):
-        new_delta.pop((q, a), None)
-
-    work: List[Tuple[int, int]] = []
-    for a, tq in out_q.items():
-        if a not in out_p:
-            new_delta[(p, a)] = tq
-        else:
-            tp = out_p[a]
-            if tp != tq:
-                work.append((tp, tq))
-
-    merged = DFA(start=start, delta=new_delta)
-    while work:
-        x, y = work.pop()
-        if x != y:
-            merged = merge_states(merged, x, y)
-    return merged
-
 def successors_of(states: Set[int], dfa: DFA) -> Set[int]:
     succ = set()
     for (u, _a), v in dfa.delta.items():
@@ -324,7 +287,6 @@ def learn_edsm_bluefringe(
 
                 merged, merged_forbidden = merge_states_with_forbidden(dfa, forbidden, r, b)
 
-                # strong safety check like your current version
                 if not compatible_by_negatives(merged, neg):
                     continue
 
