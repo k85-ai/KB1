@@ -52,7 +52,18 @@ def draw(ax, G, title):
     pos = nx.spring_layout(G, seed=1)
     nx.draw_networkx_nodes(G, pos, ax=ax, node_size=650)
     nx.draw_networkx_labels(G, pos, ax=ax, font_size=10)
-    nx.draw_networkx_edges(G, pos, ax=ax, arrows=True)
+    nx.draw_networkx_edges(
+    G,
+    pos,
+    ax=ax,
+    arrows=True,
+    arrowstyle='-|>',
+    arrowsize=22,
+    width=1.8,
+    min_source_margin=15,
+    min_target_margin=15,
+    connectionstyle="arc3,rad=0.08",
+)
     labels = {(u, v): d.get("label", "") for u, v, d in G.edges(data=True)}
     nx.draw_networkx_edge_labels(G, pos, edge_labels=labels, ax=ax, font_size=9)
 

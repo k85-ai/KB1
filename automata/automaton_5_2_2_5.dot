@@ -5,12 +5,12 @@ digraph dotMachine {
   2 [shape=circle, label="2"];
   3 [shape=circle, label="3"];
   4 [shape=circle, label="4"];
-  0 -> 1 [label="L1"];
-  0 -> 2 [label="L0"];
-  1 -> 3 [label="L0"];
-  2 -> 4 [label="L0"];
-  1 -> 0 [label="L1"];
-  4 -> 4 [label="L0"];
-  3 -> 2 [label="L0"];
-  4 -> 2 [label="L1"];
+  0 -> 1 [label="L0"];
+  1 -> 2 [label="L0"];
+  2 -> 3 [label="L0"];
+  3 -> 4 [label="L0"];
+  4 -> 0 [label="L0"];
+  3 -> 1 [label="L1"];
+  2 -> 1 [label="L1"];
+  0 -> 3 [label="L1"];
 }

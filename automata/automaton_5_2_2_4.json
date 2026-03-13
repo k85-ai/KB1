@@ -14,31 +14,21 @@
     },
     {
       "source": 1,
-      "label": "L1",
+      "label": "L0",
       "target": 2
     },
     {
-      "source": 1,
+      "source": 2,
       "label": "L0",
       "target": 3
     },
     {
-      "source": 0,
-      "label": "L1",
-      "target": 4
-    },
-    {
-      "source": 2,
-      "label": "L1",
-      "target": 1
-    },
-    {
-      "source": 2,
+      "source": 3,
       "label": "L0",
       "target": 4
     },
     {
-      "source": 3,
+      "source": 4,
       "label": "L0",
       "target": 0
     },
@@ -46,6 +36,16 @@
       "source": 3,
       "label": "L1",
       "target": 1
+    },
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 3
+    },
+    {
+      "source": 1,
+      "label": "L1",
+      "target": 0
     }
   ]
 }
