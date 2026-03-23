@@ -13,8 +13,12 @@ def load_from_dot(path: Path):
     nodes = set()
     edges = []
     for m in edge_re.finditer(text):
-        u = int(m.group(1)); v = int(m.group(2))
-        lab = m.group(3).strip()
+        u = int(m.group(1))
+        v = int(m.group(2))
+
+        lab = m.group(3)
+        lab = lab.replace("\\n", "").replace("\n", "").strip()
+        
         parts = [x.strip() for x in lab.split(",") if x.strip()]
         for a in parts:
             edges.append((u, v, a))
