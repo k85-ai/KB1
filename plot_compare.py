@@ -5,6 +5,7 @@ import json
 
 import networkx as nx
 import matplotlib.pyplot as plt
+from collections import deque, defaultdict
 
 def load_from_dot(path: Path):
     text = path.read_text(encoding="utf-8", errors="ignore")
@@ -41,6 +42,7 @@ def build_graph(nodes, edges):
     G = nx.DiGraph()
     for n in nodes:
         G.add_node(n)
+
     for u, v, a in edges:
         if G.has_edge(u, v):
             prev = G[u][v].get("label", "")
@@ -50,10 +52,10 @@ def build_graph(nodes, edges):
             G.add_edge(u, v, label=a)
     return G
 
-def draw(ax, G, title):
+def draw(ax, G, title, pos):
     ax.set_title(title)
     ax.axis("off")
-    pos = nx.spring_layout(G, seed=1)
+
     nx.draw_networkx_nodes(G, pos, ax=ax, node_size=650)
     nx.draw_networkx_labels(G, pos, ax=ax, font_size=10)
     nx.draw_networkx_edges(
@@ -78,6 +80,90 @@ def load_any(path: Path):
         return load_from_json(path)
     raise ValueError("Need .dot or .json")
 
+def bfs_layers(nodes, edges, start=0):
+    adj = defaultdict(list)
+    rev = defaultdict(list)
+
+    for u, v, a in edges:
+        adj[u].append((a, v))
+        rev[v].append((a, u))
+
+    for u in adj:
+        adj[u].sort(key=lambda x: (x[0], x[1]))
+    for v in rev:
+        rev[v].sort(key=lambda x: (x[0], x[1]))
+
+    dist = {}
+    q = deque()
+
+    if start in nodes:
+        dist[start] = 0
+        q.append(start)
+
+    while q:
+        u = q.popleft()
+        for a, v in adj.get(u, []):
+            if v not in dist:
+                dist[v] = dist[u] + 1
+                q.append(v)
+
+    maxd = max(dist.values()) if dist else 0
+    for n in sorted(nodes):
+        if n not in dist:
+            maxd += 1
+            dist[n] = maxd
+
+    return dist, adj, rev
+
+
+def node_signature(n, G, dist):
+    out_edges = []
+    for _, v, data in G.out_edges(n, data=True):
+        out_edges.append((data.get("label", ""), dist.get(v, 999999)))
+    out_edges.sort()
+
+    in_edges = []
+    for u, _, data in G.in_edges(n, data=True):
+        in_edges.append((data.get("label", ""), dist.get(u, 999999)))
+    in_edges.sort()
+
+    sig = (
+        dist.get(n, 999999),
+        G.in_degree(n),
+        G.out_degree(n),
+        tuple(out_edges),
+        tuple(in_edges),
+        n,
+    )
+    return sig
+
+
+def fixed_compare_layout(G, start=0, x_gap=3.0, y_gap=1.8):
+    nodes = list(G.nodes())
+    edges = [(u, v, d.get("label", "")) for u, v, d in G.edges(data=True)]
+
+    dist, _, _ = bfs_layers(set(nodes), edges, start=start)
+
+    layers = defaultdict(list)
+    for n in nodes:
+        layers[dist[n]].append(n)
+
+    pos = {}
+    all_depths = sorted(layers.keys())
+
+    for depth in all_depths:
+        layer_nodes = layers[depth]
+        layer_nodes.sort(key=lambda n: node_signature(n, G, dist))
+
+        k = len(layer_nodes)
+        ys = [((k - 1) / 2.0 - i) * y_gap for i in range(k)]
+
+        for n, y in zip(layer_nodes, ys):
+            x = depth * x_gap
+            pos[n] = (x, y)
+
+    return pos
+
 def main():
     if len(sys.argv) not in (2, 3):
         print("Usage:")
@@ -89,9 +175,12 @@ def main():
         p = Path(sys.argv[1])
         nodes, edges = load_any(p)
         G = build_graph(nodes, edges)
+
+        pos = fixed_compare_layout(G, start=0)
+
         fig = plt.figure(figsize=(8, 6))
         ax = fig.add_subplot(1, 1, 1)
-        draw(ax, G, p.name)
+        draw(ax, G, p.name, pos)
         plt.tight_layout()
         plt.show()
         return
@@ -103,11 +192,14 @@ def main():
     G1 = build_graph(n1, e1)
     G2 = build_graph(n2, e2)
 
+    pos1 = fixed_compare_layout(G1, start=0)
+    pos2 = fixed_compare_layout(G2, start=0)
+
     fig = plt.figure(figsize=(12, 6))
     ax1 = fig.add_subplot(1, 2, 1)
     ax2 = fig.add_subplot(1, 2, 2)
-    draw(ax1, G1, f"Reference: {p1.name}")
-    draw(ax2, G2, f"Learnt: {p2.name}")
+    draw(ax1, G1, f"Reference: {p1.name}", pos1)
+    draw(ax2, G2, f"Learnt: {p2.name}", pos2)
     plt.tight_layout()
     plt.show()
 

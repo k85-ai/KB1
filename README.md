@@ -80,3 +80,5 @@ python edsm_train_eval.py ./train ./test ./learning_E0 ./outcome_E0.csv
 ```
 python plot_compare.py ./automata/automaton_5_2_2_0.dot ./learning_E0/learnt-automaton_5_2_2_0~0.dot
 ```
+
+Plot the figure and check the BCR euqal to 1's automata, it same structure for both 5-state and 10-state.

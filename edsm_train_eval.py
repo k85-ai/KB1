@@ -93,17 +93,6 @@ def build_pta_with_forbidden(pos: List[Seq], neg: List[Seq]) -> Tuple[DFA, Dict[
     return DFA(start=start, delta=delta), forbidden, alphabet
 
 
-def compatible_by_negatives(dfa: DFA, neg: List[Seq]) -> bool:
-    """
-    Same as your current semantics:
-    learnt automaton must NOT accept any negative trace (i.e., path must not exist).
-    """
-    for seq in neg:
-        if dfa.accepts_path(seq):
-            return False
-    return True
-
-
 def merge_states_with_forbidden(dfa: DFA, forbidden: Dict[int, Set[str]], p: int, q: int) -> Tuple[DFA, Dict[int, Set[str]]]:
     """
     Merge q into p in the DFA, and merge forbidden-label evidence as well.
@@ -178,85 +167,144 @@ class DSU:
             self.parent[rb] = ra
         return ra
 
-
 def merge_score_simulate(dfa: DFA, forbidden: Dict[int, Set[str]], p: int, q: int) -> Tuple[bool, float]:
     """
-    Evidence-driven scoring:
-      - Simulate merging p and q with propagation:
-        If both states have outgoing on the same label, their targets must also be merged.
-      - Evidence score counts:
-        +1 per successfully unified state-pair
-        +1 per matched outgoing label that forces propagation
-      - Negative evidence constraint:
-        If any forbidden label becomes enabled in a merged component, reject.
+    More faithful Blue-Fringe/EDSM-style compatibility simulation.
+
+    Key idea:
+    - simulate component merges, not just single-state merges
+    - after union, outgoing labels of a component are the UNION of all members' outgoing
+    - if two merged components both have transition on same label, their targets must also merge
+    - if a forbidden label becomes enabled anywhere in a merged component, reject
+    - score prefers merges that propagate consistently through more of the PTA
     """
     dsu = DSU()
     work = deque([(p, q)])
 
-    out_cache: Dict[int, Dict[str, int]] = {}
-    def out(s: int) -> Dict[str, int]:
-        if s not in out_cache:
-            out_cache[s] = {a: t for (u, a), t in dfa.delta.items() if u == s}
-        return out_cache[s]
+    # members of each current component representative
+    members: Dict[int, Set[int]] = {}
 
-    comp_forbidden: Dict[int, Set[str]] = {}
+    def find(x: int) -> int:
+        r = dsu.find(x)
+        members.setdefault(r, {r})
+        return r
+
+    def union(a: int, b: int) -> int:
+        ra, rb = find(a), find(b)
+        if ra == rb:
+            return ra
+        new_rep = dsu.union(ra, rb)
+        if new_rep == ra:
+            members.setdefault(ra, {ra})
+            members.setdefault(rb, {rb})
+            members[ra] |= members[rb]
+            del members[rb]
+            return ra
+        else:
+            members.setdefault(ra, {ra})
+            members.setdefault(rb, {rb})
+            members[rb] |= members[ra]
+            del members[ra]
+            return rb
+
+    # cache original outgoing per state
+    out0: Dict[int, Dict[str, int]] = {}
+    for (u, a), v in dfa.delta.items():
+        out0.setdefault(u, {})[a] = v
+
+    def comp_members(rep: int) -> Set[int]:
+        rep = find(rep)
+        return members.setdefault(rep, {rep})
+
+    def comp_forbidden(rep: int) -> Set[str]:
+        fs: Set[str] = set()
+        for s in comp_members(rep):
+            fs |= forbidden.get(s, set())
+        return fs
+
+    def comp_out(rep: int) -> Dict[str, Set[int]]:
+        """
+        merged component outgoing:
+        label -> set of target component reps reachable by that label
+        """
+        rep = find(rep)
+        out_map: Dict[str, Set[int]] = {}
+        for s in comp_members(rep):
+            for lab, t in out0.get(s, {}).items():
+                out_map.setdefault(lab, set()).add(find(t))
+        return out_map
+
     score = 0.0
+    seen_pairs: Set[Tuple[int, int]] = set()
 
     while work:
         a, b = work.popleft()
-        ra, rb = dsu.find(a), dsu.find(b)
+        ra, rb = find(a), find(b)
         if ra == rb:
             continue
 
-        fa = comp_forbidden.get(ra, set(forbidden.get(ra, set())))
-        fb = comp_forbidden.get(rb, set(forbidden.get(rb, set())))
+        pair = (min(ra, rb), max(ra, rb))
+        if pair in seen_pairs:
+            continue
+        seen_pairs.add(pair)
+
+        # Check forbidden-vs-enabled on the merged component
+        fa = comp_forbidden(ra)
+        fb = comp_forbidden(rb)
         f_union = fa | fb
 
-        oa = out(ra)
-        ob = out(rb)
+        oa = comp_out(ra)
+        ob = comp_out(rb)
         enabled_union = set(oa.keys()) | set(ob.keys())
 
-        # forbidden label cannot be enabled
         if f_union & enabled_union:
             return (False, -1.0)
 
-        rep = dsu.union(ra, rb)
-        comp_forbidden[rep] = f_union
-        score += 1.0  # evidence: unified one pair
-
-        # propagation evidence: matched labels force successor merges
+        # Labels present on both sides force target merges for determinism
         common = set(oa.keys()) & set(ob.keys())
-        if common:
-            score += float(len(common))
-            for lab in common:
-                work.append((oa[lab], ob[lab]))
+
+        # reward: merging larger compatible structures
+        size_a = len(comp_members(ra))
+        size_b = len(comp_members(rb))
+        # score += 1.0 + 0.2 * (size_a + size_b - 2)
+
+        new_rep = union(ra, rb)
+
+        for lab in common:
+            ta = oa[lab]
+            tb = ob[lab]
+
+            # if multiple distinct target components remain on same label after merge, unify them pairwise
+            la = sorted(ta)
+            lb = sorted(tb)
+
+            # reward matched labels
+            score += 1.0
+
+            for xa in la:
+                for xb in lb:
+                    rxa, rxb = find(xa), find(xb)
+                    if rxa != rxb:
+                        work.append((rxa, rxb))
+
+        # after union, check determinism again:
+        # same merged source cannot keep a forbidden label enabled
+        o_new = comp_out(new_rep)
+        if comp_forbidden(new_rep) & set(o_new.keys()):
+            return (False, -1.0)
 
     return (True, score)
-
-
-def successors_of(states: Set[int], dfa: DFA) -> Set[int]:
-    succ = set()
-    for (u, _a), v in dfa.delta.items():
-        if u in states:
-            succ.add(v)
-    return succ
 
 
 def learn_edsm_bluefringe(
     pos: List[Seq],
     neg: List[Seq],
-    score_threshold: float = 1.0,
+    score_threshold: float = 0.0,
     log_every_seconds: float = 2.0,
     max_merges: int = 50000
 ) -> Tuple[DFA, List[str]]:
-    """
-    Blue-Fringe (RED/BLUE) EDSM with evidence-driven scoring, adapted to your trace semantics.
-    Returns:
-      (learnt_dfa, alphabet)
-    """
     dfa, forbidden, alphabet = build_pta_with_forbidden(pos, neg)
 
-    # Consistency check
     if not compatible_by_negatives(dfa, neg):
         raise ValueError("Initial PTA accepts some negatives (inconsistent data).")
 
@@ -269,16 +317,15 @@ def learn_edsm_bluefringe(
 
     while merges < max_merges and BLUE:
         rounds += 1
-
         best_pair = None
-        best_score = -1.0
+        best_score = None
         promote: Set[int] = set()
 
-        for b in list(BLUE):
+        for b in sorted(BLUE):
             best_for_b = None
-            best_for_b_score = -1.0
+            best_for_b_score = None
 
-            for r in RED:
+            for r in sorted(RED):
                 ok, sc = merge_score_simulate(dfa, forbidden, r, b)
                 if not ok:
                     continue
@@ -286,40 +333,63 @@ def learn_edsm_bluefringe(
                     continue
 
                 merged, merged_forbidden = merge_states_with_forbidden(dfa, forbidden, r, b)
-
                 if not compatible_by_negatives(merged, neg):
                     continue
 
-                if sc > best_for_b_score:
-                    best_for_b_score = sc
-                    best_for_b = (r, b)
+                shrink = len(dfa.states()) - len(merged.states())
+                cand = (sc, shrink, -r, -b)
+
+                if best_for_b is None or cand > best_for_b_score:
+                    best_for_b_score = cand
+                    best_for_b = (r, b, merged, merged_forbidden)
 
             if best_for_b is None:
                 promote.add(b)
             else:
-                if best_for_b_score > best_score:
+                if best_pair is None or best_for_b_score > best_score:
                     best_score = best_for_b_score
                     best_pair = best_for_b
 
         if best_pair is None:
-            # no merge found, expand frontier
             if not promote:
                 promote.add(next(iter(BLUE)))
             RED |= promote
             BLUE = successors_of(RED, dfa) - RED
         else:
-            r, b = best_pair
-            dfa, forbidden = merge_states_with_forbidden(dfa, forbidden, r, b)
+            r, b, merged, merged_forbidden = best_pair
+            dfa, forbidden = merged, merged_forbidden
             merges += 1
+            RED = {s for s in RED if s in dfa.states()}
+            if r in dfa.states():
+                RED.add(r)
             BLUE = successors_of(RED, dfa) - RED
 
         now = time.time()
         if now - last_log >= log_every_seconds:
             last_log = now
-            print(f"[round={rounds} merges={merges}] states={len(dfa.states())} RED={len(RED)} BLUE={len(BLUE)} best_score={best_score:.3f}")
+            best_sc_display = best_score[0] if best_score is not None else -1.0
+            print(f"[round={rounds} merges={merges}] states={len(dfa.states())} RED={len(RED)} BLUE={len(BLUE)} best_score={best_sc_display:.3f}")
 
     print(f"[done] rounds={rounds} merges={merges} states={len(dfa.states())}")
+    dfa, forbidden = greedy_post_merge(dfa, forbidden, neg)
     return dfa, alphabet
+
+def greedy_post_merge(dfa: DFA, forbidden: Dict[int, Set[str]], neg: List[Seq]) -> Tuple[DFA, Dict[int, Set[str]]]:
+    changed = True
+    while changed:
+        changed = False
+        states = sorted(dfa.states())
+        for i in range(len(states)):
+            for j in range(i + 1, len(states)):
+                p, q = states[i], states[j]
+                merged, merged_forbidden = merge_states_with_forbidden(dfa, forbidden, p, q)
+                if compatible_by_negatives(merged, neg):
+                    dfa, forbidden = merged, merged_forbidden
+                    changed = True
+                    break
+            if changed:
+                break
+    return dfa, forbidden
 
 
 @dataclass
@@ -405,7 +475,7 @@ def main():
 
         print(f"\n[{idx}/{len(train_files)}] Learning: {train_file.name}")
         # model = learn_edsm_redblue(pos_tr, neg_tr, score_threshold=0.0)
-        model, alphabet = learn_edsm_bluefringe(pos_tr, neg_tr, score_threshold=1.0)
+        model, alphabet = learn_edsm_bluefringe(pos_tr, neg_tr, score_threshold=0.0)
 
         stem = train_file.stem
         save_learnt(model, alphabet, learn_dir / f"learnt-{stem}.json", learn_dir / f"learnt-{stem}.dot")

@@ -7,7 +7,7 @@ from typing import List, Optional, Tuple, Set
 from common import Automaton, make_even, stable_salt_from_path
 
 def rand_len(rnd: random.Random, max_len: int) -> int:
-    return rnd.randint(1, max_len)  # Java-style
+    return rnd.randint(1, max_len)  
 
 def gen_positive(A: Automaton, rnd: random.Random, length_mult: int) -> Tuple[List[str], int]:
     max_len = max(1, length_mult * A.n_states)
