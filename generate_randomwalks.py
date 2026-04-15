@@ -3,6 +3,8 @@ import sys
 import random
 from pathlib import Path
 from typing import List, Optional, Tuple, Set
+import argparse
+from pathlib import Path
 
 from common import Automaton, make_even, stable_salt_from_path
 
@@ -35,18 +37,30 @@ def gen_negative(A: Automaton, rnd: random.Random, length_mult: int) -> Optional
     bad = rnd.choice(missing)
     return seq + [bad]
 
-def main():
-    if len(sys.argv) != 7:
-        print("Usage: python generate_randomwalks.py <SRC_AUTOMATA_DIR> <TGT_TRACES_DIR> <seq_mult> <length_mult> <pos_only> <sets_per>")
-        print("Example: python generate_randomwalks.py Data/automata Data/train_data 30 2 false 10")
-        raise SystemExit(2)
+def parse_args():
+    parser = argparse.ArgumentParser()
 
-    src_dir = Path(sys.argv[1])
-    tgt_dir = Path(sys.argv[2])
-    seq_mult = int(sys.argv[3])
-    length_mult = int(sys.argv[4])
-    pos_only = sys.argv[5].lower() == "true"
-    sets_per = int(sys.argv[6])
+    parser.add_argument("src_dir", type=Path)
+    parser.add_argument("tgt_dir", type=Path)
+
+    parser.add_argument("--seq-mult", type=int, help="number of traces per state multiplier (default: 30)", required=True)
+    parser.add_argument("--length-mult", type=int, help="maximum walk length multiplier relative to number of states (default: 2)", required=True)
+    parser.add_argument("--pos-only", type=str, default="false")
+    parser.add_argument("--sets-per", type=int,  help="number of trace sets generated for each automaton (default: 10)", required=True)
+
+    args = parser.parse_args()
+    args.pos_only = args.pos_only.lower() == "true"
+    return args
+
+def main():
+    args = parse_args()
+
+    src_dir = args.src_dir
+    tgt_dir = args.tgt_dir
+    seq_mult = args.seq_mult
+    length_mult = args.length_mult
+    pos_only = args.pos_only
+    sets_per = args.sets_per
 
     if not src_dir.is_dir():
         raise FileNotFoundError(src_dir)
@@ -86,8 +100,8 @@ def main():
                     if neg:
                         neg_set.add(tuple(neg))
 
-            pos_list = [list(t) for t in pos_set]
-            neg_list = [list(t) for t in neg_set]
+            pos_list = [list(t) for t in sorted(pos_set)]
+            neg_list = [list(t) for t in sorted(neg_set)]
 
             # If uniqueness space is small (especially for 5-state), fill with duplicates to reach required count.
             if not pos_list and n_pos > 0:
@@ -96,9 +110,9 @@ def main():
                 neg_list = [["L0"]]
 
             while len(pos_list) < n_pos:
-                pos_list.append(random.choice(pos_list))
+                pos_list.append(rnd.choice(pos_list))
             while len(neg_list) < n_neg:
-                neg_list.append(random.choice(neg_list))
+                neg_list.append(rnd.choice(neg_list))
 
             rnd.shuffle(pos_list)
             rnd.shuffle(neg_list)

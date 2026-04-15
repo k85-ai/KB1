@@ -14,22 +14,27 @@
     },
     {
       "source": 1,
-      "label": "L1",
-      "target": 18
+      "label": "L0",
+      "target": 2
     },
     {
-      "source": 1,
+      "source": 2,
       "label": "L0",
       "target": 3
     },
     {
       "source": 3,
-      "label": "L0",
-      "target": 4
+      "label": "L1",
+      "target": 2
     },
     {
-      "source": 4,
+      "source": 3,
       "label": "L0",
+      "target": 18
+    },
+    {
+      "source": 1,
+      "label": "L1",
       "target": 18
     },
     {
@@ -41,11 +46,6 @@
       "source": 18,
       "label": "L0",
       "target": 0
-    },
-    {
-      "source": 4,
-      "label": "L1",
-      "target": 3
     }
   ]
 }

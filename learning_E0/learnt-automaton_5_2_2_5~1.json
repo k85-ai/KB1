@@ -23,17 +23,22 @@
       "target": 1
     },
     {
-      "source": 2,
-      "label": "L0",
-      "target": 21
-    },
-    {
       "source": 0,
       "label": "L1",
-      "target": 21
+      "target": 9
     },
     {
-      "source": 21,
+      "source": 9,
+      "label": "L1",
+      "target": 1
+    },
+    {
+      "source": 2,
+      "label": "L0",
+      "target": 9
+    },
+    {
+      "source": 9,
       "label": "L0",
       "target": 22
     },
@@ -41,11 +46,6 @@
       "source": 22,
       "label": "L0",
       "target": 0
-    },
-    {
-      "source": 21,
-      "label": "L1",
-      "target": 1
     }
   ]
 }

@@ -60,25 +60,29 @@ python generate_automata.py <OUT_DIR> <MAX_STATES>
 ## Step 2 — Generate Training Traces
 
 ```
-python generate_randomwalks.py ./automata ./train 30 2 false 10
+python generate_randomwalks.py <SRC_AUTOMATA_DIR> <TGT_TRACES_DIR> <seq_mult> <length_mult> <pos_only> <sets_per>
+python generate_randomwalks.py ./automata ./train --seq-mult 30 --length-mult 2 --sets-per 10
 ```
 
 ## Step 3 — Generate Testing Traces
 
 ```
-python generate_randomwalks.py ./automata ./test 40 4 false 10
+python generate_randomwalks.py <SRC_AUTOMATA_DIR> <TGT_TRACES_DIR> <seq_mult> <length_mult> <pos_only> <sets_per>
+python generate_randomwalks.py ./automata ./test --seq-mult 40 --length-mult 4 --sets-per 10
 ```
 
 ## Step 4 — Learn with EDSM and Evaluate
 
 ```
+python edsm_train_eval.py  <TRAIN_DIR> <EVAL_DIR> <LEARN_DIR> <OUT_CSV>
 python edsm_train_eval.py ./train ./test ./learning_E0 ./outcome_E0.csv
 ```
 
 ## Step 5 — Visualise / Compare Automata
 
 ```
-python plot_compare.py ./automata/automaton_5_2_2_0.dot ./learning_E0/learnt-automaton_5_2_2_0~0.dot
+python plot_compare.py ./automata/automaton_5_2_2_0.dot ./learning_E0/learnt-automaton_5_2_2_0~0.dot --save
 ```
+Use save at the end of the command for saving figures.
 
 Plot the figure and check the BCR euqal to 1's automata, it same structure for both 5-state and 10-state.

@@ -352,7 +352,7 @@ def learn_edsm_bluefringe(
 
         if best_pair is None:
             if not promote:
-                promote.add(next(iter(BLUE)))
+                promote.add(min(BLUE))
             RED |= promote
             BLUE = successors_of(RED, dfa) - RED
         else:

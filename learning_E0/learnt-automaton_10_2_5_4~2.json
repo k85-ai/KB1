@@ -1,5 +1,5 @@
 {
-  "n_states": 376,
+  "n_states": 84,
   "alphabet": [
     "L0",
     "L1",
@@ -12,168 +12,133 @@
   "delta": [
     {
       "source": 0,
-      "label": "L2",
+      "label": "L0",
       "target": 1
     },
     {
       "source": 1,
-      "label": "L0",
+      "label": "L1",
       "target": 2
     },
     {
       "source": 2,
       "label": "L0",
-      "target": 46
+      "target": 3
     },
     {
-      "source": 2,
-      "label": "L4",
-      "target": 7
-    },
-    {
-      "source": 7,
-      "label": "L3",
-      "target": 72
-    },
-    {
-      "source": 0,
-      "label": "L0",
-      "target": 21
-    },
-    {
-      "source": 21,
-      "label": "L0",
-      "target": 22
-    },
-    {
-      "source": 22,
-      "label": "L0",
-      "target": 2
+      "source": 3,
+      "label": "L2",
+      "target": 4
     },
     {
       "source": 1,
+      "label": "L0",
+      "target": 5
+    },
+    {
+      "source": 5,
+      "label": "L0",
+      "target": 26
+    },
+    {
+      "source": 0,
+      "label": "L2",
+      "target": 17
+    },
+    {
+      "source": 17,
       "label": "L4",
       "target": 0
     },
     {
-      "source": 21,
+      "source": 2,
+      "label": "L2",
+      "target": 24
+    },
+    {
+      "source": 24,
+      "label": "L2",
+      "target": 26
+    },
+    {
+      "source": 17,
+      "label": "L0",
+      "target": 26
+    },
+    {
+      "source": 26,
       "label": "L1",
-      "target": 46
+      "target": 3
     },
     {
-      "source": 46,
-      "label": "L2",
-      "target": 47
-    },
-    {
-      "source": 47,
-      "label": "L2",
-      "target": 2
-    },
-    {
-      "source": 22,
+      "source": 4,
       "label": "L4",
-      "target": 72
+      "target": 1
     },
     {
-      "source": 7,
-      "label": "L2",
+      "source": 26,
+      "label": "L0",
       "target": 2
     },
     {
-      "source": 46,
-      "label": "L3",
-      "target": 21
+      "source": 26,
+      "label": "L4",
+      "target": 24
     },
     {
-      "source": 72,
-      "label": "L3",
-      "target": 2
+      "source": 3,
+      "label": "L1",
+      "target": 24
     },
     {
-      "source": 22,
-      "label": "L2",
-      "target": 21
+      "source": 24,
+      "label": "L3",
+      "target": 83
+    },
+    {
+      "source": 5,
+      "label": "L4",
+      "target": 83
+    },
+    {
+      "source": 83,
+      "label": "L4",
+      "target": 5
     },
     {
       "source": 2,
-      "label": "L1",
-      "target": 103
-    },
-    {
-      "source": 103,
-      "label": "L2",
-      "target": 104
-    },
-    {
-      "source": 104,
-      "label": "L4",
-      "target": 21
-    },
-    {
-      "source": 103,
-      "label": "L0",
-      "target": 72
-    },
-    {
-      "source": 47,
-      "label": "L3",
-      "target": 72
-    },
-    {
-      "source": 46,
-      "label": "L0",
-      "target": 230
-    },
-    {
-      "source": 230,
-      "label": "L0",
-      "target": 72
-    },
-    {
-      "source": 230,
-      "label": "L1",
-      "target": 7
-    },
-    {
-      "source": 104,
       "label": "L3",
       "target": 1
     },
     {
-      "source": 72,
-      "label": "L4",
-      "target": 22
+      "source": 3,
+      "label": "L0",
+      "target": 83
     },
     {
-      "source": 230,
+      "source": 5,
       "label": "L2",
-      "target": 375
-    },
-    {
-      "source": 72,
-      "label": "L1",
-      "target": 7
-    },
-    {
-      "source": 103,
-      "label": "L1",
-      "target": 47
-    },
-    {
-      "source": 375,
-      "label": "L3",
       "target": 1
     },
     {
-      "source": 72,
-      "label": "L0",
-      "target": 46
+      "source": 4,
+      "label": "L3",
+      "target": 17
     },
     {
-      "source": 375,
-      "label": "L4",
-      "target": 21
+      "source": 83,
+      "label": "L3",
+      "target": 26
+    },
+    {
+      "source": 83,
+      "label": "L1",
+      "target": 24
+    },
+    {
+      "source": 83,
+      "label": "L0",
+      "target": 2
     }
   ]
 }

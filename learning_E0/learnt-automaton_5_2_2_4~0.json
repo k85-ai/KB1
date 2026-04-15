@@ -1,5 +1,5 @@
 {
-  "n_states": 12,
+  "n_states": 10,
   "alphabet": [
     "L0",
     "L1"
@@ -14,38 +14,38 @@
     },
     {
       "source": 1,
-      "label": "L0",
-      "target": 2
+      "label": "L1",
+      "target": 0
     },
     {
-      "source": 2,
+      "source": 1,
       "label": "L0",
-      "target": 10
+      "target": 5
+    },
+    {
+      "source": 5,
+      "label": "L0",
+      "target": 8
     },
     {
       "source": 0,
       "label": "L1",
-      "target": 10
+      "target": 8
     },
     {
-      "source": 10,
+      "source": 8,
       "label": "L0",
-      "target": 11
+      "target": 9
     },
     {
-      "source": 11,
+      "source": 9,
       "label": "L0",
       "target": 0
     },
     {
-      "source": 10,
+      "source": 8,
       "label": "L1",
       "target": 1
-    },
-    {
-      "source": 1,
-      "label": "L1",
-      "target": 0
     }
   ]
 }

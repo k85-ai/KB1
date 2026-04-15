@@ -3,14 +3,14 @@ digraph learntMachine {
   0 [shape=circle, label="0"];
   1 [shape=circle, label="1"];
   2 [shape=circle, label="2"];
-  7 [shape=circle, label="7"];
-  14 [shape=circle, label="14"];
+  3 [shape=circle, label="3"];
+  19 [shape=circle, label="19"];
   0 -> 1 [label="L0"];
   1 -> 2 [label="L0"];
+  2 -> 3 [label="L0"];
+  3 -> 1 [label="L1"];
+  3 -> 19 [label="L0"];
+  19 -> 1 [label="L1"];
   2 -> 0 [label="L1"];
-  2 -> 7 [label="L0"];
-  7 -> 1 [label="L1"];
-  7 -> 14 [label="L0"];
-  14 -> 0 [label="L0"];
-  14 -> 1 [label="L1"];
+  19 -> 0 [label="L0"];
 }

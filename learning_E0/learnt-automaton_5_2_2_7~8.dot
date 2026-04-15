@@ -5,14 +5,12 @@ digraph learntMachine {
   2 [shape=circle, label="2"];
   9 [shape=circle, label="9"];
   10 [shape=circle, label="10"];
-  15 [shape=circle, label="15"];
   0 -> 1 [label="L0"];
   1 -> 2 [label="L0"];
   2 -> 9 [label="L0"];
   0 -> 9 [label="L1"];
-  9 -> 10 [label="L1"];
-  10 -> 9 [label="L0"];
-  9 -> 15 [label="L0"];
-  15 -> 0 [label="L0"];
-  15 -> 1 [label="L1"];
+  9 -> 10 [label="L0"];
+  10 -> 0 [label="L0"];
+  9 -> 2 [label="L1"];
+  10 -> 1 [label="L1"];
 }

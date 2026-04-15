@@ -1,5 +1,5 @@
 {
-  "n_states": 410,
+  "n_states": 1002,
   "alphabet": [
     "L0",
     "L1",
@@ -12,133 +12,113 @@
   "delta": [
     {
       "source": 0,
-      "label": "L0",
+      "label": "L2",
       "target": 1
     },
     {
       "source": 1,
+      "label": "L4",
+      "target": 2
+    },
+    {
+      "source": 2,
+      "label": "L3",
+      "target": 17
+    },
+    {
+      "source": 0,
       "label": "L0",
-      "target": 3
+      "target": 14
     },
     {
-      "source": 0,
-      "label": "L3",
-      "target": 3
-    },
-    {
-      "source": 3,
-      "label": "L2",
-      "target": 4
-    },
-    {
-      "source": 4,
-      "label": "L4",
-      "target": 0
-    },
-    {
-      "source": 0,
-      "label": "L2",
-      "target": 28
-    },
-    {
-      "source": 28,
-      "label": "L4",
-      "target": 29
-    },
-    {
-      "source": 29,
-      "label": "L3",
-      "target": 45
-    },
-    {
-      "source": 3,
+      "source": 14,
       "label": "L1",
-      "target": 45
+      "target": 15
     },
     {
-      "source": 45,
-      "label": "L2",
-      "target": 46
-    },
-    {
-      "source": 46,
+      "source": 15,
       "label": "L3",
-      "target": 4
-    },
-    {
-      "source": 28,
-      "label": "L1",
-      "target": 48
-    },
-    {
-      "source": 48,
-      "label": "L2",
-      "target": 49
-    },
-    {
-      "source": 49,
-      "label": "L3",
-      "target": 4
-    },
-    {
-      "source": 45,
-      "label": "L1",
-      "target": 0
+      "target": 14
     },
     {
       "source": 1,
       "label": "L1",
-      "target": 67
+      "target": 17
     },
     {
-      "source": 67,
-      "label": "L3",
-      "target": 1
-    },
-    {
-      "source": 4,
-      "label": "L0",
-      "target": 1
-    },
-    {
-      "source": 46,
+      "source": 17,
       "label": "L2",
-      "target": 3
+      "target": 18
     },
     {
-      "source": 29,
+      "source": 18,
+      "label": "L3",
+      "target": 80
+    },
+    {
+      "source": 2,
       "label": "L0",
-      "target": 3
+      "target": 39
     },
     {
-      "source": 67,
+      "source": 0,
+      "label": "L3",
+      "target": 39
+    },
+    {
+      "source": 39,
+      "label": "L1",
+      "target": 17
+    },
+    {
+      "source": 39,
+      "label": "L2",
+      "target": 80
+    },
+    {
+      "source": 80,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 80,
       "label": "L0",
-      "target": 45
+      "target": 14
     },
     {
-      "source": 48,
+      "source": 14,
+      "label": "L0",
+      "target": 39
+    },
+    {
+      "source": 18,
+      "label": "L2",
+      "target": 39
+    },
+    {
+      "source": 17,
       "label": "L1",
       "target": 0
     },
     {
-      "source": 49,
-      "label": "L2",
-      "target": 3
+      "source": 15,
+      "label": "L0",
+      "target": 17
     },
     {
-      "source": 67,
+      "source": 15,
       "label": "L2",
-      "target": 409
+      "target": 1001
     },
     {
-      "source": 409,
-      "label": "L2",
-      "target": 67
-    },
-    {
-      "source": 409,
+      "source": 1001,
       "label": "L3",
-      "target": 28
+      "target": 1
+    },
+    {
+      "source": 1001,
+      "label": "L2",
+      "target": 15
     }
   ]
 }

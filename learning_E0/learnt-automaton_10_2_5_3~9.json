@@ -1,5 +1,5 @@
 {
-  "n_states": 576,
+  "n_states": 1444,
   "alphabet": [
     "L0",
     "L1",
@@ -12,143 +12,153 @@
   "delta": [
     {
       "source": 0,
-      "label": "L3",
+      "label": "L4",
       "target": 1
     },
     {
       "source": 1,
-      "label": "L2",
+      "label": "L4",
       "target": 2
     },
     {
       "source": 2,
-      "label": "L1",
+      "label": "L0",
+      "target": 0
+    },
+    {
+      "source": 4,
+      "label": "L3",
+      "target": 524
+    },
+    {
+      "source": 0,
+      "label": "L3",
+      "target": 6
+    },
+    {
+      "source": 6,
+      "label": "L4",
+      "target": 8
+    },
+    {
+      "source": 0,
+      "label": "L0",
+      "target": 8
+    },
+    {
+      "source": 8,
+      "label": "L3",
+      "target": 9
+    },
+    {
+      "source": 9,
+      "label": "L3",
       "target": 1
+    },
+    {
+      "source": 6,
+      "label": "L2",
+      "target": 9
+    },
+    {
+      "source": 8,
+      "label": "L1",
+      "target": 6
+    },
+    {
+      "source": 9,
+      "label": "L1",
+      "target": 6
     },
     {
       "source": 1,
-      "label": "L4",
-      "target": 32
-    },
-    {
-      "source": 0,
-      "label": "L0",
-      "target": 32
-    },
-    {
-      "source": 32,
-      "label": "L1",
-      "target": 1
-    },
-    {
-      "source": 0,
-      "label": "L4",
-      "target": 43
-    },
-    {
-      "source": 43,
       "label": "L2",
-      "target": 32
-    },
-    {
-      "source": 43,
-      "label": "L4",
-      "target": 45
-    },
-    {
-      "source": 45,
-      "label": "L1",
-      "target": 32
-    },
-    {
-      "source": 32,
-      "label": "L3",
-      "target": 47
-    },
-    {
-      "source": 47,
-      "label": "L1",
-      "target": 1
-    },
-    {
-      "source": 43,
-      "label": "L3",
-      "target": 98
-    },
-    {
-      "source": 98,
-      "label": "L3",
-      "target": 99
-    },
-    {
-      "source": 99,
-      "label": "L1",
-      "target": 515
-    },
-    {
-      "source": 47,
-      "label": "L3",
-      "target": 43
+      "target": 8
     },
     {
       "source": 2,
+      "label": "L1",
+      "target": 8
+    },
+    {
+      "source": 1,
       "label": "L3",
-      "target": 43
+      "target": 524
     },
     {
-      "source": 45,
-      "label": "L0",
-      "target": 0
-    },
-    {
-      "source": 98,
+      "source": 524,
       "label": "L4",
       "target": 0
     },
     {
-      "source": 515,
+      "source": 524,
       "label": "L3",
-      "target": 98
+      "target": 529
     },
     {
-      "source": 515,
-      "label": "L2",
-      "target": 574
+      "source": 529,
+      "label": "L1",
+      "target": 4
     },
     {
-      "source": 574,
-      "label": "L0",
-      "target": 575
-    },
-    {
-      "source": 575,
-      "label": "L3",
-      "target": 575
-    },
-    {
-      "source": 99,
+      "source": 529,
       "label": "L4",
-      "target": 43
+      "target": 1
     },
     {
-      "source": 574,
-      "label": "L3",
-      "target": 98
-    },
-    {
-      "source": 575,
+      "source": 4,
       "label": "L2",
-      "target": 574
+      "target": 856
+    },
+    {
+      "source": 856,
+      "label": "L0",
+      "target": 857
+    },
+    {
+      "source": 857,
+      "label": "L2",
+      "target": 856
+    },
+    {
+      "source": 857,
+      "label": "L3",
+      "target": 1442
+    },
+    {
+      "source": 856,
+      "label": "L3",
+      "target": 1442
+    },
+    {
+      "source": 1442,
+      "label": "L4",
+      "target": 1443
+    },
+    {
+      "source": 1443,
+      "label": "L4",
+      "target": 1
+    },
+    {
+      "source": 1442,
+      "label": "L3",
+      "target": 529
     },
     {
       "source": 0,
       "label": "L1",
-      "target": 515
+      "target": 4
     },
     {
-      "source": 575,
-      "label": "L4",
-      "target": 515
+      "source": 1443,
+      "label": "L3",
+      "target": 6
+    },
+    {
+      "source": 1443,
+      "label": "L0",
+      "target": 0
     }
   ]
 }

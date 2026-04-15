@@ -9,32 +9,22 @@
   "delta": [
     {
       "source": 0,
-      "label": "L1",
+      "label": "L0",
       "target": 1
     },
     {
       "source": 1,
-      "label": "L1",
+      "label": "L0",
       "target": 2
     },
     {
       "source": 2,
       "label": "L0",
-      "target": 1
-    },
-    {
-      "source": 1,
-      "label": "L0",
-      "target": 6
-    },
-    {
-      "source": 6,
-      "label": "L1",
       "target": 11
     },
     {
       "source": 0,
-      "label": "L0",
+      "label": "L1",
       "target": 11
     },
     {
@@ -45,12 +35,17 @@
     {
       "source": 12,
       "label": "L0",
+      "target": 0
+    },
+    {
+      "source": 12,
+      "label": "L1",
       "target": 1
     },
     {
-      "source": 6,
-      "label": "L0",
-      "target": 0
+      "source": 11,
+      "label": "L1",
+      "target": 2
     }
   ]
 }

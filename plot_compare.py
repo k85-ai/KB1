@@ -2,6 +2,7 @@ import re
 import sys
 from pathlib import Path
 import json
+import argparse
 
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -164,15 +165,32 @@ def fixed_compare_layout(G, start=0, x_gap=3.0, y_gap=1.8):
 
     return pos
 
+def should_save(argv):
+    return len(argv) >= 2 and argv[-1].lower() == "save"
+
+def output_png_path(p: Path) -> Path:
+    return p.with_suffix(".png")
+
+def output_compare_png_path(p1: Path, p2: Path) -> Path:
+    return  f"{p1.stem}_VS_{p2.stem}.png"
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("files", nargs="+", help="1 or 2 input files")
+    parser.add_argument("--save", action="store_true", help="save figure as png")
+    return parser.parse_args()
+
 def main():
-    if len(sys.argv) not in (2, 3):
+    args = parse_args()
+
+    if len(args.files) not in (1, 2):
         print("Usage:")
-        print("  python plot_compare.py <DOT_OR_JSON>")
-        print("  python plot_compare.py <REF.dot> <LEARN.dot>")
+        print("  python plot_compare.py <DOT_OR_JSON> [--save]")
+        print("  python plot_compare.py ./automata/automaton_5_2_2_0.dot ./learning_E0/learnt-automaton_5_2_2_0~0.dot --save")
         raise SystemExit(2)
 
-    if len(sys.argv) == 2:
-        p = Path(sys.argv[1])
+    if len(args.files) == 1:
+        p = Path(args.files[0])
         nodes, edges = load_any(p)
         G = build_graph(nodes, edges)
 
@@ -182,11 +200,17 @@ def main():
         ax = fig.add_subplot(1, 1, 1)
         draw(ax, G, p.name, pos)
         plt.tight_layout()
+
+        if args.save:
+            out_png = output_png_path(p)
+            fig.savefig(out_png, dpi=300, bbox_inches="tight")
+            print(f"Saved figure to: {out_png}")
+
         plt.show()
         return
 
-    p1 = Path(sys.argv[1])
-    p2 = Path(sys.argv[2])
+    p1 = Path(args.files[0])
+    p2 = Path(args.files[1])
     n1, e1 = load_any(p1)
     n2, e2 = load_any(p2)
     G1 = build_graph(n1, e1)
@@ -201,6 +225,12 @@ def main():
     draw(ax1, G1, f"Reference: {p1.name}", pos1)
     draw(ax2, G2, f"Learnt: {p2.name}", pos2)
     plt.tight_layout()
+
+    if args.save:
+        out_png = output_compare_png_path(p1, p2)
+        fig.savefig(out_png, dpi=300, bbox_inches="tight")
+        print(f"Saved figure to: {out_png}")
+
     plt.show()
 
 if __name__ == "__main__":
