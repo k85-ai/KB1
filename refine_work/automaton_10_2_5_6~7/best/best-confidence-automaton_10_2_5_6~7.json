@@ -1,0 +1,228 @@
+{
+  "state_conf": {
+    "0": 0.9375,
+    "1": 0.9375,
+    "154": 0.9375,
+    "190": 0.9375,
+    "288": 0.9375,
+    "289": 0.9375,
+    "384": 0.9375,
+    "439": 0.9375,
+    "591": 0.9375,
+    "786": 0.9375
+  },
+  "prefix_conf": {
+    "0": {
+      "prefix": [],
+      "confidence": 0.9375
+    },
+    "1": {
+      "prefix": [
+        "L0"
+      ],
+      "confidence": 0.9375
+    },
+    "154": {
+      "prefix": [
+        "L0",
+        "L1"
+      ],
+      "confidence": 0.9375
+    },
+    "190": {
+      "prefix": [
+        "L0",
+        "L1",
+        "L2"
+      ],
+      "confidence": 0.9375
+    },
+    "288": {
+      "prefix": [
+        "L2"
+      ],
+      "confidence": 0.9375
+    },
+    "289": {
+      "prefix": [
+        "L2",
+        "L1"
+      ],
+      "confidence": 0.9375
+    },
+    "384": {
+      "prefix": [
+        "L2",
+        "L1",
+        "L2"
+      ],
+      "confidence": 0.9375
+    },
+    "439": {
+      "prefix": [
+        "L2",
+        "L4"
+      ],
+      "confidence": 0.9375
+    },
+    "591": {
+      "prefix": [
+        "L3"
+      ],
+      "confidence": 0.9375
+    },
+    "786": {
+      "prefix": [
+        "L3",
+        "L2"
+      ],
+      "confidence": 0.9375
+    }
+  },
+  "merge_history": [
+    {
+      "phase": "bluefringe",
+      "merge_to": 591,
+      "merge_from": 2,
+      "score": 91.0,
+      "confidence": 1.0,
+      "states_before": 1644,
+      "states_after": 1552
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 842,
+      "score": 98.0,
+      "confidence": 1.0,
+      "states_before": 1552,
+      "states_after": 1453
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 593,
+      "score": 111.0,
+      "confidence": 1.0,
+      "states_before": 1453,
+      "states_after": 1341
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 290,
+      "score": 101.0,
+      "confidence": 1.0,
+      "states_before": 1341,
+      "states_after": 1239
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 591,
+      "merge_from": 440,
+      "score": 100.0,
+      "confidence": 1.0,
+      "states_before": 1239,
+      "states_after": 1138
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 1,
+      "merge_from": 787,
+      "score": 106.0,
+      "confidence": 1.0,
+      "states_before": 1138,
+      "states_after": 1031
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 1,
+      "merge_from": 234,
+      "score": 95.0,
+      "confidence": 1.0,
+      "states_before": 1031,
+      "states_after": 935
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 289,
+      "merge_from": 155,
+      "score": 93.0,
+      "confidence": 1.0,
+      "states_before": 935,
+      "states_after": 841
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 289,
+      "merge_from": 513,
+      "score": 95.0,
+      "confidence": 1.0,
+      "states_before": 841,
+      "states_after": 745
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 591,
+      "merge_from": 698,
+      "score": 131.0,
+      "confidence": 1.0,
+      "states_before": 745,
+      "states_after": 613
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 591,
+      "merge_from": 385,
+      "score": 139.0,
+      "confidence": 1.0,
+      "states_before": 613,
+      "states_after": 473
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 786,
+      "merge_from": 758,
+      "score": 142.0,
+      "confidence": 1.0,
+      "states_before": 473,
+      "states_after": 330
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 154,
+      "merge_from": 191,
+      "score": 119.0,
+      "confidence": 1.0,
+      "states_before": 330,
+      "states_after": 210
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 786,
+      "merge_from": 422,
+      "score": 109.0,
+      "confidence": 1.0,
+      "states_before": 210,
+      "states_after": 100
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 288,
+      "merge_from": 223,
+      "score": 87.0,
+      "confidence": 1.0,
+      "states_before": 100,
+      "states_after": 12
+    },
+    {
+      "phase": "greedy_post_merge",
+      "merge_to": 289,
+      "merge_from": 592,
+      "score": 4.0,
+      "confidence": 0.9375,
+      "states_before": 12,
+      "states_after": 10
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "n_states": 798,
+  "alphabet": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "start": 0,
+  "graph_density": -1,
+  "delta": [
+    {
+      "source": 0,
+      "label": "L0",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L1",
+      "target": 2
+    },
+    {
+      "source": 2,
+      "label": "L0",
+      "target": 531
+    },
+    {
+      "source": 2,
+      "label": "L2",
+      "target": 158
+    },
+    {
+      "source": 1,
+      "label": "L3",
+      "target": 158
+    },
+    {
+      "source": 158,
+      "label": "L0",
+      "target": 531
+    },
+    {
+      "source": 158,
+      "label": "L3",
+      "target": 264
+    },
+    {
+      "source": 264,
+      "label": "L0",
+      "target": 1
+    },
+    {
+      "source": 264,
+      "label": "L1",
+      "target": 531
+    },
+    {
+      "source": 264,
+      "label": "L4",
+      "target": 319
+    },
+    {
+      "source": 319,
+      "label": "L0",
+      "target": 530
+    },
+    {
+      "source": 319,
+      "label": "L1",
+      "target": 532
+    },
+    {
+      "source": 319,
+      "label": "L2",
+      "target": 0
+    },
+    {
+      "source": 319,
+      "label": "L3",
+      "target": 264
+    },
+    {
+      "source": 1,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 530
+    },
+    {
+      "source": 530,
+      "label": "L1",
+      "target": 531
+    },
+    {
+      "source": 531,
+      "label": "L2",
+      "target": 532
+    },
+    {
+      "source": 532,
+      "label": "L2",
+      "target": 2
+    },
+    {
+      "source": 532,
+      "label": "L3",
+      "target": 797
+    },
+    {
+      "source": 531,
+      "label": "L3",
+      "target": 530
+    },
+    {
+      "source": 531,
+      "label": "L4",
+      "target": 264
+    },
+    {
+      "source": 530,
+      "label": "L3",
+      "target": 797
+    },
+    {
+      "source": 797,
+      "label": "L2",
+      "target": 158
+    },
+    {
+      "source": 797,
+      "label": "L4",
+      "target": 0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "state_conf": {
+    "0": 0.9999999998835847,
+    "1": 0.9999999998835847,
+    "2": 0.9999999998835847,
+    "53": 0.9999999998835847,
+    "89": 0.9999999998835847
+  },
+  "prefix_conf": {
+    "0": {
+      "prefix": [],
+      "confidence": 0.9999999998835847
+    },
+    "1": {
+      "prefix": [
+        "L0"
+      ],
+      "confidence": 0.9999999998835847
+    },
+    "2": {
+      "prefix": [
+        "L0",
+        "L0"
+      ],
+      "confidence": 0.9999999998835847
+    },
+    "53": {
+      "prefix": [
+        "L1"
+      ],
+      "confidence": 0.9999999998835847
+    },
+    "89": {
+      "prefix": [
+        "L1",
+        "L1"
+      ],
+      "confidence": 0.9999999998835847
+    }
+  },
+  "merge_history": [
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 54,
+      "score": 56.0,
+      "confidence": 1.0,
+      "states_before": 191,
+      "states_after": 134
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 53,
+      "merge_from": 23,
+      "score": 47.0,
+      "confidence": 0.9999999999999929,
+      "states_before": 134,
+      "states_after": 86
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 53,
+      "merge_from": 90,
+      "score": 46.0,
+      "confidence": 0.9999999999999858,
+      "states_before": 86,
+      "states_after": 39
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 89,
+      "merge_from": 3,
+      "score": 33.0,
+      "confidence": 0.9999999998835847,
+      "states_before": 39,
+      "states_after": 5
+    }
+  ]
+}

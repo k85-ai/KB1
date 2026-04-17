@@ -1,0 +1,38 @@
+digraph learntMachine {
+  rankdir=LR;
+  0 [shape=circle, label="0"];
+  1 [shape=circle, label="1"];
+  2 [shape=circle, label="2"];
+  154 [shape=circle, label="154"];
+  239 [shape=circle, label="239"];
+  341 [shape=circle, label="341"];
+  495 [shape=circle, label="495"];
+  496 [shape=circle, label="496"];
+  497 [shape=circle, label="497"];
+  754 [shape=circle, label="754"];
+  0 -> 1 [label="L0"];
+  1 -> 2 [label="L1"];
+  2 -> 496 [label="L0"];
+  2 -> 154 [label="L2"];
+  1 -> 154 [label="L3"];
+  154 -> 496 [label="L0"];
+  154 -> 239 [label="L3"];
+  239 -> 1 [label="L0"];
+  239 -> 496 [label="L1"];
+  239 -> 341 [label="L4"];
+  341 -> 495 [label="L0"];
+  341 -> 497 [label="L1"];
+  341 -> 239 [label="L3"];
+  1 -> 0 [label="L4"];
+  0 -> 495 [label="L1"];
+  495 -> 496 [label="L1"];
+  496 -> 497 [label="L2"];
+  497 -> 2 [label="L2"];
+  497 -> 754 [label="L3"];
+  496 -> 495 [label="L3"];
+  496 -> 239 [label="L4"];
+  495 -> 754 [label="L3"];
+  754 -> 154 [label="L2"];
+  754 -> 0 [label="L4"];
+  341 -> 0 [label="L2"];
+}

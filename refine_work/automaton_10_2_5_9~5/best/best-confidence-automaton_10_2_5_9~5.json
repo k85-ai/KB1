@@ -1,0 +1,208 @@
+{
+  "state_conf": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "91": 0.0,
+    "463": 0.0,
+    "521": 0.0,
+    "820": 0.0
+  },
+  "prefix_conf": {
+    "0": {
+      "prefix": [],
+      "confidence": 0.0
+    },
+    "1": {
+      "prefix": [
+        "L0"
+      ],
+      "confidence": 0.0
+    },
+    "2": {
+      "prefix": [
+        "L0",
+        "L1"
+      ],
+      "confidence": 0.0
+    },
+    "3": {
+      "prefix": [
+        "L0",
+        "L1",
+        "L2"
+      ],
+      "confidence": 0.0
+    },
+    "91": {
+      "prefix": [
+        "L0",
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "confidence": 0.0
+    },
+    "463": {
+      "prefix": [
+        "L1"
+      ],
+      "confidence": 0.0
+    },
+    "521": {
+      "prefix": [
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L0"
+      ],
+      "confidence": 0.0
+    },
+    "820": {
+      "prefix": [
+        "L1",
+        "L3"
+      ],
+      "confidence": 0.0
+    }
+  },
+  "merge_history": [
+    {
+      "phase": "bluefringe",
+      "merge_to": 1,
+      "merge_from": 464,
+      "score": 125.0,
+      "confidence": 1.0,
+      "states_before": 1919,
+      "states_after": 1793
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 463,
+      "merge_from": 281,
+      "score": 183.0,
+      "confidence": 1.0,
+      "states_before": 1793,
+      "states_after": 1609
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 162,
+      "score": 258.0,
+      "confidence": 1.0,
+      "states_before": 1609,
+      "states_after": 1350
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 463,
+      "merge_from": 821,
+      "score": 241.0,
+      "confidence": 1.0,
+      "states_before": 1350,
+      "states_after": 1108
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 977,
+      "score": 337.0,
+      "confidence": 1.0,
+      "states_before": 1108,
+      "states_after": 770
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 820,
+      "merge_from": 97,
+      "score": 322.0,
+      "confidence": 1.0,
+      "states_before": 770,
+      "states_after": 447
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 463,
+      "merge_from": 4,
+      "score": 159.0,
+      "confidence": 1.0,
+      "states_before": 447,
+      "states_after": 287
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 1,
+      "merge_from": 82,
+      "score": 109.0,
+      "confidence": 1.0,
+      "states_before": 287,
+      "states_after": 177
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 1125,
+      "score": 53.0,
+      "confidence": 0.9999999999999999,
+      "states_before": 177,
+      "states_after": 123
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 2,
+      "merge_from": 92,
+      "score": 31.0,
+      "confidence": 0.9999999995343387,
+      "states_before": 123,
+      "states_after": 91
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 91,
+      "merge_from": 1137,
+      "score": 22.0,
+      "confidence": 0.9999997615814209,
+      "states_before": 91,
+      "states_after": 68
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 463,
+      "merge_from": 522,
+      "score": 32.0,
+      "confidence": 0.9999999997671694,
+      "states_before": 68,
+      "states_after": 35
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 3,
+      "merge_from": 1527,
+      "score": 15.0,
+      "confidence": 0.999969482421875,
+      "states_before": 35,
+      "states_after": 19
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 521,
+      "merge_from": 1619,
+      "score": 9.0,
+      "confidence": 0.998046875,
+      "states_before": 19,
+      "states_after": 9
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 1726,
+      "score": 0.0,
+      "confidence": 0.0,
+      "states_before": 9,
+      "states_after": 8
+    }
+  ]
+}

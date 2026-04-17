@@ -1,0 +1,139 @@
+{
+  "n_states": 800,
+  "alphabet": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "start": 0,
+  "graph_density": -1,
+  "delta": [
+    {
+      "source": 0,
+      "label": "L0",
+      "target": 1
+    },
+    {
+      "source": 1,
+      "label": "L1",
+      "target": 2
+    },
+    {
+      "source": 2,
+      "label": "L0",
+      "target": 505
+    },
+    {
+      "source": 2,
+      "label": "L2",
+      "target": 196
+    },
+    {
+      "source": 1,
+      "label": "L3",
+      "target": 196
+    },
+    {
+      "source": 196,
+      "label": "L0",
+      "target": 505
+    },
+    {
+      "source": 196,
+      "label": "L3",
+      "target": 233
+    },
+    {
+      "source": 233,
+      "label": "L0",
+      "target": 1
+    },
+    {
+      "source": 233,
+      "label": "L1",
+      "target": 505
+    },
+    {
+      "source": 233,
+      "label": "L4",
+      "target": 264
+    },
+    {
+      "source": 264,
+      "label": "L3",
+      "target": 233
+    },
+    {
+      "source": 1,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 0,
+      "label": "L1",
+      "target": 504
+    },
+    {
+      "source": 504,
+      "label": "L1",
+      "target": 505
+    },
+    {
+      "source": 505,
+      "label": "L2",
+      "target": 506
+    },
+    {
+      "source": 506,
+      "label": "L2",
+      "target": 2
+    },
+    {
+      "source": 506,
+      "label": "L3",
+      "target": 799
+    },
+    {
+      "source": 505,
+      "label": "L3",
+      "target": 504
+    },
+    {
+      "source": 505,
+      "label": "L4",
+      "target": 233
+    },
+    {
+      "source": 504,
+      "label": "L3",
+      "target": 799
+    },
+    {
+      "source": 799,
+      "label": "L2",
+      "target": 196
+    },
+    {
+      "source": 799,
+      "label": "L4",
+      "target": 0
+    },
+    {
+      "source": 264,
+      "label": "L2",
+      "target": 0
+    },
+    {
+      "source": 264,
+      "label": "L1",
+      "target": 506
+    },
+    {
+      "source": 264,
+      "label": "L0",
+      "target": 504
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "state_conf": {
+    "0": 0.75,
+    "1": 0.75,
+    "175": 0.75,
+    "304": 0.75,
+    "616": 0.75,
+    "725": 0.75,
+    "726": 0.75,
+    "727": 0.75,
+    "844": 0.75,
+    "845": 0.75,
+    "846": 0.75
+  },
+  "prefix_conf": {
+    "0": {
+      "prefix": [],
+      "confidence": 0.75
+    },
+    "1": {
+      "prefix": [
+        "L0"
+      ],
+      "confidence": 0.75
+    },
+    "175": {
+      "prefix": [
+        "L0",
+        "L3"
+      ],
+      "confidence": 0.75
+    },
+    "304": {
+      "prefix": [
+        "L3"
+      ],
+      "confidence": 0.75
+    },
+    "616": {
+      "prefix": [
+        "L4"
+      ],
+      "confidence": 0.75
+    },
+    "725": {
+      "prefix": [
+        "L4",
+        "L3"
+      ],
+      "confidence": 0.75
+    },
+    "726": {
+      "prefix": [
+        "L4",
+        "L3",
+        "L3"
+      ],
+      "confidence": 0.75
+    },
+    "727": {
+      "prefix": [
+        "L4",
+        "L3",
+        "L3",
+        "L1"
+      ],
+      "confidence": 0.75
+    },
+    "844": {
+      "prefix": [
+        "L4",
+        "L4"
+      ],
+      "confidence": 0.75
+    },
+    "845": {
+      "prefix": [
+        "L4",
+        "L4",
+        "L0"
+      ],
+      "confidence": 0.75
+    },
+    "846": {
+      "prefix": [
+        "L4",
+        "L4",
+        "L0",
+        "L1"
+      ],
+      "confidence": 0.75
+    }
+  },
+  "merge_history": [
+    {
+      "phase": "bluefringe",
+      "merge_to": 1,
+      "merge_from": 465,
+      "score": 91.0,
+      "confidence": 1.0,
+      "states_before": 1747,
+      "states_after": 1655
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 304,
+      "merge_from": 2,
+      "score": 141.0,
+      "confidence": 1.0,
+      "states_before": 1655,
+      "states_after": 1513
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 1,
+      "merge_from": 617,
+      "score": 87.0,
+      "confidence": 1.0,
+      "states_before": 1513,
+      "states_after": 1425
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 304,
+      "merge_from": 306,
+      "score": 172.0,
+      "confidence": 1.0,
+      "states_before": 1425,
+      "states_after": 1252
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 616,
+      "merge_from": 201,
+      "score": 152.0,
+      "confidence": 1.0,
+      "states_before": 1252,
+      "states_after": 1099
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 304,
+      "merge_from": 176,
+      "score": 173.0,
+      "confidence": 1.0,
+      "states_before": 1099,
+      "states_after": 925
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 616,
+      "merge_from": 386,
+      "score": 216.0,
+      "confidence": 1.0,
+      "states_before": 925,
+      "states_after": 708
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 0,
+      "merge_from": 785,
+      "score": 206.0,
+      "confidence": 1.0,
+      "states_before": 708,
+      "states_after": 501
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 1,
+      "merge_from": 902,
+      "score": 126.0,
+      "confidence": 1.0,
+      "states_before": 501,
+      "states_after": 374
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 616,
+      "merge_from": 867,
+      "score": 87.0,
+      "confidence": 1.0,
+      "states_before": 374,
+      "states_after": 286
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 616,
+      "merge_from": 759,
+      "score": 74.0,
+      "confidence": 1.0,
+      "states_before": 286,
+      "states_after": 211
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 725,
+      "merge_from": 748,
+      "score": 58.0,
+      "confidence": 1.0,
+      "states_before": 211,
+      "states_after": 152
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 725,
+      "merge_from": 861,
+      "score": 33.0,
+      "confidence": 0.9999999998835847,
+      "states_before": 152,
+      "states_after": 118
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 846,
+      "merge_from": 847,
+      "score": 26.0,
+      "confidence": 0.9999999850988388,
+      "states_before": 118,
+      "states_after": 91
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 846,
+      "merge_from": 728,
+      "score": 25.0,
+      "confidence": 0.9999999701976776,
+      "states_before": 91,
+      "states_after": 65
+    },
+    {
+      "phase": "bluefringe",
+      "merge_to": 727,
+      "merge_from": 848,
+      "score": 52.0,
+      "confidence": 0.9999999999999998,
+      "states_before": 65,
+      "states_after": 12
+    },
+    {
+      "phase": "greedy_post_merge",
+      "merge_to": 175,
+      "merge_from": 305,
+      "score": 2.0,
+      "confidence": 0.75,
+      "states_before": 12,
+      "states_after": 11
+    }
+  ]
+}
