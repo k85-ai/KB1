@@ -16,10 +16,32 @@ State = int
 
 @dataclass
 class DFA:
+    """
+    Simple deterministic automaton used during learning and evaluation.
+
+    Args:
+        start: Start state id.
+        delta: Transition map (state, label) -> next state.
+
+    Methods:
+        accepts_path(seq): Return True if the full sequence can be followed.
+        states(): Return the set of reachable state ids appearing in delta/start.
+        outgoing_labels(s): Return all labels enabled from state s.
+    """
     start: int
     delta: Dict[Tuple[int, str], int]
 
     def accepts_path(self, seq: Seq) -> bool:
+        """
+        Check path-existence acceptance under the project trace semantics.
+
+        Args:
+            seq: Input label sequence.
+
+        Returns:
+            True if every symbol in seq can be followed from the start state,
+            otherwise False.
+        """
         s = self.start
         for a in seq:
             s = self.delta.get((s, a))
@@ -28,6 +50,13 @@ class DFA:
         return True
 
     def states(self) -> Set[int]:
+        """
+        Collect all state ids present in the DFA.
+
+        Returns:
+            A set containing the start state and every source/target state that
+            appears in the transition map.
+        """
         st = {self.start}
         for (u, _), v in self.delta.items():
             st.add(u)
@@ -40,6 +69,15 @@ class DFA:
 
 @dataclass
 class LearnResult:
+    """
+    Bundle returned by the confidence-aware EDSM learner.
+
+    Args:
+        model: Learnt DFA after blue-fringe learning and greedy post-merge.
+        alphabet: Alphabet inferred from training data / forbidden labels.
+        state_conf: Confidence assigned to each final learnt state.
+        merge_history: Log of accepted merge operations with scores/confidence.
+    """
     model: DFA
     alphabet: List[str]
     state_conf: Dict[int, float]
@@ -48,6 +86,15 @@ class LearnResult:
 
 @dataclass
 class Metrics:
+    """
+    Confusion-matrix style evaluation summary.
+
+    Args:
+        tp: Positive traces accepted by the model.
+        tn: Negative traces rejected by the model.
+        fp: Negative traces incorrectly accepted by the model.
+        fn: Positive traces incorrectly rejected by the model.
+    """
     tp: int = 0
     tn: int = 0
     fp: int = 0
@@ -111,12 +158,31 @@ def build_pta_with_forbidden(pos: List[Seq], neg: List[Seq]) -> Tuple[DFA, Dict[
 
 
 def merge_confidence_from_score(score: float) -> float:
+    """
+    Convert a merge score into a confidence value.
+
+    Args:
+        score: Merge evidence score.
+
+    Returns:
+        0 for negative scores, otherwise 1 - 0.5**score.
+    """
     if score < 0:
         return 0.0
     return 1.0 - (0.5 ** score)
 
 
 def normalize_state_conf(dfa: DFA, state_conf: Dict[int, float]) -> Dict[int, float]:
+    """
+    Clamp stored state-confidence values to [0, 1] and fill missing states.
+
+    Args:
+        dfa: Final DFA whose states should be covered.
+        state_conf: Partial or unnormalized confidence map.
+
+    Returns:
+        A normalized confidence map containing every DFA state.
+    """
     out = {}
     for s in dfa.states():
         x = state_conf.get(s, 1.0)
@@ -223,6 +289,24 @@ class DSU:
 
 
 def merge_score_simulate(dfa: DFA, forbidden: Dict[int, Set[str]], p: int, q: int) -> Tuple[bool, float]:
+    """
+    Simulate a candidate merge and estimate its evidence score.
+
+    The simulation merges components symbolically, propagates deterministic
+    constraints along common labels, and rejects merges that would enable a
+    forbidden label inside a merged component.
+
+    Args:
+        dfa: Current DFA.
+        forbidden: Forbidden-label evidence map.
+        p: First candidate state.
+        q: Second candidate state.
+
+    Returns:
+        A pair (ok, score):
+            - ok is False if the merge is incompatible
+            - score is the simulated evidence score when compatible
+    """
     dsu = DSU()
     work = deque([(p, q)])
     members: Dict[int, Set[int]] = {}
@@ -328,6 +412,22 @@ def update_conf_after_merge(
     rep_map: Dict[int, int],
     merge_conf: float,
 ) -> Dict[int, float]:
+    """
+    Update state confidence after a successful merge.
+
+    Confidence is propagated with a weakest-link rule: the new representative
+    receives the minimum of all contributing old-state confidences and the
+    current merge confidence.
+
+    Args:
+        merged_dfa: DFA after the merge.
+        old_state_conf: Confidence map before the merge.
+        rep_map: Mapping from pre-merge states to post-merge representatives.
+        merge_conf: Confidence of the current merge.
+
+    Returns:
+        Updated normalized state-confidence map for the merged DFA.
+    """
     new_conf: Dict[int, float] = {}
 
     groups: Dict[int, List[int]] = {}
@@ -401,6 +501,24 @@ def learn_edsm_bluefringe(
     log_every_seconds: float = 2.0,
     max_merges: int = 50000
 ) -> LearnResult:
+    """
+    Learn a DFA with confidence-aware blue-fringe EDSM plus greedy post-merge.
+
+    The learner builds a PTA from positive traces, uses negatives as forbidden
+    evidence, repeatedly chooses the best compatible RED/BLUE merge, records
+    merge confidence, and finally applies a greedy cleanup pass.
+
+    Args:
+        pos: Positive training traces.
+        neg: Negative training traces.
+        score_threshold: Minimum simulated merge score to consider.
+        log_every_seconds: Progress-log interval in seconds.
+        max_merges: Hard cap on accepted blue-fringe merges.
+
+    Returns:
+        LearnResult containing the learnt DFA, inferred alphabet, state
+        confidence map, and merge history.
+    """
     dfa, forbidden, alphabet = build_pta_with_forbidden(pos, neg)
 
     if not compatible_by_negatives(dfa, neg):
@@ -518,6 +636,18 @@ def eval_on_traces(model: DFA, pos: List[Seq], neg: List[Seq]) -> Metrics:
 
 
 def one_prefix_per_state(dfa: DFA) -> Dict[int, List[str]]:
+    """
+    Find one representative prefix from the start state to each DFA state.
+
+    The prefixes are built by a BFS-style traversal and are later used for
+    confidence ranking and local refinement.
+
+    Args:
+        dfa: Learnt DFA.
+
+    Returns:
+        Mapping state -> one input sequence that reaches that state.
+    """
     prefix = {dfa.start: []}
     q = deque([dfa.start])
 
@@ -536,6 +666,18 @@ def one_prefix_per_state(dfa: DFA) -> Dict[int, List[str]]:
 
 
 def trace_confidence(dfa: DFA, state_conf: Dict[int, float], seq: List[str]) -> float:
+    """
+    Compute confidence of a trace/prefix using the weakest state on its path.
+
+    Args:
+        dfa: Learnt DFA.
+        state_conf: Confidence assigned to final DFA states.
+        seq: Input trace or prefix.
+
+    Returns:
+        0.0 if the trace cannot be followed in the DFA; otherwise the minimum
+        confidence of all states visited along the path.
+    """
     s = dfa.start
     confs = [state_conf.get(s, 1.0)]
     for a in seq:
@@ -555,6 +697,18 @@ def save_learnt(
     merge_history: Optional[List[dict]] = None,
     confidence_json: Optional[Path] = None,
 ) -> None:
+    """
+    Save the learnt DFA and optional confidence diagnostics to disk.
+
+    Args:
+        model: Learnt DFA to save.
+        alphabet: Alphabet used by the model.
+        out_json: Output path for automaton JSON.
+        out_dot: Output path for automaton DOT graph.
+        state_conf: Optional state-confidence map.
+        merge_history: Optional merge log.
+        confidence_json: Optional output path for confidence diagnostics JSON.
+    """
     st = sorted(model.states())
     n_states = (max(st) + 1) if st else 1
 

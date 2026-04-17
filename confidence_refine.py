@@ -18,6 +18,7 @@ Seq = List[str]
 import random
 
 def run_prefix(A: Automaton, seq: Seq):
+    """Run a prefix on the reference automaton and return the reached state, or None if invalid."""
     s = A.start
     for a in seq:
         s = A.step(s, a)
@@ -26,6 +27,7 @@ def run_prefix(A: Automaton, seq: Seq):
     return s
 
 def gen_positive_from_prefix(A: Automaton, prefix: Seq, rnd: random.Random, extra_steps: int = 1):
+    """Generate a new positive trace by extending a valid prefix with legal transitions."""
     s = run_prefix(A, prefix)
     if s is None:
         return None
@@ -43,6 +45,7 @@ def gen_positive_from_prefix(A: Automaton, prefix: Seq, rnd: random.Random, extr
     return seq
 
 def gen_negative_from_prefix(A: Automaton, prefix: Seq, rnd: random.Random, extra_steps: int = 1):
+    """Generate a new negative trace by extending a valid prefix and forcing an invalid final step."""
     s = run_prefix(A, prefix)
     if s is None:
         return None
@@ -66,25 +69,9 @@ def gen_negative_from_prefix(A: Automaton, prefix: Seq, rnd: random.Random, extr
     bad = rnd.choice(missing)
     return seq + [bad]
 
-def expand_prefix(prefix: Seq, alphabet: List[str], max_depth: int = 2) -> List[Seq]:
-    results: List[Seq] = []
-
-    def dfs(cur: Seq, depth: int):
-        if depth == 0:
-            results.append(cur[:])
-            return
-        for a in alphabet:
-            cur.append(a)
-            dfs(cur, depth - 1)
-            cur.pop()
-
-    for d in range(1, max_depth + 1):
-        dfs(prefix[:], d)
-
-    return results
-
 
 def append_traces_txt(path: Path, pos_traces: List[Seq], neg_traces: List[Seq]) -> None:
+    """Append newly generated positive and negative traces to the working training file."""
     with path.open("a", encoding="utf-8") as f:
         for seq in pos_traces:
             f.write("+ " + ",".join(seq) + "\n")
@@ -94,6 +81,7 @@ def append_traces_txt(path: Path, pos_traces: List[Seq], neg_traces: List[Seq]) 
 
 def load_reference_automaton(reference_dir: Path, train_filename: str) -> Automaton:
     """
+    Load the reference automaton that matches a given training trace file.
     train filename example:
       automaton_10_2_5_0~1.txt
     reference json:
@@ -115,6 +103,28 @@ def propose_additional_traces(
     per_prefix_pos: int = 5,
     per_prefix_neg: int = 5,
 ) -> Tuple[List[Seq], List[Seq], List[dict]]:
+    """
+    Generate confidence-guided additional traces around uncertain learnt states.
+
+    The current learnt model is used only to identify low-confidence prefixes.
+    Actual new traces are generated from the reference automaton so that labels
+    remain consistent with the original trace semantics.
+
+    Args:
+        ref_A: Reference automaton used as oracle.
+        model: Current learnt DFA.
+        state_conf: Confidence map for learnt states.
+        top_k_states: Number of lowest-confidence prefixes to refine.
+        per_prefix_pos: Number of positive samples to try per chosen prefix.
+        per_prefix_neg: Number of negative samples to try per chosen prefix.
+
+    Returns:
+        A tuple of:
+            - new positive traces
+            - new negative traces
+            - metadata describing the chosen uncertain prefixes
+    """
+
     prefix_map = one_prefix_per_state(model)
 
     ranked = []
@@ -156,6 +166,9 @@ def propose_additional_traces(
     return pos_new, neg_new, chosen
 
 def sanitize_trace_sets(pos_tr, neg_tr):
+    """
+    Remove exact label conflicts and negatives that are already accepted by the positive PTA.
+    """
     pos_set = {tuple(x) for x in pos_tr}
     neg_set = {tuple(x) for x in neg_tr}
 
@@ -182,6 +195,9 @@ def sanitize_trace_sets(pos_tr, neg_tr):
     return pos_clean, neg_clean
 
 def pta_accepts(seq, pos_traces):
+    """
+    Check whether a sequence is accepted by the PTA built from the current positive traces.
+    """
     trie = {}
     END = "__end__"
 
@@ -207,6 +223,26 @@ def run_refinement_for_one_file(
     top_k_states: int = 3,
     max_new_traces_per_round: int = 40,
 ):
+    """
+    Run the full confidence-guided refinement loop for one training file.
+
+    The function creates a working copy of the training traces, repeatedly
+    learns a confidence-aware DFA, optionally augments the data around low-
+    confidence prefixes, and keeps the best round by BCR /
+    confidence.
+
+    Args:
+        train_file: Original training trace file.
+        eval_file: Evaluation trace file matched to train_file.
+        reference_dir: Directory containing reference automata.
+        work_dir: Per-file working directory used during refinement.
+        rounds: Maximum number of refinement rounds after the initial learning.
+        top_k_states: Number of uncertain prefixes to refine each round.
+        max_new_traces_per_round: Approximate budget of added traces per round.
+
+    Returns:
+        Dictionary summarizing the best result and the per-round history.
+    """
     work_dir.mkdir(parents=True, exist_ok=True)
 
     active_train = work_dir / train_file.name
