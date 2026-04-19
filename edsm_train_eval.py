@@ -247,14 +247,16 @@ def learn_edsm_bluefringe(
     neg: List[Seq],
     score_threshold: float = 1.0,
     log_every_seconds: float = 2.0,
-    max_merges: int = 50000
-) -> Tuple[DFA, List[str]]:
+    max_merges: int = 50000,
+) -> Tuple[DFA, List[str], "ConfidenceData"]:
     """
     Blue-Fringe (RED/BLUE) EDSM with evidence-driven scoring, adapted to your trace semantics.
     Returns:
-      (learnt_dfa, alphabet)
+      (learnt_dfa, alphabet, confidence)
     """
+    from confidence import _MergeRecord, compute_confidence, ConfidenceData
     dfa, forbidden, alphabet = build_pta_with_forbidden(pos, neg)
+    merge_log: List = []
 
     # Consistency check
     if not compatible_by_negatives(dfa, neg):
@@ -310,6 +312,7 @@ def learn_edsm_bluefringe(
         else:
             r, b = best_pair
             dfa, forbidden = merge_states_with_forbidden(dfa, forbidden, r, b)
+            merge_log.append(_MergeRecord(red=r, blue=b, score=best_score))
             merges += 1
             BLUE = successors_of(RED, dfa) - RED
 
@@ -319,7 +322,7 @@ def learn_edsm_bluefringe(
             print(f"[round={rounds} merges={merges}] states={len(dfa.states())} RED={len(RED)} BLUE={len(BLUE)} best_score={best_score:.3f}")
 
     print(f"[done] rounds={rounds} merges={merges} states={len(dfa.states())}")
-    return dfa, alphabet
+    return dfa, alphabet, compute_confidence(merge_log)
 
 
 @dataclass
@@ -347,7 +350,7 @@ def eval_on_traces(model: DFA, pos: List[Seq], neg: List[Seq]) -> Metrics:
             m.tn += 1
     return m
 
-def save_learnt(model: DFA, alphabet: List[str], out_json: Path, out_dot: Path) -> None:
+def save_learnt(model: DFA, alphabet: List[str], out_json: Path, out_dot: Path, conf=None) -> None:
     st = sorted(model.states())
     n_states = (max(st) + 1) if st else 1
     obj = {
@@ -357,6 +360,12 @@ def save_learnt(model: DFA, alphabet: List[str], out_json: Path, out_dot: Path) 
         "graph_density": -1,
         "delta": [{"source": u, "label": a, "target": v} for (u, a), v in model.delta.items()],
     }
+    if conf is not None:
+        obj["confidence"] = {
+            "global_conf": conf.global_conf,
+            "state_scores": {str(k): v for k, v in conf.state_scores.items()},
+            "n_merges": conf.n_merges,
+        }
     out_json.write_text(json.dumps(obj, indent=2), encoding="utf-8")
 
     nodes = sorted(set(range(n_states)) & set(st))
@@ -386,7 +395,7 @@ def main():
     if not train_files:
         raise FileNotFoundError(f"No .txt files in {train_dir}")
 
-    headers = ["file","TP","TN","FP","FN","BCR","N","train_pos","train_neg","eval_pos","eval_neg","seconds"]
+    headers = ["file","TP","TN","FP","FN","BCR","N","train_pos","train_neg","eval_pos","eval_neg","seconds","global_conf","n_merges"]
     rows = []
 
     start_all = time.time()
@@ -404,21 +413,21 @@ def main():
         # alphabet = sorted({a for seq in (pos_tr + neg_tr) for a in seq})
 
         print(f"\n[{idx}/{len(train_files)}] Learning: {train_file.name}")
-        # model = learn_edsm_redblue(pos_tr, neg_tr, score_threshold=0.0)
-        model, alphabet = learn_edsm_bluefringe(pos_tr, neg_tr, score_threshold=1.0)
+        model, alphabet, conf = learn_edsm_bluefringe(pos_tr, neg_tr, score_threshold=1.0)
 
         stem = train_file.stem
-        save_learnt(model, alphabet, learn_dir / f"learnt-{stem}.json", learn_dir / f"learnt-{stem}.dot")
+        save_learnt(model, alphabet, learn_dir / f"learnt-{stem}.json", learn_dir / f"learnt-{stem}.dot", conf)
 
         m = eval_on_traces(model, pos_ev, neg_ev)
         elapsed = time.time() - t0
         N = m.tp + m.tn + m.fp + m.fn
 
-        print(f"[DONE {idx}/{len(train_files)}] BCR={m.bcr():.3f} TP={m.tp} TN={m.tn} FP={m.fp} FN={m.fn} (N={N}, {elapsed:.1f}s)")
+        print(f"[DONE {idx}/{len(train_files)}] BCR={m.bcr():.3f} TP={m.tp} TN={m.tn} FP={m.fp} FN={m.fn} (N={N}, {elapsed:.1f}s) global_conf={conf.global_conf:.6f} merges={conf.n_merges}")
 
         rows.append([
             train_file.name, m.tp, m.tn, m.fp, m.fn, f"{m.bcr():.6f}", N,
-            len(pos_tr), len(neg_tr), len(pos_ev), len(neg_ev), f"{elapsed:.3f}"
+            len(pos_tr), len(neg_tr), len(pos_ev), len(neg_ev), f"{elapsed:.3f}",
+            f"{conf.global_conf:.6f}", conf.n_merges,
         ])
 
     with out_csv.open("w", encoding="utf-8") as f:
