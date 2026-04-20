@@ -743,8 +743,8 @@ def save_learnt(
 
 # def main():
 #     if len(sys.argv) != 5:
-#         print("Usage: python edsm_train_eval.py <TRAIN_DIR> <EVAL_DIR> <LEARN_DIR> <OUT_CSV>")
-#         print("Example: python edsm_train_eval.py Data/train_data Data/test_data Data/learning_E0 Data/outcome_E0.csv")
+#         print("Usage: python confidence_edsm.py <TRAIN_DIR> <EVAL_DIR> <LEARN_DIR> <OUT_CSV>")
+#         print("Example: python confidence_edsm.py ./train ./test ./learning_E0 ./outcome_E0.csv")
 #         raise SystemExit(2)
 
 #     train_dir = Path(sys.argv[1])
@@ -798,7 +798,7 @@ def save_learnt(
 #             learn_dir / f"learnt-{stem}.dot",
 #             state_conf=state_conf,
 #             merge_history=merge_history,
-#             confidence_json=learn_dir / f"confidence-{stem}.json",
+#             # confidence_json=learn_dir / f"confidence-{stem}.json",
 #         )
 
 #         m = eval_on_traces(model, pos_ev, neg_ev)

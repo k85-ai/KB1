@@ -1,4 +1,4 @@
-import sys
+import sys,time
 import shutil
 import json
 from pathlib import Path
@@ -79,20 +79,51 @@ def append_traces_txt(path: Path, pos_traces: List[Seq], neg_traces: List[Seq]) 
             f.write("- " + ",".join(seq) + "\n")
 
 
+# def load_reference_automaton(reference_dir: Path, train_filename: str) -> Automaton:
+#     """
+#     Load the reference automaton that matches a given training trace file.
+#     train filename example:
+#       automaton_10_2_5_0~1.txt
+#     reference json:
+#       automaton_10_2_5_0.json
+#     """
+#     stem = Path(train_filename).stem
+#     base = stem.split("~")[0]
+#     ref_json = reference_dir / f"{base}.json"
+#     if not ref_json.exists():
+#         raise FileNotFoundError(f"Reference automaton not found: {ref_json}")
+#     return Automaton.from_json(ref_json)
+
 def load_reference_automaton(reference_dir: Path, train_filename: str) -> Automaton:
     """
     Load the reference automaton that matches a given training trace file.
+
     train filename example:
       automaton_10_2_5_0~1.txt
-    reference json:
+
+    supported reference files:
       automaton_10_2_5_0.json
+      automaton_10_2_5_0.dot
+      automaton_10_2_5_0.xml
     """
     stem = Path(train_filename).stem
     base = stem.split("~")[0]
-    ref_json = reference_dir / f"{base}.json"
-    if not ref_json.exists():
-        raise FileNotFoundError(f"Reference automaton not found: {ref_json}")
-    return Automaton.from_json(ref_json)
+
+    candidates = [
+        reference_dir / f"{base}.json",
+        reference_dir / f"{base}.dot",
+        reference_dir / f"{base}.xml",
+    ]
+
+    for path in candidates:
+        if path.exists():
+            return Automaton.from_file(path)
+
+    raise FileNotFoundError(
+        "Reference automaton not found. Tried: "
+        + ", ".join(str(p) for p in candidates)
+    )
+
 
 
 def propose_additional_traces(
@@ -177,6 +208,20 @@ def sanitize_trace_sets(pos_tr, neg_tr):
         print(f"[WARN] exact conflicts: {len(exact_conflict)}")
         neg_set -= exact_conflict
 
+    neg_prefix_conflict = set()
+    for seq in neg_set:
+        for other in neg_set:
+            if seq == other:
+                continue
+            if len(seq) < len(other) and other[:len(seq)] == seq:
+                neg_prefix_conflict.add(seq)
+                break
+
+    if neg_prefix_conflict:
+        print(f"[WARN] negative prefix conflicts: {len(neg_prefix_conflict)}")
+        print(f"[WARN] examples: {[list(x) for x in sorted(neg_prefix_conflict)[:10]]}")
+        neg_set -= neg_prefix_conflict
+
     pos_clean = [list(x) for x in sorted(pos_set)]
     neg_raw = [list(x) for x in sorted(neg_set)]
 
@@ -221,7 +266,7 @@ def run_refinement_for_one_file(
     work_dir: Path,
     rounds: int = 2,
     top_k_states: int = 3,
-    max_new_traces_per_round: int = 40,
+    max_new_traces_per_round: int = 20,
 ):
     """
     Run the full confidence-guided refinement loop for one training file.
@@ -254,6 +299,8 @@ def run_refinement_for_one_file(
     best_result = None
 
     for round_idx in range(rounds + 1):
+        round_start = time.time()
+
         pos_tr, neg_tr = parse_traces_txt(active_train)
         pos_tr, neg_tr = sanitize_trace_sets(pos_tr, neg_tr)
 
@@ -261,6 +308,11 @@ def run_refinement_for_one_file(
 
         result = learn_edsm_bluefringe(pos_tr, neg_tr, score_threshold=0.0)
         m = eval_on_traces(result.model, pos_ev, neg_ev)
+
+        round_time = time.time() - round_start
+        print(f"[DONE round {round_idx}] "
+            f"[ROUND TIME] time={round_time:.3f}s"
+            f" BCR={m.bcr():.3f} TP={m.tp} TN={m.tn} FP={m.fp} FN={m.fn}")
 
         conf_vals = list(result.state_conf.values()) if result.state_conf else [1.0]
         min_conf = min(conf_vals)
@@ -387,6 +439,7 @@ def run_refinement_for_one_file(
 
 
 def main():
+    start_time = time.time()
     if len(sys.argv) != 7:
         print("Usage: python confidence_refine.py <REFERENCE_AUTOMATA_DIR> <TRAIN_DIR> <EVAL_DIR> <WORK_DIR> <OUT_JSON> <OUT_CSV>")
         print("Example: python confidence_refine.py ./automata ./train ./test ./refine_work ./refine_summary.json ./best_results.csv")
@@ -429,7 +482,7 @@ def main():
         work_dir=work_dir / train_file.stem,
         rounds=2,
         top_k_states=3,
-        max_new_traces_per_round=40,
+        max_new_traces_per_round=20,
     )
         all_rows.append(result)
 
@@ -475,6 +528,7 @@ def main():
 
     print(f"Done. Summary written to: {out_json}")
     print(f"Done. Best-results CSV written to: {out_csv}")
+    print(f"Total time: {time.time()-start_time:.1f}s")
 
 
 if __name__ == "__main__":
