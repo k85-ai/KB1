@@ -287,8 +287,19 @@ class DSU:
             self.parent[rb] = ra
         return ra
 
+def build_outgoing_cache(dfa: DFA) -> Dict[int, Dict[str, int]]:
+    out0: Dict[int, Dict[str, int]] = {}
+    for (u, a), v in dfa.delta.items():
+        out0.setdefault(u, {})[a] = v
+    return out0
 
-def merge_score_simulate(dfa: DFA, forbidden: Dict[int, Set[str]], p: int, q: int) -> Tuple[bool, float]:
+def merge_score_simulate(
+    dfa: DFA,
+    forbidden: Dict[int, Set[str]],
+    p: int,
+    q: int,
+    out0: Optional[Dict[int, Dict[str, int]]] = None,
+) -> Tuple[bool, float]:
     """
     Simulate a candidate merge and estimate its evidence score.
 
@@ -334,9 +345,12 @@ def merge_score_simulate(dfa: DFA, forbidden: Dict[int, Set[str]], p: int, q: in
             del members[ra]
             return rb
 
-    out0: Dict[int, Dict[str, int]] = {}
-    for (u, a), v in dfa.delta.items():
-        out0.setdefault(u, {})[a] = v
+    # out0: Dict[int, Dict[str, int]] = {}
+    # for (u, a), v in dfa.delta.items():
+    #     out0.setdefault(u, {})[a] = v
+
+    if out0 is None:
+        out0 = build_outgoing_cache(dfa)
 
     def comp_members(rep: int) -> Set[int]:
         rep = find(rep)
@@ -445,6 +459,27 @@ def update_conf_after_merge(
 
     return normalize_state_conf(merged_dfa, new_conf)
 
+def update_conf_after_merge(
+    merged_dfa: DFA,
+    old_state_conf: Dict[int, float],
+    rep_map: Dict[int, int],
+    merge_conf: float,
+) -> Dict[int, float]:
+    alive = merged_dfa.states()
+    new_conf = {s: old_state_conf.get(s, 1.0) for s in alive}
+
+    touched_reps: Dict[int, List[int]] = {}
+    for old_s, rep in rep_map.items():
+        if rep in alive:
+            touched_reps.setdefault(rep, []).append(old_s)
+
+    for rep, olds in touched_reps.items():
+        vals = [old_state_conf.get(s, 1.0) for s in olds]
+        vals.append(merge_conf)
+        new_conf[rep] = min(vals)
+
+    return new_conf
+
 
 def greedy_post_merge(
     dfa: DFA,
@@ -460,13 +495,15 @@ def greedy_post_merge(
 
     changed = True
     while changed:
+        out0_cache = build_outgoing_cache(dfa)
         changed = False
         states = sorted(dfa.states())
         for i in range(len(states)):
             for j in range(i + 1, len(states)):
                 p, q = states[i], states[j]
 
-                ok, sc = merge_score_simulate(dfa, forbidden, p, q)
+                # ok, sc = merge_score_simulate(dfa, forbidden, p, q)
+                ok, sc = merge_score_simulate(dfa, forbidden, p, q, out0_cache)
                 if not ok:
                     continue
 
@@ -491,7 +528,7 @@ def greedy_post_merge(
             if changed:
                 break
 
-    return dfa, forbidden, normalize_state_conf(dfa, state_conf), merge_history
+    return dfa, forbidden, state_conf, merge_history
 
 
 def learn_edsm_bluefringe(
@@ -535,6 +572,7 @@ def learn_edsm_bluefringe(
     last_log = time.time()
 
     while merges < max_merges and BLUE:
+        out0_cache = build_outgoing_cache(dfa)
         rounds += 1
         best_pair = None
         best_score = None
@@ -545,7 +583,8 @@ def learn_edsm_bluefringe(
             best_for_b_score = None
 
             for r in sorted(RED):
-                ok, sc = merge_score_simulate(dfa, forbidden, r, b)
+                # ok, sc = merge_score_simulate(dfa, forbidden, r, b)
+                ok, sc = merge_score_simulate(dfa, forbidden, r, b, out0_cache)
                 if not ok:
                     continue
                 if sc < score_threshold:
@@ -741,93 +780,93 @@ def save_learnt(
         confidence_json.write_text(json.dumps(conf_obj, indent=2), encoding="utf-8")
 
 
-# def main():
-#     if len(sys.argv) != 5:
-#         print("Usage: python confidence_edsm.py <TRAIN_DIR> <EVAL_DIR> <LEARN_DIR> <OUT_CSV>")
-#         print("Example: python confidence_edsm.py ./train ./test ./learning_E0 ./outcome_E0.csv")
-#         raise SystemExit(2)
+def main():
+    if len(sys.argv) != 5:
+        print("Usage: python confidence_edsm.py <TRAIN_DIR> <EVAL_DIR> <LEARN_DIR> <OUT_CSV>")
+        print("Example: python confidence_edsm.py ./train ./test ./learning_E0 ./outcome_E0.csv")
+        raise SystemExit(2)
 
-#     train_dir = Path(sys.argv[1])
-#     eval_dir = Path(sys.argv[2])
-#     learn_dir = Path(sys.argv[3])
-#     out_csv = Path(sys.argv[4])
+    train_dir = Path(sys.argv[1])
+    eval_dir = Path(sys.argv[2])
+    learn_dir = Path(sys.argv[3])
+    out_csv = Path(sys.argv[4])
 
-#     if not train_dir.is_dir():
-#         raise FileNotFoundError(train_dir)
-#     if not eval_dir.is_dir():
-#         raise FileNotFoundError(eval_dir)
+    if not train_dir.is_dir():
+        raise FileNotFoundError(train_dir)
+    if not eval_dir.is_dir():
+        raise FileNotFoundError(eval_dir)
 
-#     learn_dir.mkdir(parents=True, exist_ok=True)
-#     out_csv.parent.mkdir(parents=True, exist_ok=True)
+    learn_dir.mkdir(parents=True, exist_ok=True)
+    out_csv.parent.mkdir(parents=True, exist_ok=True)
 
-#     train_files = sorted(train_dir.glob("*.txt"))
-#     if not train_files:
-#         raise FileNotFoundError(f"No .txt files in {train_dir}")
+    train_files = sorted(train_dir.glob("*.txt"))
+    if not train_files:
+        raise FileNotFoundError(f"No .txt files in {train_dir}")
 
-#     headers = [
-#         "file", "TP", "TN", "FP", "FN", "BCR", "N",
-#         "train_pos", "train_neg", "eval_pos", "eval_neg",
-#         "seconds", "min_state_conf", "avg_state_conf"
-#     ]
-#     rows = []
+    headers = [
+        "file", "TP", "TN", "FP", "FN", "BCR", "N",
+        "train_pos", "train_neg", "eval_pos", "eval_neg",
+        "seconds", "min_state_conf", "avg_state_conf"
+    ]
+    rows = []
 
-#     start_all = time.time()
-#     for idx, train_file in enumerate(train_files, start=1):
-#         eval_file = eval_dir / train_file.name
-#         if not eval_file.exists():
-#             print(f"[SKIP {idx}/{len(train_files)}] no eval file for {train_file.name}")
-#             continue
+    start_all = time.time()
+    for idx, train_file in enumerate(train_files, start=1):
+        eval_file = eval_dir / train_file.name
+        if not eval_file.exists():
+            print(f"[SKIP {idx}/{len(train_files)}] no eval file for {train_file.name}")
+            continue
 
-#         t0 = time.time()
-#         pos_tr, neg_tr = parse_traces_txt(train_file)
-#         pos_ev, neg_ev = parse_traces_txt(eval_file)
+        t0 = time.time()
+        pos_tr, neg_tr = parse_traces_txt(train_file)
+        pos_ev, neg_ev = parse_traces_txt(eval_file)
 
-#         print(f"\n[{idx}/{len(train_files)}] Learning: {train_file.name}")
-#         result = learn_edsm_bluefringe(pos_tr, neg_tr, score_threshold=0.0)
+        print(f"\n[{idx}/{len(train_files)}] Learning: {train_file.name}")
+        result = learn_edsm_bluefringe(pos_tr, neg_tr, score_threshold=0.0)
 
-#         model = result.model
-#         alphabet = result.alphabet
-#         state_conf = result.state_conf
-#         merge_history = result.merge_history
+        model = result.model
+        alphabet = result.alphabet
+        state_conf = result.state_conf
+        merge_history = result.merge_history
 
-#         stem = train_file.stem
-#         save_learnt(
-#             model,
-#             alphabet,
-#             learn_dir / f"learnt-{stem}.json",
-#             learn_dir / f"learnt-{stem}.dot",
-#             state_conf=state_conf,
-#             merge_history=merge_history,
-#             # confidence_json=learn_dir / f"confidence-{stem}.json",
-#         )
+        stem = train_file.stem
+        save_learnt(
+            model,
+            alphabet,
+            learn_dir / f"learnt-{stem}.json",
+            learn_dir / f"learnt-{stem}.dot",
+            state_conf=state_conf,
+            merge_history=merge_history,
+            # confidence_json=learn_dir / f"confidence-{stem}.json",
+        )
 
-#         m = eval_on_traces(model, pos_ev, neg_ev)
-#         elapsed = time.time() - t0
-#         N = m.tp + m.tn + m.fp + m.fn
+        m = eval_on_traces(model, pos_ev, neg_ev)
+        elapsed = time.time() - t0
+        N = m.tp + m.tn + m.fp + m.fn
 
-#         conf_vals = list(state_conf.values()) if state_conf else [1.0]
-#         min_conf = min(conf_vals) if conf_vals else 1.0
-#         avg_conf = sum(conf_vals) / len(conf_vals) if conf_vals else 1.0
+        conf_vals = list(state_conf.values()) if state_conf else [1.0]
+        min_conf = min(conf_vals) if conf_vals else 1.0
+        avg_conf = sum(conf_vals) / len(conf_vals) if conf_vals else 1.0
 
-#         print(
-#             f"[DONE {idx}/{len(train_files)}] "
-#             f"BCR={m.bcr():.3f} TP={m.tp} TN={m.tn} FP={m.fp} FN={m.fn} "
-#             f"(N={N}, {elapsed:.1f}s, min_conf={min_conf:.3f}, avg_conf={avg_conf:.3f})"
-#         )
+        print(
+            f"[DONE {idx}/{len(train_files)}] "
+            f"BCR={m.bcr():.3f} TP={m.tp} TN={m.tn} FP={m.fp} FN={m.fn} "
+            f"(N={N}, {elapsed:.1f}s, min_conf={min_conf:.3f}, avg_conf={avg_conf:.3f})"
+        )
 
-#         rows.append([
-#             train_file.name, m.tp, m.tn, m.fp, m.fn, f"{m.bcr():.6f}", N,
-#             len(pos_tr), len(neg_tr), len(pos_ev), len(neg_ev), f"{elapsed:.3f}",
-#             f"{min_conf:.6f}", f"{avg_conf:.6f}"
-#         ])
+        rows.append([
+            train_file.name, m.tp, m.tn, m.fp, m.fn, f"{m.bcr():.6f}", N,
+            len(pos_tr), len(neg_tr), len(pos_ev), len(neg_ev), f"{elapsed:.3f}",
+            f"{min_conf:.6f}", f"{avg_conf:.6f}"
+        ])
 
-#     with out_csv.open("w", encoding="utf-8") as f:
-#         f.write(",".join(headers) + "\n")
-#         for r in rows:
-#             f.write(",".join(map(str, r)) + "\n")
+    with out_csv.open("w", encoding="utf-8") as f:
+        f.write(",".join(headers) + "\n")
+        for r in rows:
+            f.write(",".join(map(str, r)) + "\n")
 
-#     print(f"\nAll done. CSV: {out_csv}  Learnt dir: {learn_dir}  Total time: {time.time()-start_all:.1f}s")
+    print(f"\nAll done. CSV: {out_csv}  Learnt dir: {learn_dir}  Total time: {time.time()-start_all:.1f}s")
 
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()

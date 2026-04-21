@@ -2,7 +2,7 @@ import sys,time
 import shutil
 import json
 from pathlib import Path
-from typing import List, Tuple, Set, Dict
+from typing import List, Optional, Tuple, Set, Dict
 
 from common import Automaton, parse_traces_txt
 from confidence_edsm import (
@@ -78,6 +78,39 @@ def append_traces_txt(path: Path, pos_traces: List[Seq], neg_traces: List[Seq]) 
         for seq in neg_traces:
             f.write("- " + ",".join(seq) + "\n")
 
+def filter_candidate_traces(
+    pos_new: List[Seq],
+    neg_new: List[Seq],
+    existing_pos: List[Seq],
+    existing_neg: List[Seq],
+) -> Tuple[List[Seq], List[Seq]]:
+    """
+    Remove duplicates against existing train data and remove pos/neg conflicts.
+    """
+    existing_pos_set = {tuple(x) for x in existing_pos}
+    existing_neg_set = {tuple(x) for x in existing_neg}
+
+    pos_new = [
+        x for x in pos_new
+        if tuple(x) not in existing_pos_set and tuple(x) not in existing_neg_set
+    ]
+    neg_new = [
+        x for x in neg_new
+        if tuple(x) not in existing_neg_set and tuple(x) not in existing_pos_set
+    ]
+
+    pos_new_set = {tuple(x) for x in pos_new}
+    neg_new_set = {tuple(x) for x in neg_new}
+    conflict_set = pos_new_set & neg_new_set
+
+    if conflict_set:
+        pos_new = [x for x in pos_new if tuple(x) not in conflict_set]
+        neg_new = [x for x in neg_new if tuple(x) not in conflict_set]
+
+    pos_new = [list(x) for x in sorted({tuple(x) for x in pos_new})]
+    neg_new = [list(x) for x in sorted({tuple(x) for x in neg_new})]
+
+    return pos_new, neg_new
 
 # def load_reference_automaton(reference_dir: Path, train_filename: str) -> Automaton:
 #     """
@@ -124,6 +157,82 @@ def load_reference_automaton(reference_dir: Path, train_filename: str) -> Automa
         + ", ".join(str(p) for p in candidates)
     )
 
+def propose_random_traces_match_counts(
+    ref_A: Automaton,
+    model,
+    target_pos: int,
+    target_neg: int,
+    existing_pos: Optional[List[Seq]] = None,
+    existing_neg: Optional[List[Seq]] = None,
+    max_attempts: int = 5000,
+    extra_steps: int = 1,
+    seed: int = 0,
+) -> Tuple[List[Seq], List[Seq], List[dict]]:
+    """
+    Random baseline that tries to add exactly target_pos positives and
+    target_neg negatives, matching the actual counts from the confidence-guided
+    method in a comparable round.
+
+    Sampling is done from random valid prefixes of the current learnt model.
+    """
+
+    if target_pos <= 0 and target_neg <= 0:
+        return [], [], []
+
+    if existing_pos is None:
+        existing_pos = []
+    if existing_neg is None:
+        existing_neg = []
+
+    existing_pos_set = {tuple(x) for x in existing_pos}
+    existing_neg_set = {tuple(x) for x in existing_neg}
+
+    prefix_map = one_prefix_per_state(model)
+
+    candidates = []
+    for s, prefix in prefix_map.items():
+        if run_prefix(ref_A, prefix) is not None:
+            candidates.append({
+                "state": s,
+                "prefix": prefix,
+                "confidence": None,
+                "uncertainty": None,
+            })
+
+    if not candidates:
+        return [], [], []
+
+    rnd = random.Random(seed)
+
+    pos_set: Set[Tuple[str, ...]] = set()
+    neg_set: Set[Tuple[str, ...]] = set()
+    chosen_meta: List[dict] = []
+
+    attempts = 0
+    while attempts < max_attempts and (len(pos_set) < target_pos or len(neg_set) < target_neg):
+        attempts += 1
+        item = rnd.choice(candidates)
+        prefix = item["prefix"]
+        chosen_meta.append(item)
+
+        if len(pos_set) < target_pos:
+            seq = gen_positive_from_prefix(ref_A, prefix, rnd, extra_steps=extra_steps)
+            if seq is not None:
+                t = tuple(seq)
+                if t not in existing_pos_set and t not in existing_neg_set and t not in neg_set:
+                    pos_set.add(t)
+
+        if len(neg_set) < target_neg:
+            seq = gen_negative_from_prefix(ref_A, prefix, rnd, extra_steps=extra_steps)
+            if seq is not None:
+                t = tuple(seq)
+                if t not in existing_neg_set and t not in existing_pos_set and t not in pos_set:
+                    neg_set.add(t)
+
+    pos_new = [list(x) for x in sorted(pos_set)]
+    neg_new = [list(x) for x in sorted(neg_set)]
+
+    return pos_new, neg_new, chosen_meta
 
 
 def propose_additional_traces(
@@ -267,6 +376,8 @@ def run_refinement_for_one_file(
     rounds: int = 2,
     top_k_states: int = 3,
     max_new_traces_per_round: int = 20,
+    proposal_mode: str = "confidence",
+    target_added_per_round: Optional[Dict[int, Dict[str, int]]] = None,
 ):
     """
     Run the full confidence-guided refinement loop for one training file.
@@ -340,6 +451,9 @@ def run_refinement_for_one_file(
             "added_pos": 0,
             "added_neg": 0,
             "chosen_uncertain_prefixes": [],
+            "proposal_mode": proposal_mode,
+            "target_added_pos": 0,
+            "target_added_neg": 0,
         }
 
         summary_rows.append(row)
@@ -361,35 +475,65 @@ def run_refinement_for_one_file(
         if round_idx == rounds:
             break
 
-        pos_new, neg_new, chosen = propose_additional_traces(
-            ref_A=ref_A,
-            model=result.model,
-            state_conf=result.state_conf,
-            top_k_states=top_k_states,
-            per_prefix_pos=max_new_traces_per_round // (2 * top_k_states),
-            per_prefix_neg=max_new_traces_per_round // (2 * top_k_states),
-)
-
         existing_pos, existing_neg = parse_traces_txt(active_train)
-        existing_pos_set = {tuple(x) for x in existing_pos}
-        existing_neg_set = {tuple(x) for x in existing_neg}
 
-        pos_new = [
-            x for x in pos_new
-            if tuple(x) not in existing_pos_set and tuple(x) not in existing_neg_set
-        ]
-        neg_new = [
-            x for x in neg_new
-            if tuple(x) not in existing_neg_set and tuple(x) not in existing_pos_set
-        ]
+        if proposal_mode == "confidence":
+            per_prefix_pos = max_new_traces_per_round // (2 * top_k_states)
+            per_prefix_neg = max_new_traces_per_round // (2 * top_k_states)
 
-        pos_new_set = {tuple(x) for x in pos_new}
-        neg_new_set = {tuple(x) for x in neg_new}
-        conflict_set = pos_new_set & neg_new_set
+            pos_new, neg_new, chosen = propose_additional_traces(
+                ref_A=ref_A,
+                model=result.model,
+                state_conf=result.state_conf,
+                top_k_states=top_k_states,
+                per_prefix_pos=per_prefix_pos,
+                per_prefix_neg=per_prefix_neg,
+            )
 
-        if conflict_set:
-            pos_new = [x for x in pos_new if tuple(x) not in conflict_set]
-            neg_new = [x for x in neg_new if tuple(x) not in conflict_set]
+            pos_new, neg_new = filter_candidate_traces(
+                pos_new=pos_new,
+                neg_new=neg_new,
+                existing_pos=existing_pos,
+                existing_neg=existing_neg,
+    )
+
+            summary_rows[-1]["target_added_pos"] = len(pos_new)
+            summary_rows[-1]["target_added_neg"] = len(neg_new)
+
+        elif proposal_mode == "random":
+            if target_added_per_round is None:
+                raise ValueError("target_added_per_round is required for random mode.")
+
+            target_pos = int(target_added_per_round.get(round_idx, {}).get("pos", 0))
+            target_neg = int(target_added_per_round.get(round_idx, {}).get("neg", 0))
+
+            summary_rows[-1]["target_added_pos"] = target_pos
+            summary_rows[-1]["target_added_neg"] = target_neg
+
+            pos_new, neg_new, chosen = propose_random_traces_match_counts(
+                ref_A=ref_A,
+                model=result.model,
+                target_pos=target_pos,
+                target_neg=target_neg,
+                existing_pos=existing_pos,
+                existing_neg=existing_neg,
+                max_attempts=5000,
+                extra_steps=1,
+                seed=0,
+            )
+
+            pos_new, neg_new = filter_candidate_traces(
+                pos_new=pos_new,
+                neg_new=neg_new,
+                existing_pos=existing_pos,
+                existing_neg=existing_neg,
+            )
+            
+            pos_new = pos_new[:target_pos]
+            neg_new = neg_new[:target_neg]
+
+        else:
+            raise ValueError(f"Unknown proposal_mode: {proposal_mode}")
 
         append_traces_txt(active_train, pos_new, neg_new)
 
@@ -413,7 +557,7 @@ def run_refinement_for_one_file(
         best_dir / f"best-learnt-{stem}.dot",
         state_conf=best_lr.state_conf,
         merge_history=best_lr.merge_history,
-        confidence_json=best_dir / f"best-confidence-{stem}.json",
+        confidence_json=best_dir / f"best-{proposal_mode}-{stem}.json",
     )
 
     best_result["row"]["saved_as_best"] = True
@@ -421,6 +565,7 @@ def run_refinement_for_one_file(
 
     return {
         "file": train_file.name,
+        "proposal_mode": proposal_mode,
         "best_round": best_result["round"],
         "best_bcr": best_result["metrics"].bcr(),
         "best_states": len(best_lr.model.states()),
@@ -435,8 +580,143 @@ def run_refinement_for_one_file(
         "best_avg_state_conf": best_result["row"]["avg_state_conf"],
         "best_state_gap": best_result["row"]["state_gap"],
         "summary_rows": summary_rows,
+        
     }
 
+def load_targets_from_confidence_summary(conf_summary_path: Path) -> Dict[str, Dict[int, Dict[str, int]]]:
+    """
+    Read an existing confidence summary json and build:
+
+        {
+            "automaton_xxx.txt": {
+                0: {"pos": 6, "neg": 5},
+                1: {"pos": 0, "neg": 3},
+                ...
+            },
+            ...
+        }
+    """
+    data = json.loads(conf_summary_path.read_text(encoding="utf-8"))
+    out: Dict[str, Dict[int, Dict[str, int]]] = {}
+
+    for item in data:
+        fname = item["file"]
+        per_round: Dict[int, Dict[str, int]] = {}
+
+        for row in item.get("summary_rows", []):
+            per_round[int(row["round"])] = {
+                "pos": int(row.get("added_pos", 0)),
+                "neg": int(row.get("added_neg", 0)),
+            }
+
+        out[fname] = per_round
+
+    return out
+
+def main_random_from_summary():
+    start_time = time.time()
+    if len(sys.argv) != 9:
+        print("Usage: python confidence_refine.py random <REFERENCE_AUTOMATA_DIR> <TRAIN_DIR> <EVAL_DIR> <WORK_DIR> <CONF_SUMMARY_JSON> <OUT_JSON> <OUT_CSV>")
+        print("Example: python confidence_refine.py random ./automata ./train ./test ./refine_work ./refine_summary_confidence.json ./refine_summary_random.json ./best_results_random.csv")
+        raise SystemExit(2)
+
+    reference_dir = Path(sys.argv[2])
+    train_dir = Path(sys.argv[3])
+    eval_dir = Path(sys.argv[4])
+    work_dir = Path(sys.argv[5])
+    conf_summary_json = Path(sys.argv[6])
+    out_json = Path(sys.argv[7])
+    out_csv = Path(sys.argv[8])
+
+    if not reference_dir.is_dir():
+        raise FileNotFoundError(reference_dir)
+    if not train_dir.is_dir():
+        raise FileNotFoundError(train_dir)
+    if not eval_dir.is_dir():
+        raise FileNotFoundError(eval_dir)
+    if not conf_summary_json.exists():
+        raise FileNotFoundError(conf_summary_json)
+
+    work_dir.mkdir(parents=True, exist_ok=True)
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_csv.parent.mkdir(parents=True, exist_ok=True)
+
+    train_files = sorted(train_dir.glob("*.txt"))
+    if not train_files:
+        raise FileNotFoundError(f"No .txt files in {train_dir}")
+
+    targets_by_file = load_targets_from_confidence_summary(conf_summary_json)
+
+    all_rand_results = []
+
+    for idx, train_file in enumerate(train_files, start=1):
+        eval_file = eval_dir / train_file.name
+        if not eval_file.exists():
+            print(f"[SKIP] no eval file for {train_file.name}")
+            continue
+
+        if train_file.name not in targets_by_file:
+            print(f"[SKIP] no confidence summary target for {train_file.name}")
+            continue
+
+        print(f"[RANDOM {idx}/{len(train_files)}] {train_file.name}")
+
+        result_rand = run_refinement_for_one_file(
+            train_file=train_file,
+            eval_file=eval_file,
+            reference_dir=reference_dir,
+            work_dir=work_dir / "random" / train_file.stem,
+            rounds=2,
+            top_k_states=3,
+            max_new_traces_per_round=20,
+            proposal_mode="random",
+            target_added_per_round=targets_by_file[train_file.name],
+        )
+        all_rand_results.append(result_rand)
+
+    out_json.write_text(json.dumps(all_rand_results, indent=2), encoding="utf-8")
+
+    headers = [
+        "file",
+        "best_round",
+        "best_bcr",
+        "best_tp",
+        "best_tn",
+        "best_fp",
+        "best_fn",
+        "best_states",
+        "reference_states",
+        "best_state_gap",
+        "best_train_pos",
+        "best_train_neg",
+        "best_min_state_conf",
+        "best_avg_state_conf",
+    ]
+
+    with out_csv.open("w", encoding="utf-8") as f:
+        f.write(",".join(headers) + "\n")
+        for r in all_rand_results:
+            row = [
+                r["file"],
+                r["best_round"],
+                f"{r['best_bcr']:.6f}",
+                r["best_tp"],
+                r["best_tn"],
+                r["best_fp"],
+                r["best_fn"],
+                r["best_states"],
+                r["reference_states"],
+                r["best_state_gap"],
+                r["best_train_pos"],
+                r["best_train_neg"],
+                f"{r['best_min_state_conf']:.6f}",
+                f"{r['best_avg_state_conf']:.6f}",
+            ]
+            f.write(",".join(map(str, row)) + "\n")
+
+    print(f"Done. Random summary written to: {out_json}")
+    print(f"Done. Random CSV written to: {out_csv}")
+    print(f"Total time: {time.time()-start_time:.1f}s")
 
 def main():
     start_time = time.time()
@@ -467,7 +747,7 @@ def main():
     if not train_files:
         raise FileNotFoundError(f"No .txt files in {train_dir}")
 
-    all_rows = []
+    all_conf_results = []
     for idx, train_file in enumerate(train_files, start=1):
         eval_file = eval_dir / train_file.name
         if not eval_file.exists():
@@ -475,39 +755,41 @@ def main():
             continue
 
         print(f"[REFINE {idx}/{len(train_files)}] {train_file.name}")
-        result = run_refinement_for_one_file(
+        result_conf = run_refinement_for_one_file(
         train_file=train_file,
         eval_file=eval_file,
         reference_dir=reference_dir,
-        work_dir=work_dir / train_file.stem,
+        work_dir=work_dir / "confidence" / train_file.stem,
         rounds=2,
         top_k_states=3,
         max_new_traces_per_round=20,
+        proposal_mode="confidence"
     )
-        all_rows.append(result)
+        all_conf_results.append(result_conf)
 
-    out_json.write_text(json.dumps(all_rows, indent=2), encoding="utf-8")
+    out_json.write_text(json.dumps(all_conf_results, indent=2), encoding="utf-8")
 
     headers = [
-    "file",
-    "best_round",
-    "best_bcr",
-    "best_tp",
-    "best_tn",
-    "best_fp",
-    "best_fn",
-    "best_states",
-    "reference_states",
-    "best_state_gap",
-    "best_train_pos",
-    "best_train_neg",
-    "best_min_state_conf",
-    "best_avg_state_conf",
-]
+        "file",
+        "best_round",
+        "best_bcr",
+        "best_tp",
+        "best_tn",
+        "best_fp",
+        "best_fn",
+        "best_states",
+        "reference_states",
+        "best_state_gap",
+        "best_train_pos",
+        "best_train_neg",
+        "best_min_state_conf",
+        "best_avg_state_conf",
+    ]
 
+    # confidence csv
     with out_csv.open("w", encoding="utf-8") as f:
         f.write(",".join(headers) + "\n")
-        for r in all_rows:
+        for r in all_conf_results:
             row = [
                 r["file"],
                 r["best_round"],
@@ -526,10 +808,14 @@ def main():
             ]
             f.write(",".join(map(str, row)) + "\n")
 
-    print(f"Done. Summary written to: {out_json}")
-    print(f"Done. Best-results CSV written to: {out_csv}")
+
+    print(f"Done. Confidence summary written to: {out_json}")
+    print(f"Done. Confidence CSV written to: {out_csv}")
     print(f"Total time: {time.time()-start_time:.1f}s")
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) >= 2 and sys.argv[1] == "random":
+        main_random_from_summary()
+    else:
+        main()

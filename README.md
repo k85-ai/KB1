@@ -174,3 +174,8 @@ The script also outputs:
 
 BCR before in average: 0.9769375
 BCR after using confidence Refinement in average: 0.9910125
+
+using  python generate_randomwalks.py ./automata ./train_0 --seq-mult 10 --length-mult 2 --sets-per 5 to generating sequence
+orignal 0.834
+Random 0.866
+confidence 0.900

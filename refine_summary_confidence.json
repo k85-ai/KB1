@@ -1,0 +1,7855 @@
+[
+  {
+    "file": "automaton_10_2_5_0~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.79,
+    "best_states": 16,
+    "reference_states": 10,
+    "best_tp": 143,
+    "best_tn": 173,
+    "best_fp": 27,
+    "best_fn": 57,
+    "best_train_pos": 56,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 6,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_0~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 99,
+        "TN": 157,
+        "FP": 43,
+        "FN": 101,
+        "BCR": 0.64,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 6,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 239,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 6,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_0~0.txt",
+        "train_pos": 56,
+        "train_neg": 55,
+        "TP": 143,
+        "TN": 173,
+        "FP": 27,
+        "FN": 57,
+        "BCR": 0.79,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 239,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_0~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.76,
+    "best_states": 21,
+    "reference_states": 10,
+    "best_tp": 141,
+    "best_tn": 163,
+    "best_fp": 37,
+    "best_fn": 59,
+    "best_train_pos": 52,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 11,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_0~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 88,
+        "TN": 150,
+        "FP": 50,
+        "FN": 112,
+        "BCR": 0.595,
+        "states": 27,
+        "ref_states": 10,
+        "state_gap": 17,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 251,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_0~1.txt",
+        "train_pos": 52,
+        "train_neg": 55,
+        "TP": 141,
+        "TN": 163,
+        "FP": 37,
+        "FN": 59,
+        "BCR": 0.76,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 251,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_0~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.7825,
+    "best_states": 19,
+    "reference_states": 10,
+    "best_tp": 152,
+    "best_tn": 161,
+    "best_fp": 39,
+    "best_fn": 48,
+    "best_train_pos": 51,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 9,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_0~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 98,
+        "TN": 148,
+        "FP": 52,
+        "FN": 102,
+        "BCR": 0.615,
+        "states": 24,
+        "ref_states": 10,
+        "state_gap": 14,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 168,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_0~2.txt",
+        "train_pos": 51,
+        "train_neg": 55,
+        "TP": 152,
+        "TN": 161,
+        "FP": 39,
+        "FN": 48,
+        "BCR": 0.7825,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 166,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 3
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_0~2.txt",
+        "train_pos": 52,
+        "train_neg": 58,
+        "TP": 152,
+        "TN": 161,
+        "FP": 39,
+        "FN": 48,
+        "BCR": 0.7825,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_0~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.7350000000000001,
+    "best_states": 19,
+    "reference_states": 10,
+    "best_tp": 133,
+    "best_tn": 161,
+    "best_fp": 39,
+    "best_fn": 67,
+    "best_train_pos": 55,
+    "best_train_neg": 57,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 9,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_0~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 103,
+        "TN": 136,
+        "FP": 64,
+        "FN": 97,
+        "BCR": 0.5975,
+        "states": 24,
+        "ref_states": 10,
+        "state_gap": 14,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 5,
+        "added_neg": 7,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 152,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 5,
+        "target_added_neg": 7
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_0~3.txt",
+        "train_pos": 55,
+        "train_neg": 57,
+        "TP": 133,
+        "TN": 161,
+        "FP": 39,
+        "FN": 67,
+        "BCR": 0.7350000000000001,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 152,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_0~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 2,
+    "best_bcr": 0.895,
+    "best_states": 12,
+    "reference_states": 10,
+    "best_tp": 158,
+    "best_tn": 200,
+    "best_fp": 0,
+    "best_fn": 42,
+    "best_train_pos": 54,
+    "best_train_neg": 58,
+    "best_min_state_conf": 0.99609375,
+    "best_avg_state_conf": 0.99609375,
+    "best_state_gap": 2,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_0~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 114,
+        "TN": 111,
+        "FP": 89,
+        "FN": 86,
+        "BCR": 0.5625,
+        "states": 25,
+        "ref_states": 10,
+        "state_gap": 15,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 4,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 250,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 4,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_0~4.txt",
+        "train_pos": 54,
+        "train_neg": 55,
+        "TP": 146,
+        "TN": 180,
+        "FP": 20,
+        "FN": 54,
+        "BCR": 0.815,
+        "states": 15,
+        "ref_states": 10,
+        "state_gap": 5,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 138,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 3
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_0~4.txt",
+        "train_pos": 54,
+        "train_neg": 58,
+        "TP": 158,
+        "TN": 200,
+        "FP": 0,
+        "FN": 42,
+        "BCR": 0.895,
+        "states": 12,
+        "ref_states": 10,
+        "state_gap": 2,
+        "min_state_conf": 0.99609375,
+        "avg_state_conf": 0.99609375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_1~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 2,
+    "best_bcr": 0.7150000000000001,
+    "best_states": 19,
+    "reference_states": 10,
+    "best_tp": 136,
+    "best_tn": 150,
+    "best_fp": 50,
+    "best_fn": 64,
+    "best_train_pos": 54,
+    "best_train_neg": 57,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 9,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_1~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 81,
+        "TN": 128,
+        "FP": 72,
+        "FN": 119,
+        "BCR": 0.5225,
+        "states": 26,
+        "ref_states": 10,
+        "state_gap": 16,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 188,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_1~0.txt",
+        "train_pos": 53,
+        "train_neg": 55,
+        "TP": 98,
+        "TN": 139,
+        "FP": 61,
+        "FN": 102,
+        "BCR": 0.5925,
+        "states": 25,
+        "ref_states": 10,
+        "state_gap": 15,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 187,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 2
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_1~0.txt",
+        "train_pos": 54,
+        "train_neg": 57,
+        "TP": 136,
+        "TN": 150,
+        "FP": 50,
+        "FN": 64,
+        "BCR": 0.7150000000000001,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_1~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.795,
+    "best_states": 16,
+    "reference_states": 10,
+    "best_tp": 159,
+    "best_tn": 159,
+    "best_fp": 41,
+    "best_fn": 41,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 6,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_1~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 159,
+        "TN": 159,
+        "FP": 41,
+        "FN": 41,
+        "BCR": 0.795,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 157,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_1~1.txt",
+        "train_pos": 53,
+        "train_neg": 56,
+        "TP": 126,
+        "TN": 152,
+        "FP": 48,
+        "FN": 74,
+        "BCR": 0.6950000000000001,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 157,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_1~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 1.0,
+    "best_states": 10,
+    "reference_states": 10,
+    "best_tp": 200,
+    "best_tn": 200,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 50,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.75,
+    "best_avg_state_conf": 0.75,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_1~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 130,
+        "TN": 143,
+        "FP": 57,
+        "FN": 70,
+        "BCR": 0.6825,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 167,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_1~2.txt",
+        "train_pos": 50,
+        "train_neg": 55,
+        "TP": 200,
+        "TN": 200,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.75,
+        "avg_state_conf": 0.75,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_1~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 2,
+    "best_bcr": 1.0,
+    "best_states": 10,
+    "reference_states": 10,
+    "best_tp": 200,
+    "best_tn": 200,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 55,
+    "best_train_neg": 56,
+    "best_min_state_conf": 0.75,
+    "best_avg_state_conf": 0.75,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_1~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 116,
+        "TN": 127,
+        "FP": 73,
+        "FN": 84,
+        "BCR": 0.6074999999999999,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 3,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_1~3.txt",
+        "train_pos": 53,
+        "train_neg": 54,
+        "TP": 132,
+        "TN": 159,
+        "FP": 41,
+        "FN": 68,
+        "BCR": 0.7275,
+        "states": 23,
+        "ref_states": 10,
+        "state_gap": 13,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 185,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 2
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_1~3.txt",
+        "train_pos": 55,
+        "train_neg": 56,
+        "TP": 200,
+        "TN": 200,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.75,
+        "avg_state_conf": 0.75,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_1~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.8975,
+    "best_states": 13,
+    "reference_states": 10,
+    "best_tp": 192,
+    "best_tn": 167,
+    "best_fp": 33,
+    "best_fn": 8,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 3,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_1~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 192,
+        "TN": 167,
+        "FP": 33,
+        "FN": 8,
+        "BCR": 0.8975,
+        "states": 13,
+        "ref_states": 10,
+        "state_gap": 3,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 6,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 207,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 6,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_1~4.txt",
+        "train_pos": 56,
+        "train_neg": 55,
+        "TP": 117,
+        "TN": 144,
+        "FP": 56,
+        "FN": 83,
+        "BCR": 0.6525,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 207,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_2~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.7250000000000001,
+    "best_states": 16,
+    "reference_states": 10,
+    "best_tp": 135,
+    "best_tn": 155,
+    "best_fp": 45,
+    "best_fn": 65,
+    "best_train_pos": 53,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 6,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_2~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 139,
+        "TN": 136,
+        "FP": 64,
+        "FN": 61,
+        "BCR": 0.6875,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 200,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_2~0.txt",
+        "train_pos": 53,
+        "train_neg": 55,
+        "TP": 135,
+        "TN": 155,
+        "FP": 45,
+        "FN": 65,
+        "BCR": 0.7250000000000001,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 200,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_2~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.75,
+    "best_states": 18,
+    "reference_states": 10,
+    "best_tp": 140,
+    "best_tn": 160,
+    "best_fp": 40,
+    "best_fn": 60,
+    "best_train_pos": 51,
+    "best_train_neg": 54,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 8,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_2~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 103,
+        "TN": 149,
+        "FP": 51,
+        "FN": 97,
+        "BCR": 0.63,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 214,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_2~1.txt",
+        "train_pos": 51,
+        "train_neg": 54,
+        "TP": 140,
+        "TN": 160,
+        "FP": 40,
+        "FN": 60,
+        "BCR": 0.75,
+        "states": 18,
+        "ref_states": 10,
+        "state_gap": 8,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 214,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_2~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.8425,
+    "best_states": 17,
+    "reference_states": 10,
+    "best_tp": 174,
+    "best_tn": 163,
+    "best_fp": 37,
+    "best_fn": 26,
+    "best_train_pos": 51,
+    "best_train_neg": 52,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 7,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_2~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 127,
+        "TN": 102,
+        "FP": 98,
+        "FN": 73,
+        "BCR": 0.5725,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 77,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 2
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_2~2.txt",
+        "train_pos": 51,
+        "train_neg": 52,
+        "TP": 174,
+        "TN": 163,
+        "FP": 37,
+        "FN": 26,
+        "BCR": 0.8425,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 1,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 151,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 1
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_2~2.txt",
+        "train_pos": 52,
+        "train_neg": 53,
+        "TP": 174,
+        "TN": 163,
+        "FP": 37,
+        "FN": 26,
+        "BCR": 0.8425,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_2~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.6425000000000001,
+    "best_states": 21,
+    "reference_states": 10,
+    "best_tp": 123,
+    "best_tn": 134,
+    "best_fp": 66,
+    "best_fn": 77,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 11,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_2~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 123,
+        "TN": 134,
+        "FP": 66,
+        "FN": 77,
+        "BCR": 0.6425000000000001,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 115,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 2
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_2~3.txt",
+        "train_pos": 51,
+        "train_neg": 52,
+        "TP": 123,
+        "TN": 134,
+        "FP": 66,
+        "FN": 77,
+        "BCR": 0.6425000000000001,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 115,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_2~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.6125,
+    "best_states": 21,
+    "reference_states": 10,
+    "best_tp": 105,
+    "best_tn": 140,
+    "best_fp": 60,
+    "best_fn": 95,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 11,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_2~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 105,
+        "TN": 140,
+        "FP": 60,
+        "FN": 95,
+        "BCR": 0.6125,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 1,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 121,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 1
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_2~4.txt",
+        "train_pos": 52,
+        "train_neg": 51,
+        "TP": 105,
+        "TN": 140,
+        "FP": 60,
+        "FN": 95,
+        "BCR": 0.6125,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 121,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_3~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.735,
+    "best_states": 19,
+    "reference_states": 10,
+    "best_tp": 142,
+    "best_tn": 152,
+    "best_fp": 48,
+    "best_fn": 58,
+    "best_train_pos": 53,
+    "best_train_neg": 53,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 9,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_3~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 122,
+        "TN": 130,
+        "FP": 70,
+        "FN": 78,
+        "BCR": 0.63,
+        "states": 22,
+        "ref_states": 10,
+        "state_gap": 12,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 122,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_3~0.txt",
+        "train_pos": 53,
+        "train_neg": 53,
+        "TP": 142,
+        "TN": 152,
+        "FP": 48,
+        "FN": 58,
+        "BCR": 0.735,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 122,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_3~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.9724999999999999,
+    "best_states": 9,
+    "reference_states": 10,
+    "best_tp": 200,
+    "best_tn": 189,
+    "best_fp": 11,
+    "best_fn": 0,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 1,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_3~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 200,
+        "TN": 189,
+        "FP": 11,
+        "FN": 0,
+        "BCR": 0.9724999999999999,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 4,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 113,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 4,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_3~1.txt",
+        "train_pos": 54,
+        "train_neg": 53,
+        "TP": 200,
+        "TN": 189,
+        "FP": 11,
+        "FN": 0,
+        "BCR": 0.9724999999999999,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 113,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_3~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.9450000000000001,
+    "best_states": 10,
+    "reference_states": 10,
+    "best_tp": 198,
+    "best_tn": 180,
+    "best_fp": 20,
+    "best_fn": 2,
+    "best_train_pos": 53,
+    "best_train_neg": 56,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_3~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 99,
+        "TN": 133,
+        "FP": 67,
+        "FN": 101,
+        "BCR": 0.5800000000000001,
+        "states": 25,
+        "ref_states": 10,
+        "state_gap": 15,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 59,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_3~2.txt",
+        "train_pos": 53,
+        "train_neg": 56,
+        "TP": 198,
+        "TN": 180,
+        "FP": 20,
+        "FN": 2,
+        "BCR": 0.9450000000000001,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 59,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_3~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.9875,
+    "best_states": 9,
+    "reference_states": 10,
+    "best_tp": 200,
+    "best_tn": 195,
+    "best_fp": 5,
+    "best_fn": 0,
+    "best_train_pos": 52,
+    "best_train_neg": 54,
+    "best_min_state_conf": 0.75,
+    "best_avg_state_conf": 0.75,
+    "best_state_gap": 1,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_3~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 151,
+        "TN": 134,
+        "FP": 66,
+        "FN": 49,
+        "BCR": 0.7125,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 125,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_3~3.txt",
+        "train_pos": 52,
+        "train_neg": 54,
+        "TP": 200,
+        "TN": 195,
+        "FP": 5,
+        "FN": 0,
+        "BCR": 0.9875,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.75,
+        "avg_state_conf": 0.75,
+        "added_pos": 1,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          },
+          {
+            "state": 124,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 3
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_3~3.txt",
+        "train_pos": 53,
+        "train_neg": 57,
+        "TP": 200,
+        "TN": 195,
+        "FP": 5,
+        "FN": 0,
+        "BCR": 0.9875,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.75,
+        "avg_state_conf": 0.75,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_3~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 2,
+    "best_bcr": 0.8775,
+    "best_states": 11,
+    "reference_states": 10,
+    "best_tp": 174,
+    "best_tn": 177,
+    "best_fp": 23,
+    "best_fn": 26,
+    "best_train_pos": 52,
+    "best_train_neg": 56,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 1,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_3~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 128,
+        "TN": 139,
+        "FP": 61,
+        "FN": 72,
+        "BCR": 0.6675,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 224,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_3~4.txt",
+        "train_pos": 52,
+        "train_neg": 54,
+        "TP": 132,
+        "TN": 154,
+        "FP": 46,
+        "FN": 68,
+        "BCR": 0.7150000000000001,
+        "states": 18,
+        "ref_states": 10,
+        "state_gap": 8,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 79,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 2
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_3~4.txt",
+        "train_pos": 52,
+        "train_neg": 56,
+        "TP": 174,
+        "TN": 177,
+        "FP": 23,
+        "FN": 26,
+        "BCR": 0.8775,
+        "states": 11,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_4~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 1.0,
+    "best_states": 10,
+    "reference_states": 10,
+    "best_tp": 200,
+    "best_tn": 200,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 54,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.75,
+    "best_avg_state_conf": 0.75,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_4~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 104,
+        "TN": 141,
+        "FP": 59,
+        "FN": 96,
+        "BCR": 0.6125,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 4,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 111,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 4,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_4~0.txt",
+        "train_pos": 54,
+        "train_neg": 55,
+        "TP": 200,
+        "TN": 200,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.75,
+        "avg_state_conf": 0.75,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_4~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.5975,
+    "best_states": 24,
+    "reference_states": 10,
+    "best_tp": 93,
+    "best_tn": 146,
+    "best_fp": 54,
+    "best_fn": 107,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 14,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_4~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 93,
+        "TN": 146,
+        "FP": 54,
+        "FN": 107,
+        "BCR": 0.5975,
+        "states": 24,
+        "ref_states": 10,
+        "state_gap": 14,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 176,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_4~1.txt",
+        "train_pos": 52,
+        "train_neg": 53,
+        "TP": 83,
+        "TN": 149,
+        "FP": 51,
+        "FN": 117,
+        "BCR": 0.58,
+        "states": 24,
+        "ref_states": 10,
+        "state_gap": 14,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 141,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_4~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.62,
+    "best_states": 23,
+    "reference_states": 10,
+    "best_tp": 88,
+    "best_tn": 160,
+    "best_fp": 40,
+    "best_fn": 112,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 13,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_4~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 88,
+        "TN": 160,
+        "FP": 40,
+        "FN": 112,
+        "BCR": 0.62,
+        "states": 23,
+        "ref_states": 10,
+        "state_gap": 13,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 203,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_4~2.txt",
+        "train_pos": 52,
+        "train_neg": 53,
+        "TP": 80,
+        "TN": 157,
+        "FP": 43,
+        "FN": 120,
+        "BCR": 0.5925,
+        "states": 22,
+        "ref_states": 10,
+        "state_gap": 12,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_4~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.6174999999999999,
+    "best_states": 17,
+    "reference_states": 10,
+    "best_tp": 78,
+    "best_tn": 169,
+    "best_fp": 31,
+    "best_fn": 122,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 7,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_4~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 78,
+        "TN": 169,
+        "FP": 31,
+        "FN": 122,
+        "BCR": 0.6174999999999999,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 204,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_4~3.txt",
+        "train_pos": 53,
+        "train_neg": 54,
+        "TP": 78,
+        "TN": 169,
+        "FP": 31,
+        "FN": 122,
+        "BCR": 0.6174999999999999,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 204,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_4~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 1.0,
+    "best_states": 10,
+    "reference_states": 10,
+    "best_tp": 200,
+    "best_tn": 200,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 50,
+    "best_train_neg": 56,
+    "best_min_state_conf": 0.9921875,
+    "best_avg_state_conf": 0.9921875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_4~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 76,
+        "TN": 139,
+        "FP": 61,
+        "FN": 124,
+        "BCR": 0.5375,
+        "states": 24,
+        "ref_states": 10,
+        "state_gap": 14,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 176,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_4~4.txt",
+        "train_pos": 50,
+        "train_neg": 56,
+        "TP": 200,
+        "TN": 200,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.9921875,
+        "avg_state_conf": 0.9921875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_5~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.6725000000000001,
+    "best_states": 18,
+    "reference_states": 10,
+    "best_tp": 112,
+    "best_tn": 157,
+    "best_fp": 43,
+    "best_fn": 88,
+    "best_train_pos": 52,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 8,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_5~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 112,
+        "TN": 125,
+        "FP": 75,
+        "FN": 88,
+        "BCR": 0.5925,
+        "states": 30,
+        "ref_states": 10,
+        "state_gap": 20,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 198,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_5~0.txt",
+        "train_pos": 52,
+        "train_neg": 55,
+        "TP": 112,
+        "TN": 157,
+        "FP": 43,
+        "FN": 88,
+        "BCR": 0.6725000000000001,
+        "states": 18,
+        "ref_states": 10,
+        "state_gap": 8,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 129,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_5~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.6975,
+    "best_states": 22,
+    "reference_states": 10,
+    "best_tp": 126,
+    "best_tn": 153,
+    "best_fp": 47,
+    "best_fn": 74,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 12,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_5~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 126,
+        "TN": 153,
+        "FP": 47,
+        "FN": 74,
+        "BCR": 0.6975,
+        "states": 22,
+        "ref_states": 10,
+        "state_gap": 12,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 79,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 2
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_5~1.txt",
+        "train_pos": 50,
+        "train_neg": 52,
+        "TP": 128,
+        "TN": 140,
+        "FP": 60,
+        "FN": 72,
+        "BCR": 0.6699999999999999,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 79,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_5~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.9025000000000001,
+    "best_states": 12,
+    "reference_states": 10,
+    "best_tp": 182,
+    "best_tn": 179,
+    "best_fp": 21,
+    "best_fn": 18,
+    "best_train_pos": 53,
+    "best_train_neg": 53,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 2,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_5~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 103,
+        "TN": 136,
+        "FP": 64,
+        "FN": 97,
+        "BCR": 0.5975,
+        "states": 22,
+        "ref_states": 10,
+        "state_gap": 12,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 3,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_5~2.txt",
+        "train_pos": 53,
+        "train_neg": 53,
+        "TP": 182,
+        "TN": 179,
+        "FP": 21,
+        "FN": 18,
+        "BCR": 0.9025000000000001,
+        "states": 12,
+        "ref_states": 10,
+        "state_gap": 2,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 3,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_5~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.925,
+    "best_states": 15,
+    "reference_states": 10,
+    "best_tp": 184,
+    "best_tn": 186,
+    "best_fp": 14,
+    "best_fn": 16,
+    "best_train_pos": 52,
+    "best_train_neg": 58,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 5,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_5~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 112,
+        "TN": 133,
+        "FP": 67,
+        "FN": 88,
+        "BCR": 0.6125,
+        "states": 25,
+        "ref_states": 10,
+        "state_gap": 15,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 8,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 162,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 8
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_5~3.txt",
+        "train_pos": 52,
+        "train_neg": 58,
+        "TP": 184,
+        "TN": 186,
+        "FP": 14,
+        "FN": 16,
+        "BCR": 0.925,
+        "states": 15,
+        "ref_states": 10,
+        "state_gap": 5,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 3,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_5~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.6325,
+    "best_states": 23,
+    "reference_states": 10,
+    "best_tp": 86,
+    "best_tn": 167,
+    "best_fp": 33,
+    "best_fn": 114,
+    "best_train_pos": 51,
+    "best_train_neg": 52,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 13,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_5~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 103,
+        "TN": 134,
+        "FP": 66,
+        "FN": 97,
+        "BCR": 0.5925,
+        "states": 25,
+        "ref_states": 10,
+        "state_gap": 15,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 114,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 2
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_5~4.txt",
+        "train_pos": 51,
+        "train_neg": 52,
+        "TP": 86,
+        "TN": 167,
+        "FP": 33,
+        "FN": 114,
+        "BCR": 0.6325,
+        "states": 23,
+        "ref_states": 10,
+        "state_gap": 13,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 114,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_6~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.6025,
+    "best_states": 24,
+    "reference_states": 10,
+    "best_tp": 118,
+    "best_tn": 123,
+    "best_fp": 77,
+    "best_fn": 82,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 14,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_6~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 118,
+        "TN": 123,
+        "FP": 77,
+        "FN": 82,
+        "BCR": 0.6025,
+        "states": 24,
+        "ref_states": 10,
+        "state_gap": 14,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 101,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 165,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_6~0.txt",
+        "train_pos": 53,
+        "train_neg": 54,
+        "TP": 116,
+        "TN": 120,
+        "FP": 80,
+        "FN": 84,
+        "BCR": 0.59,
+        "states": 24,
+        "ref_states": 10,
+        "state_gap": 14,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 101,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 165,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_6~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.5974999999999999,
+    "best_states": 21,
+    "reference_states": 10,
+    "best_tp": 97,
+    "best_tn": 142,
+    "best_fp": 58,
+    "best_fn": 103,
+    "best_train_pos": 53,
+    "best_train_neg": 56,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 11,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_6~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 92,
+        "TN": 137,
+        "FP": 63,
+        "FN": 108,
+        "BCR": 0.5725,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 165,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_6~1.txt",
+        "train_pos": 53,
+        "train_neg": 56,
+        "TP": 97,
+        "TN": 142,
+        "FP": 58,
+        "FN": 103,
+        "BCR": 0.5974999999999999,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 165,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_6~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 2,
+    "best_bcr": 0.6475,
+    "best_states": 19,
+    "reference_states": 10,
+    "best_tp": 97,
+    "best_tn": 162,
+    "best_fp": 38,
+    "best_fn": 103,
+    "best_train_pos": 53,
+    "best_train_neg": 57,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 9,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_6~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 136,
+        "TN": 98,
+        "FP": 102,
+        "FN": 64,
+        "BCR": 0.585,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 261,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_6~2.txt",
+        "train_pos": 52,
+        "train_neg": 54,
+        "TP": 89,
+        "TN": 141,
+        "FP": 59,
+        "FN": 111,
+        "BCR": 0.575,
+        "states": 23,
+        "ref_states": 10,
+        "state_gap": 13,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 99,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 3
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_6~2.txt",
+        "train_pos": 53,
+        "train_neg": 57,
+        "TP": 97,
+        "TN": 162,
+        "FP": 38,
+        "FN": 103,
+        "BCR": 0.6475,
+        "states": 19,
+        "ref_states": 10,
+        "state_gap": 9,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_6~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 2,
+    "best_bcr": 0.7175,
+    "best_states": 15,
+    "reference_states": 10,
+    "best_tp": 135,
+    "best_tn": 152,
+    "best_fp": 48,
+    "best_fn": 65,
+    "best_train_pos": 55,
+    "best_train_neg": 57,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 5,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_6~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 145,
+        "TN": 103,
+        "FP": 97,
+        "FN": 55,
+        "BCR": 0.62,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 129,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_6~3.txt",
+        "train_pos": 53,
+        "train_neg": 54,
+        "TP": 89,
+        "TN": 140,
+        "FP": 60,
+        "FN": 111,
+        "BCR": 0.5725,
+        "states": 27,
+        "ref_states": 10,
+        "state_gap": 17,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 88,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 3
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_6~3.txt",
+        "train_pos": 55,
+        "train_neg": 57,
+        "TP": 135,
+        "TN": 152,
+        "FP": 48,
+        "FN": 65,
+        "BCR": 0.7175,
+        "states": 15,
+        "ref_states": 10,
+        "state_gap": 5,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_6~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.6575,
+    "best_states": 20,
+    "reference_states": 10,
+    "best_tp": 128,
+    "best_tn": 135,
+    "best_fp": 65,
+    "best_fn": 72,
+    "best_train_pos": 54,
+    "best_train_neg": 57,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 10,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_6~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 98,
+        "TN": 135,
+        "FP": 65,
+        "FN": 102,
+        "BCR": 0.5825,
+        "states": 25,
+        "ref_states": 10,
+        "state_gap": 15,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 4,
+        "added_neg": 7,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 142,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 4,
+        "target_added_neg": 7
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_6~4.txt",
+        "train_pos": 54,
+        "train_neg": 57,
+        "TP": 128,
+        "TN": 135,
+        "FP": 65,
+        "FN": 72,
+        "BCR": 0.6575,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 142,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_7~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.9624999999999999,
+    "best_states": 14,
+    "reference_states": 10,
+    "best_tp": 190,
+    "best_tn": 195,
+    "best_fp": 5,
+    "best_fn": 10,
+    "best_train_pos": 54,
+    "best_train_neg": 54,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 4,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_7~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 110,
+        "TN": 134,
+        "FP": 66,
+        "FN": 90,
+        "BCR": 0.6100000000000001,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 4,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 175,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 4,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_7~0.txt",
+        "train_pos": 54,
+        "train_neg": 54,
+        "TP": 190,
+        "TN": 195,
+        "FP": 5,
+        "FN": 10,
+        "BCR": 0.9624999999999999,
+        "states": 14,
+        "ref_states": 10,
+        "state_gap": 4,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 175,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_7~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.5674999999999999,
+    "best_states": 23,
+    "reference_states": 10,
+    "best_tp": 113,
+    "best_tn": 114,
+    "best_fp": 86,
+    "best_fn": 87,
+    "best_train_pos": 50,
+    "best_train_neg": 51,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 13,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_7~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 102,
+        "TN": 124,
+        "FP": 76,
+        "FN": 98,
+        "BCR": 0.565,
+        "states": 25,
+        "ref_states": 10,
+        "state_gap": 15,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 1,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 37,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 120,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 1
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_7~1.txt",
+        "train_pos": 50,
+        "train_neg": 51,
+        "TP": 113,
+        "TN": 114,
+        "FP": 86,
+        "FN": 87,
+        "BCR": 0.5674999999999999,
+        "states": 23,
+        "ref_states": 10,
+        "state_gap": 13,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 37,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 120,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_7~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.825,
+    "best_states": 17,
+    "reference_states": 10,
+    "best_tp": 155,
+    "best_tn": 175,
+    "best_fp": 25,
+    "best_fn": 45,
+    "best_train_pos": 55,
+    "best_train_neg": 53,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 7,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_7~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 93,
+        "TN": 147,
+        "FP": 53,
+        "FN": 107,
+        "BCR": 0.6,
+        "states": 23,
+        "ref_states": 10,
+        "state_gap": 13,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 5,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 189,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 5,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_7~2.txt",
+        "train_pos": 55,
+        "train_neg": 53,
+        "TP": 155,
+        "TN": 175,
+        "FP": 25,
+        "FN": 45,
+        "BCR": 0.825,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 70,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_7~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.99,
+    "best_states": 10,
+    "reference_states": 10,
+    "best_tp": 200,
+    "best_tn": 196,
+    "best_fp": 4,
+    "best_fn": 0,
+    "best_train_pos": 54,
+    "best_train_neg": 53,
+    "best_min_state_conf": 0.9999999701976776,
+    "best_avg_state_conf": 0.9999999701976776,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_7~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 120,
+        "TN": 136,
+        "FP": 64,
+        "FN": 80,
+        "BCR": 0.64,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 4,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 32,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 4,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_7~3.txt",
+        "train_pos": 54,
+        "train_neg": 53,
+        "TP": 200,
+        "TN": 196,
+        "FP": 4,
+        "FN": 0,
+        "BCR": 0.99,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.9999999701976776,
+        "avg_state_conf": 0.9999999701976776,
+        "added_pos": 1,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.9999999701976776,
+            "uncertainty": 2.9802322387695312e-08
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.9999999701976776,
+            "uncertainty": 2.9802322387695312e-08
+          },
+          {
+            "state": 222,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.9999999701976776,
+            "uncertainty": 2.9802322387695312e-08
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 2
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_7~3.txt",
+        "train_pos": 55,
+        "train_neg": 55,
+        "TP": 200,
+        "TN": 196,
+        "FP": 4,
+        "FN": 0,
+        "BCR": 0.99,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.9999999701976776,
+        "avg_state_conf": 0.9999999701976776,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_7~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.7475,
+    "best_states": 17,
+    "reference_states": 10,
+    "best_tp": 152,
+    "best_tn": 147,
+    "best_fp": 53,
+    "best_fn": 48,
+    "best_train_pos": 52,
+    "best_train_neg": 54,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 7,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_7~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 153,
+        "TN": 137,
+        "FP": 63,
+        "FN": 47,
+        "BCR": 0.7250000000000001,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 98,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_7~4.txt",
+        "train_pos": 52,
+        "train_neg": 54,
+        "TP": 152,
+        "TN": 147,
+        "FP": 53,
+        "FN": 48,
+        "BCR": 0.7475,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 98,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_8~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.865,
+    "best_states": 15,
+    "reference_states": 10,
+    "best_tp": 175,
+    "best_tn": 171,
+    "best_fp": 29,
+    "best_fn": 25,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 5,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_8~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 175,
+        "TN": 171,
+        "FP": 29,
+        "FN": 25,
+        "BCR": 0.865,
+        "states": 15,
+        "ref_states": 10,
+        "state_gap": 5,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 191,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_8~0.txt",
+        "train_pos": 53,
+        "train_neg": 56,
+        "TP": 175,
+        "TN": 171,
+        "FP": 29,
+        "FN": 25,
+        "BCR": 0.865,
+        "states": 15,
+        "ref_states": 10,
+        "state_gap": 5,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 191,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_8~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.76,
+    "best_states": 17,
+    "reference_states": 10,
+    "best_tp": 144,
+    "best_tn": 160,
+    "best_fp": 40,
+    "best_fn": 56,
+    "best_train_pos": 53,
+    "best_train_neg": 56,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 7,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_8~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 105,
+        "TN": 147,
+        "FP": 53,
+        "FN": 95,
+        "BCR": 0.63,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 133,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_8~1.txt",
+        "train_pos": 53,
+        "train_neg": 56,
+        "TP": 144,
+        "TN": 160,
+        "FP": 40,
+        "FN": 56,
+        "BCR": 0.76,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 62,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_8~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.7975,
+    "best_states": 18,
+    "reference_states": 10,
+    "best_tp": 166,
+    "best_tn": 153,
+    "best_fp": 47,
+    "best_fn": 34,
+    "best_train_pos": 53,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 8,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_8~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 128,
+        "TN": 133,
+        "FP": 67,
+        "FN": 72,
+        "BCR": 0.6525000000000001,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 103,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_8~2.txt",
+        "train_pos": 53,
+        "train_neg": 55,
+        "TP": 166,
+        "TN": 153,
+        "FP": 47,
+        "FN": 34,
+        "BCR": 0.7975,
+        "states": 18,
+        "ref_states": 10,
+        "state_gap": 8,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 70,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_8~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.875,
+    "best_states": 16,
+    "reference_states": 10,
+    "best_tp": 170,
+    "best_tn": 180,
+    "best_fp": 20,
+    "best_fn": 30,
+    "best_train_pos": 53,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 6,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_8~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 126,
+        "TN": 158,
+        "FP": 42,
+        "FN": 74,
+        "BCR": 0.71,
+        "states": 20,
+        "ref_states": 10,
+        "state_gap": 10,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 3,
+        "added_neg": 5,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 242,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 5
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_8~3.txt",
+        "train_pos": 53,
+        "train_neg": 55,
+        "TP": 170,
+        "TN": 180,
+        "FP": 20,
+        "FN": 30,
+        "BCR": 0.875,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 2,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_8~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.925,
+    "best_states": 12,
+    "reference_states": 10,
+    "best_tp": 178,
+    "best_tn": 192,
+    "best_fp": 8,
+    "best_fn": 22,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 2,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_8~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 178,
+        "TN": 192,
+        "FP": 8,
+        "FN": 22,
+        "BCR": 0.925,
+        "states": 12,
+        "ref_states": 10,
+        "state_gap": 2,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 158,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 3
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_8~4.txt",
+        "train_pos": 51,
+        "train_neg": 53,
+        "TP": 178,
+        "TN": 192,
+        "FP": 8,
+        "FN": 22,
+        "BCR": 0.925,
+        "states": 12,
+        "ref_states": 10,
+        "state_gap": 2,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 158,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_9~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.975,
+    "best_states": 9,
+    "reference_states": 10,
+    "best_tp": 192,
+    "best_tn": 198,
+    "best_fp": 2,
+    "best_fn": 8,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 1,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_9~0.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 192,
+        "TN": 198,
+        "FP": 2,
+        "FN": 8,
+        "BCR": 0.975,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 3,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 160,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_9~0.txt",
+        "train_pos": 53,
+        "train_neg": 56,
+        "TP": 192,
+        "TN": 198,
+        "FP": 2,
+        "FN": 8,
+        "BCR": 0.975,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          },
+          {
+            "state": 160,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.5,
+            "uncertainty": 0.5
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_9~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.97,
+    "best_states": 10,
+    "reference_states": 10,
+    "best_tp": 188,
+    "best_tn": 200,
+    "best_fp": 0,
+    "best_fn": 12,
+    "best_train_pos": 50,
+    "best_train_neg": 50,
+    "best_min_state_conf": 0.75,
+    "best_avg_state_conf": 0.75,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_9~1.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 188,
+        "TN": 200,
+        "FP": 0,
+        "FN": 12,
+        "BCR": 0.97,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.75,
+        "avg_state_conf": 0.75,
+        "added_pos": 3,
+        "added_neg": 6,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          },
+          {
+            "state": 166,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 3,
+        "target_added_neg": 6
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_9~1.txt",
+        "train_pos": 53,
+        "train_neg": 56,
+        "TP": 188,
+        "TN": 200,
+        "FP": 0,
+        "FN": 12,
+        "BCR": 0.97,
+        "states": 10,
+        "ref_states": 10,
+        "state_gap": 0,
+        "min_state_conf": 0.75,
+        "avg_state_conf": 0.75,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          },
+          {
+            "state": 166,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.75,
+            "uncertainty": 0.25
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_9~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.8025,
+    "best_states": 15,
+    "reference_states": 10,
+    "best_tp": 169,
+    "best_tn": 152,
+    "best_fp": 48,
+    "best_fn": 31,
+    "best_train_pos": 51,
+    "best_train_neg": 54,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 5,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_9~2.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 147,
+        "TN": 109,
+        "FP": 91,
+        "FN": 53,
+        "BCR": 0.64,
+        "states": 21,
+        "ref_states": 10,
+        "state_gap": 11,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 36,
+            "prefix": [
+              "L3"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 166,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_9~2.txt",
+        "train_pos": 51,
+        "train_neg": 54,
+        "TP": 169,
+        "TN": 152,
+        "FP": 48,
+        "FN": 31,
+        "BCR": 0.8025,
+        "states": 15,
+        "ref_states": 10,
+        "state_gap": 5,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 2,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 166,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 2,
+        "target_added_neg": 4
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_9~2.txt",
+        "train_pos": 53,
+        "train_neg": 58,
+        "TP": 169,
+        "TN": 152,
+        "FP": 48,
+        "FN": 31,
+        "BCR": 0.8025,
+        "states": 15,
+        "ref_states": 10,
+        "state_gap": 5,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_9~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 1,
+    "best_bcr": 0.9824999999999999,
+    "best_states": 9,
+    "reference_states": 10,
+    "best_tp": 194,
+    "best_tn": 199,
+    "best_fp": 1,
+    "best_fn": 6,
+    "best_train_pos": 51,
+    "best_train_neg": 54,
+    "best_min_state_conf": 0.0,
+    "best_avg_state_conf": 0.0,
+    "best_state_gap": 1,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_9~3.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 163,
+        "TN": 159,
+        "FP": 41,
+        "FN": 37,
+        "BCR": 0.8049999999999999,
+        "states": 16,
+        "ref_states": 10,
+        "state_gap": 6,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 4,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 3,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 4
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_9~3.txt",
+        "train_pos": 51,
+        "train_neg": 54,
+        "TP": 194,
+        "TN": 199,
+        "FP": 1,
+        "FN": 6,
+        "BCR": 0.9824999999999999,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 174,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 2
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_9~3.txt",
+        "train_pos": 52,
+        "train_neg": 56,
+        "TP": 194,
+        "TN": 199,
+        "FP": 1,
+        "FN": 6,
+        "BCR": 0.9824999999999999,
+        "states": 9,
+        "ref_states": 10,
+        "state_gap": 1,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_10_2_5_9~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 2,
+    "best_bcr": 0.9775,
+    "best_states": 8,
+    "reference_states": 10,
+    "best_tp": 193,
+    "best_tn": 198,
+    "best_fp": 2,
+    "best_fn": 7,
+    "best_train_pos": 51,
+    "best_train_neg": 55,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 2,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_10_2_5_9~4.txt",
+        "train_pos": 50,
+        "train_neg": 50,
+        "TP": 159,
+        "TN": 126,
+        "FP": 74,
+        "FN": 41,
+        "BCR": 0.7125,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 1,
+        "added_neg": 2,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 97,
+            "prefix": [
+              "L4"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 203,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 2
+      },
+      {
+        "round": 1,
+        "file": "automaton_10_2_5_9~4.txt",
+        "train_pos": 51,
+        "train_neg": 52,
+        "TP": 148,
+        "TN": 156,
+        "FP": 44,
+        "FN": 52,
+        "BCR": 0.76,
+        "states": 17,
+        "ref_states": 10,
+        "state_gap": 7,
+        "min_state_conf": 0.0,
+        "avg_state_conf": 0.0,
+        "added_pos": 0,
+        "added_neg": 3,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          },
+          {
+            "state": 3,
+            "prefix": [
+              "L2"
+            ],
+            "confidence": 0.0,
+            "uncertainty": 1.0
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 3
+      },
+      {
+        "round": 2,
+        "file": "automaton_10_2_5_9~4.txt",
+        "train_pos": 51,
+        "train_neg": 55,
+        "TP": 193,
+        "TN": 198,
+        "FP": 2,
+        "FN": 7,
+        "BCR": 0.9775,
+        "states": 8,
+        "ref_states": 10,
+        "state_gap": 2,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_0~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.999755859375,
+    "best_avg_state_conf": 0.999755859375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_0~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.999755859375,
+        "avg_state_conf": 0.999755859375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_0~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99951171875,
+    "best_avg_state_conf": 0.99951171875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_0~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99951171875,
+        "avg_state_conf": 0.99951171875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_0~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99609375,
+    "best_avg_state_conf": 0.99609375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_0~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99609375,
+        "avg_state_conf": 0.99609375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_0~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9998779296875,
+    "best_avg_state_conf": 0.9998779296875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_0~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9998779296875,
+        "avg_state_conf": 0.9998779296875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_0~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.984375,
+    "best_avg_state_conf": 0.984375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_0~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.984375,
+        "avg_state_conf": 0.984375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_1~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99609375,
+    "best_avg_state_conf": 0.99609375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_1~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99609375,
+        "avg_state_conf": 0.99609375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_1~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9921875,
+    "best_avg_state_conf": 0.9921875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_1~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9921875,
+        "avg_state_conf": 0.9921875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_1~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.984375,
+    "best_avg_state_conf": 0.984375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_1~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.984375,
+        "avg_state_conf": 0.984375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_1~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99609375,
+    "best_avg_state_conf": 0.99609375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_1~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99609375,
+        "avg_state_conf": 0.99609375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_1~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.835,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 74,
+    "best_tn": 93,
+    "best_fp": 7,
+    "best_fn": 26,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9375,
+    "best_avg_state_conf": 0.9375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_1~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 74,
+        "TN": 93,
+        "FP": 7,
+        "FN": 26,
+        "BCR": 0.835,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9375,
+        "avg_state_conf": 0.9375,
+        "added_pos": 1,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 29,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 0
+      },
+      {
+        "round": 1,
+        "file": "automaton_5_2_2_1~4.txt",
+        "train_pos": 26,
+        "train_neg": 25,
+        "TP": 74,
+        "TN": 93,
+        "FP": 7,
+        "FN": 26,
+        "BCR": 0.835,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9375,
+        "avg_state_conf": 0.9375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 29,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_2~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.999755859375,
+    "best_avg_state_conf": 0.999755859375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_2~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.999755859375,
+        "avg_state_conf": 0.999755859375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_2~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.998046875,
+    "best_avg_state_conf": 0.998046875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_2~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.998046875,
+        "avg_state_conf": 0.998046875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_2~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99951171875,
+    "best_avg_state_conf": 0.99951171875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_2~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99951171875,
+        "avg_state_conf": 0.99951171875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_2~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.999969482421875,
+    "best_avg_state_conf": 0.999969482421875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_2~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.999969482421875,
+        "avg_state_conf": 0.999969482421875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_2~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.998046875,
+    "best_avg_state_conf": 0.998046875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_2~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.998046875,
+        "avg_state_conf": 0.998046875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_3~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999923706054688,
+    "best_avg_state_conf": 0.9999923706054688,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_3~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999923706054688,
+        "avg_state_conf": 0.9999923706054688,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_3~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.999969482421875,
+    "best_avg_state_conf": 0.999969482421875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_3~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.999969482421875,
+        "avg_state_conf": 0.999969482421875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_3~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999995231628418,
+    "best_avg_state_conf": 0.9999995231628418,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_3~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999995231628418,
+        "avg_state_conf": 0.9999995231628418,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_3~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.998046875,
+    "best_avg_state_conf": 0.998046875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_3~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.998046875,
+        "avg_state_conf": 0.998046875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_3~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.999755859375,
+    "best_avg_state_conf": 0.999755859375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_3~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.999755859375,
+        "avg_state_conf": 0.999755859375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_4~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999980926513672,
+    "best_avg_state_conf": 0.9999980926513672,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_4~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999980926513672,
+        "avg_state_conf": 0.9999980926513672,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_4~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999999403953552,
+    "best_avg_state_conf": 0.9999999403953552,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_4~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999999403953552,
+        "avg_state_conf": 0.9999999403953552,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_4~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999995231628418,
+    "best_avg_state_conf": 0.9999995231628418,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_4~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999995231628418,
+        "avg_state_conf": 0.9999995231628418,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_4~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999999925494194,
+    "best_avg_state_conf": 0.9999999925494194,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_4~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999999925494194,
+        "avg_state_conf": 0.9999999925494194,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_4~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999995231628418,
+    "best_avg_state_conf": 0.9999995231628418,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_4~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999995231628418,
+        "avg_state_conf": 0.9999995231628418,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_5~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999997615814209,
+    "best_avg_state_conf": 0.9999997615814209,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_5~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999997615814209,
+        "avg_state_conf": 0.9999997615814209,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_5~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999847412109375,
+    "best_avg_state_conf": 0.9999847412109375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_5~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999847412109375,
+        "avg_state_conf": 0.9999847412109375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_5~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.999969482421875,
+    "best_avg_state_conf": 0.999969482421875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_5~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.999969482421875,
+        "avg_state_conf": 0.999969482421875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_5~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.999969482421875,
+    "best_avg_state_conf": 0.999969482421875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_5~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.999969482421875,
+        "avg_state_conf": 0.999969482421875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_5~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9999990463256836,
+    "best_avg_state_conf": 0.9999990463256836,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_5~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9999990463256836,
+        "avg_state_conf": 0.9999990463256836,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_6~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9990234375,
+    "best_avg_state_conf": 0.9990234375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_6~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9990234375,
+        "avg_state_conf": 0.9990234375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_6~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.984375,
+    "best_avg_state_conf": 0.984375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_6~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.984375,
+        "avg_state_conf": 0.984375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_6~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99609375,
+    "best_avg_state_conf": 0.99609375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_6~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99609375,
+        "avg_state_conf": 0.99609375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_6~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9921875,
+    "best_avg_state_conf": 0.9921875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_6~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9921875,
+        "avg_state_conf": 0.9921875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_6~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.984375,
+    "best_avg_state_conf": 0.984375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_6~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.984375,
+        "avg_state_conf": 0.984375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_7~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_7~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_7~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_7~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_7~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_7~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_7~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_7~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_7~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.5,
+    "best_avg_state_conf": 0.5,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_7~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.5,
+        "avg_state_conf": 0.5,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_8~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.984375,
+    "best_avg_state_conf": 0.984375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_8~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.984375,
+        "avg_state_conf": 0.984375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_8~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.96875,
+    "best_avg_state_conf": 0.96875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_8~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.96875,
+        "avg_state_conf": 0.96875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_8~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9375,
+    "best_avg_state_conf": 0.9375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_8~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9375,
+        "avg_state_conf": 0.9375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_8~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9921875,
+    "best_avg_state_conf": 0.9921875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_8~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9921875,
+        "avg_state_conf": 0.9921875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_8~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.984375,
+    "best_avg_state_conf": 0.984375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_8~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.984375,
+        "avg_state_conf": 0.984375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_9~0.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99609375,
+    "best_avg_state_conf": 0.99609375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_9~0.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99609375,
+        "avg_state_conf": 0.99609375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_9~1.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9921875,
+    "best_avg_state_conf": 0.9921875,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_9~1.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9921875,
+        "avg_state_conf": 0.9921875,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_9~2.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.984375,
+    "best_avg_state_conf": 0.984375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_9~2.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.984375,
+        "avg_state_conf": 0.984375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_9~3.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 1.0,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 100,
+    "best_tn": 100,
+    "best_fp": 0,
+    "best_fn": 0,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.99609375,
+    "best_avg_state_conf": 0.99609375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_9~3.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 100,
+        "TN": 100,
+        "FP": 0,
+        "FN": 0,
+        "BCR": 1.0,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.99609375,
+        "avg_state_conf": 0.99609375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  },
+  {
+    "file": "automaton_5_2_2_9~4.txt",
+    "proposal_mode": "confidence",
+    "best_round": 0,
+    "best_bcr": 0.835,
+    "best_states": 5,
+    "reference_states": 5,
+    "best_tp": 74,
+    "best_tn": 93,
+    "best_fp": 7,
+    "best_fn": 26,
+    "best_train_pos": 25,
+    "best_train_neg": 25,
+    "best_min_state_conf": 0.9375,
+    "best_avg_state_conf": 0.9375,
+    "best_state_gap": 0,
+    "summary_rows": [
+      {
+        "round": 0,
+        "file": "automaton_5_2_2_9~4.txt",
+        "train_pos": 25,
+        "train_neg": 25,
+        "TP": 74,
+        "TN": 93,
+        "FP": 7,
+        "FN": 26,
+        "BCR": 0.835,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9375,
+        "avg_state_conf": 0.9375,
+        "added_pos": 1,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 29,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 1,
+        "target_added_neg": 0
+      },
+      {
+        "round": 1,
+        "file": "automaton_5_2_2_9~4.txt",
+        "train_pos": 26,
+        "train_neg": 25,
+        "TP": 74,
+        "TN": 93,
+        "FP": 7,
+        "FN": 26,
+        "BCR": 0.835,
+        "states": 5,
+        "ref_states": 5,
+        "state_gap": 0,
+        "min_state_conf": 0.9375,
+        "avg_state_conf": 0.9375,
+        "added_pos": 0,
+        "added_neg": 0,
+        "chosen_uncertain_prefixes": [
+          {
+            "state": 0,
+            "prefix": [],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 1,
+            "prefix": [
+              "L0"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          },
+          {
+            "state": 29,
+            "prefix": [
+              "L1"
+            ],
+            "confidence": 0.9375,
+            "uncertainty": 0.0625
+          }
+        ],
+        "proposal_mode": "confidence",
+        "target_added_pos": 0,
+        "target_added_neg": 0
+      }
+    ]
+  }
+]
