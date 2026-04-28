@@ -139,7 +139,7 @@ def node_signature(n, G, dist):
     return sig
 
 
-def fixed_compare_layout(G, start=0, x_gap=3.0, y_gap=1.8):
+def fixed_compare_layout(G, start=0, x_gap=1.7, y_gap=1.0):
     nodes = list(G.nodes())
     edges = [(u, v, d.get("label", "")) for u, v, d in G.edges(data=True)]
 
@@ -180,13 +180,18 @@ def parse_args():
     parser.add_argument("--save", action="store_true", help="save figure as png")
     return parser.parse_args()
 
+def output_four_compare_png_path(files):
+    stems = [Path(f).stem for f in files]
+    return "FOUR_COMPARE_" + "_VS_".join(stems) + ".png"
+
 def main():
     args = parse_args()
 
-    if len(args.files) not in (1, 2):
+    if len(args.files) not in (1, 2, 4):
         print("Usage:")
         print("  python plot_compare.py <DOT_OR_JSON> [--save]")
-        print("  python plot_compare.py ./automata/automaton_5_2_2_0.dot ./learning_E0/learnt-automaton_5_2_2_0~0.dot --save")
+        print("  python plot_compare.py <REFERENCE> <LEARNT> [--save]")
+        print("  python plot_compare.py <REFERENCE> <EDSM_BASELINE> <RANDOM_ADDED> <CONFIDENCE_ADDED> [--save]")
         raise SystemExit(2)
 
     if len(args.files) == 1:
@@ -208,30 +213,97 @@ def main():
 
         plt.show()
         return
+    
+    if len(args.files) == 2:
+        p1 = Path(args.files[0])
+        p2 = Path(args.files[1])
 
-    p1 = Path(args.files[0])
-    p2 = Path(args.files[1])
-    n1, e1 = load_any(p1)
-    n2, e2 = load_any(p2)
-    G1 = build_graph(n1, e1)
-    G2 = build_graph(n2, e2)
+        n1, e1 = load_any(p1)
+        n2, e2 = load_any(p2)
 
-    pos1 = fixed_compare_layout(G1, start=0)
-    pos2 = fixed_compare_layout(G2, start=0)
+        G1 = build_graph(n1, e1)
+        G2 = build_graph(n2, e2)
 
-    fig = plt.figure(figsize=(12, 6))
-    ax1 = fig.add_subplot(1, 2, 1)
-    ax2 = fig.add_subplot(1, 2, 2)
-    draw(ax1, G1, f"Reference: {p1.name}", pos1)
-    draw(ax2, G2, f"Learnt: {p2.name}", pos2)
-    plt.tight_layout()
+        pos1 = fixed_compare_layout(G1, start=0)
+        pos2 = fixed_compare_layout(G2, start=0)
 
-    if args.save:
-        out_png = output_compare_png_path(p1, p2)
-        fig.savefig(out_png, dpi=300, bbox_inches="tight")
-        print(f"Saved figure to: {out_png}")
+        fig = plt.figure(figsize=(12, 6))
+        ax1 = fig.add_subplot(1, 2, 1)
+        ax2 = fig.add_subplot(1, 2, 2)
 
-    plt.show()
+        draw(ax1, G1, f"Reference: {p1.name}", pos1)
+        draw(ax2, G2, f"Learnt: {p2.name}", pos2)
+
+        plt.tight_layout()
+
+        if args.save:
+            out_png = output_compare_png_path(p1, p2)
+            fig.savefig(out_png, dpi=300, bbox_inches="tight")
+            print(f"Saved figure to: {out_png}")
+
+        plt.show()
+        return
+
+    if len(args.files) == 4:
+        paths = [Path(f) for f in args.files]
+
+        titles = [
+            "Reference Automaton",
+            "EDSM Baseline",
+            "Random traces Added",
+            "Confidence-based Added",
+        ]
+
+        graphs = []
+        positions = []
+
+        for p in paths:
+            nodes, edges = load_any(p)
+            G = build_graph(nodes, edges)
+            pos = fixed_compare_layout(G, start=0)
+
+            graphs.append(G)
+            positions.append(pos)
+
+        fig, axes = plt.subplots(2, 2, figsize=(12, 7))
+        axes = axes.flatten()
+
+        for ax, G, pos, title, path in zip(axes, graphs, positions, titles, paths):
+            draw(ax, G, f"{title}\n{path.name}", pos)
+
+        plt.tight_layout()
+
+        if args.save:
+            out_png = output_four_compare_png_path(paths)
+            fig.savefig(out_png, dpi=300, bbox_inches="tight")
+            print(f"Saved figure to: {out_png}")
+
+        plt.show()
+        return
+
+    # p1 = Path(args.files[0])
+    # p2 = Path(args.files[1])
+    # n1, e1 = load_any(p1)
+    # n2, e2 = load_any(p2)
+    # G1 = build_graph(n1, e1)
+    # G2 = build_graph(n2, e2)
+
+    # pos1 = fixed_compare_layout(G1, start=0)
+    # pos2 = fixed_compare_layout(G2, start=0)
+
+    # fig = plt.figure(figsize=(12, 6))
+    # ax1 = fig.add_subplot(1, 2, 1)
+    # ax2 = fig.add_subplot(1, 2, 2)
+    # draw(ax1, G1, f"Reference: {p1.name}", pos1)
+    # draw(ax2, G2, f"Learnt: {p2.name}", pos2)
+    # plt.tight_layout()
+
+    # if args.save:
+    #     out_png = output_compare_png_path(p1, p2)
+    #     fig.savefig(out_png, dpi=300, bbox_inches="tight")
+    #     print(f"Saved figure to: {out_png}")
+
+    # plt.show()
 
 if __name__ == "__main__":
     main()
